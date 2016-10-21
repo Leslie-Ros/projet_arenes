@@ -29,7 +29,7 @@ $this->set('bestfighter',$bestfighter );
 }
 public function sight()
 {
-
+	//c'est ma part TO
 }
 public function diary()
 {
