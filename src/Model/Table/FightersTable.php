@@ -57,5 +57,17 @@ class FightersTable extends Table
         
         //insertion du nouveau tuple
         $table->save($combattant);
+        
+        //à améliorer : tester la réussite pour informer l'utilisateur de la réussite de l'opération
+    }
+    
+    public function deleteFighter($id){
+        //Comme l'id du Fighter n'est clé étrangère que pour les message et équipements non-implémentés ici,
+        //la méthode de répercussion de la suppression d'un combattant (ie en cascade ou non, passage à null...) importe peu
+        $table = TableRegistry::get('Fighters');
+        $asuppr=$table->get($id);
+        $success=$table->delete($asuppr);
+    
+        //à améliorer : utiliser $success pour informer d'utilisateur de la réussite de l'opération
     }
 }
