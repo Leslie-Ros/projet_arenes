@@ -1,1 +1,3 @@
-<?php pr($bestfighter);?>
+<?php
+    echo "Combattant"
+;?>

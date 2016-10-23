@@ -21,10 +21,10 @@ public function login()
 public function fighter()
 {
 $this->loadModel('Fighters');
-$resultat=$this->Fighters->test();
-$this->set('var',$resultat );
-$bestfighter=$this->Fighters->getBestFighter()->toArray();
-$this->set('bestfighter',$bestfighter );
+//$resultat=$this->Fighters->test();
+//$this->set('var',$resultat );
+//$bestfighter=$this->Fighters->getBestFighter()->toArray();
+//$this->set('bestfighter',$bestfighter );
 
 }
 public function sight()
