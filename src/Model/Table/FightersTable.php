@@ -14,7 +14,8 @@
 
 namespace App\Model\Table;
 
-use Cake\ORM\Table;
+use Cake\ORM\Table/*Registry*/;
+use Cake\ORM\TableRegistry;
 
 class FightersTable extends Table
 {
@@ -30,29 +31,31 @@ class FightersTable extends Table
     }
 
     public function createFighter($nom, $joueur){
+        
+        
         //initialisation des coordonnées de départ (susceptibles d'etre modifiées)
         $x=0; $y=0;
         
         //création d'un nouveau tuple
-        $table = Table::get('Fighters');
-        //$combattant = $table->newEntity();
+        $table = TableRegistry::get('Fighters'/*,['className' => 'FightersTable']*/);
+        $combattant = $table->newEntity();
         
         //remplissage des attributs de ce nouveau tuple
-        //$combattant->name = $nom;
-        //$combattant->player_id = $joueur;
-        //$combattant->coordinate_x = $x;
-        //$combattant->coordinate_y = $y;
-        //$combattant->level = 1;
-        //$combattant->xp=0;
-        //$combattant->skill_sight=0;
-        //$combattant->skill_strength=1;
-        //$combattant->skill_health=3;
-        //$combattant->current_health=3;
+        $combattant->name = $nom;
+        $combattant->player_id = $joueur;
+        $combattant->coordinate_x = $x;
+        $combattant->coordinate_y = $y;
+        $combattant->level = 1;
+        $combattant->xp=0;
+        $combattant->skill_sight=0;
+        $combattant->skill_strength=1;
+        $combattant->skill_health=3;
+        $combattant->current_health=3;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
         //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
         //$combattant->guild_id;
         
         //insertion du nouveau tuple
-        //$table->save($combattant);
+        $table->save($combattant);
     }
 }
