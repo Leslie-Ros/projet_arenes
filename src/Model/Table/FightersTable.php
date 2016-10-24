@@ -74,7 +74,6 @@ class FightersTable extends Table
     public function getFightersForUser($userid){
         //on laisse la possibilité pour plus tard de récupérer plusieurs combattants par joueurs
         $fighters=$this->find()->where(['player_id' => $userid])->toArray();
-        
         return $fighters;
     }
 }

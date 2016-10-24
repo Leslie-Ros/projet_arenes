@@ -32,7 +32,7 @@ $this->loadModel('Fighters');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
     
-    $persos=$this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+    $persos=$this->Fighters->getFightersForUser('truc');
     pr($persos);
 
 }
