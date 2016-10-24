@@ -76,4 +76,11 @@ class FightersTable extends Table
         $fighters=$this->find()->where(['player_id' => $userid])->toArray();
         return $fighters;
     }
+    
+    public function levelUp($id){
+        $table = TableRegistry::get('Fighters');
+        $amodif=$table->get($id);
+        $amodif->level += 1;
+        $table->save($amodif);
+    }
 }
