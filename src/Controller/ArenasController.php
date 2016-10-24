@@ -32,8 +32,17 @@ $this->loadModel('Fighters');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
     
-    $persos=$this->Fighters->getFightersForUser('truc');
-    pr($persos);
+    $userid='545f827c-576c-4dc5-ab6d-27c33186dc3e'; //à changer : récupérer l'iduser lors de la connexion
+    $persos=$this->Fighters->getFightersForUser($userid);
+    //Soit le joueur a un personnage et on lui propose toutes les actions associées,
+    //soit il n'en a pas et on lui propose d'en créer un
+    if (empty($persos)){
+        $this->set('hasFighter',FALSE);
+    }
+    else{
+        $this->set('hasFighter',TRUE);
+        $this->set('combattant', $persos[0]);
+    }
 
 }
 public function sight()
