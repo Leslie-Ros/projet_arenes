@@ -1,0 +1,36 @@
+
+#onglets
+{
+    font : bold 14px arial, serif;
+    list-style-type : none; /*enleve les puces*/
+    padding-bottom : 30px; /* à modifier suivant la taille de la police ET de la hauteur de l'onglet dans #onglets li */
+    border-bottom : 1px solid grey; 
+    margin-left : 0;
+}
+
+
+
+#onglets li
+{
+    float : left; /*met les onglets dans la meme ligne*/
+    height : 26px; /* à modifier suivant la taille de la police pour centrer le texte dans l'onglet */
+    background-color: #F4F9FD;
+    margin : 2px 2px 0 2px ;  
+    border : 1px solid #9EA0A1;
+}
+
+
+
+#onglets a
+{
+    display : block;
+    color : #666;
+    text-decoration : none;
+    padding : 4px;
+}
+
+#onglets a:hover /*quand on survol l'onglet*/
+{
+    background : #fff;
+}
+
