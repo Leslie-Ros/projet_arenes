@@ -38,7 +38,22 @@ $this->loadModel('Fighters');
 }
 public function sight()
 {
-	//c'est ma part TO
+	$arena = array();
+        //initialiser $arena
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                $arena[$row][$col] = '_';
+            }
+        }
+        //récupérer les personnages
+        $this->loadModel('Fighters');
+        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //peupler $arena avec les personnages
+        foreach ($fightersList as $value) {
+            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        }
+        //pr($arena);
+        $this->set('arena', $arena);
 }
 public function diary()
 {
