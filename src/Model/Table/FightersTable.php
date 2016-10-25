@@ -77,10 +77,25 @@ class FightersTable extends Table
         return $fighters;
     }
     
-    public function levelUp($id){
+    public function levelUp($id, $comp){
+        //récupération du tuple
         $table = TableRegistry::get('Fighters');
         $amodif=$table->get($id);
+        //augmentation de niveau
         $amodif->level += 1;
+        //amélioration de la caractéristique choisie
+        switch ($comp){
+            case "vue" :
+                $amodif->skill_sight +=1;
+                break;
+            case "force" :
+                $amodif->skill_strength +=1;
+                break;
+            case "vie" :
+                $amodif->skill_health +=3;
+                break;
+        }
+        //sauvegarde des modifications
         $table->save($amodif);
     }
 }

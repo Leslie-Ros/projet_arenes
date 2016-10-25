@@ -32,7 +32,7 @@ $this->loadModel('Fighters');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
     //Exemple d'utilisation de la fonction levelUp
-    //$this->Fighters->levelUp(2);
+    //$this->Fighters->levelUp(4, "vie");
 
     
     $userid='545f827c-576c-4dc5-ab6d-27c33186dc3e'; //à changer : récupérer l'iduser lors de la connexion
