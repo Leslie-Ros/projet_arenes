@@ -78,14 +78,18 @@ class FightersTable extends Table {
     }
 
     public function attack($attId, $defId) {
-        $table = TableRegistry::get('Fighters');
-        $att = $table->get($attId);
-        $def = $table->get($defId);
+        //$table = TableRegistry::get('Fighters');
+        $att = $this->get($attId);
+        $def = $this->get($defId);
         //test pour toucher ;
-        if (10 + $att['level'] - $def['level'] <= rand(20)) {
-            $def['skill_health'] -= $att['skill_strenght'];
+        $dice = rand(20, 0);
+        pr($dice);
+        if (10 + $att['level'] - $def['level'] <= $dice) {
+            $def['skill_health'] -= $att['skill_strength'];
+            //appel updateFighter
+            $this->updateFighter($def);
             //test si tué
-            if($def['skill_health'] <= 0){
+            if ($def['skill_health'] <= 0) {
                 //appel eventTue
             } else {
                 //appel eventBlesse
@@ -93,6 +97,13 @@ class FightersTable extends Table {
         } else {
             //appel eventRate
         }
+        pr($def['skill_health']);
+    }
+    
+    
+    public function updateFighter($fighter){
+            $table = TableRegistry::get('Fighters');
+            $table->save($fighter);
     }
 
 }
