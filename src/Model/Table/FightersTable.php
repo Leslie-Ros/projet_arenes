@@ -98,4 +98,14 @@ class FightersTable extends Table
         //sauvegarde des modifications
         $table->save($amodif);
     }
+    
+    public function mayLevelUp($id){
+        $table = TableRegistry::get('Fighters');
+        $combattant=$table->get($id);
+        
+        if ($combattant->xp % 4 == 0 && $combattant->xp != 0){
+            return TRUE;
+        }
+            return FALSE;
+    }
 }
