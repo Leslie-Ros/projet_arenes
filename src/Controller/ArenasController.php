@@ -1,61 +1,95 @@
 <?php
-//à inserer : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-namespace App\Controller;
-use App\Controller\AppController;
-/**
-* Personal Controller
-* User personal interface
-*
-*/
-class ArenasController  extends AppController
-{
-public function index()
-{
-$this->loadModel('Fighters');
-$figterlist=$this->Fighters->find('all');
-pr($figterlist->toArray());
-}
-public function login()
-{
 
-}
-public function fighter()
-{
-$this->loadModel('Fighters');
-//$resultat=$this->Fighters->test();
-//$this->set('var',$resultat );
-//$bestfighter=$this->Fighters->getBestFighter()->toArray();
-//$this->set('bestfighter',$bestfighter );
+//à inserer : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+namespace App\Controller;
+
+use App\Controller\AppController;
+
+use Cake\ORM\TableRegistry;
+
+/**
+ * Personal Controller
+ * User personal interface
+ *
+ */
+class ArenasController extends AppController {
+
+    public function index() {
+        $this->loadModel('Fighters');
+        $figterlist = $this->Fighters->find('all');
+        pr($figterlist->toArray());
+    }
+
+    public function login() {
+        
+    }
+
+    public function fighter() {
+        $this->loadModel('Fighters');
+
+        //Exemple d'utilisation de la fonction createFighter
+        //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //Exemple d'utilisation de la fonction deleteFighter
+        //$this->Fighters->deleteFighter(3);
+        //Exemple d'utilisation de la fonction createFighter
+        //$this->Fighters->createFighter('Sheeta', 'fb14a4c2-9aea-11e6-988d-ac220b153e06');
+        //Exemple d'utilisation de la fonction deleteFighter
+        //$this->Fighters->deleteFighter(3);
+        //Exemple d'utilisation de la fonction levelUp
+        //$this->Fighters->levelUp(4, "vie");
+
+        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
+        $persos = $this->Fighters->getFightersForUser($userid);
+        //Soit le joueur a un personnage et on lui propose toutes les actions associées,
+        //soit il n'en a pas et on lui propose d'en créer un
+        if (empty($persos)) {
+            $this->set('hasFighter', FALSE);
+        } else {
+            $this->set('hasFighter', TRUE);
+            $this->set('combattant', $persos[0]);
+            $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
+        }
+    }
+
+    public function sight() {
+        $arena = array();
+        //initialiser $arena
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                $arena[$row][$col] = '_';
+            }
+        }
+        $idAtt = 1;
+        $idDef = 2;
+        //récupérer les personnages
+        $this->loadModel('Fighters');
+        //$this->Fighters->attack($idAtt, $idDef);
+        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //peupler $arena avec les personnages
+        foreach ($fightersList as $value) {
+            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        }
+        //pr($arena);
+        $this->set('arena', $arena);
+    }
 
     //Exemple d'utilisation de la fonction createFighter
-    //$this->Fighters->createFighter('Sheeta', 'fb14a4c2-9aea-11e6-988d-ac220b153e06');
+    //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
-    //Exemple d'utilisation de la fonction levelUp
-    //$this->Fighters->levelUp(4, "vie");
 
-    
-    $userid='fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
-    $persos=$this->Fighters->getFightersForUser($userid);
-    //Soit le joueur a un personnage et on lui propose toutes les actions associées,
-    //soit il n'en a pas et on lui propose d'en créer un
-    if (empty($persos)){
-        $this->set('hasFighter',FALSE);
-    }
-    else{
-        $this->set('hasFighter',TRUE);
-        $this->set('combattant', $persos[0]);
-        $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
-    }
-
-}
-public function sight()
-{
-
-}
 public function diary()
 {
+    //test
+    //$this->loadModel('Events');
+    //$this->loadModel('Fighters');
+    //        $tableFighters = TableRegistry::get('Fighters');
+    //        $fighter= $tableFighters->get(1);
+    //        $enemy= $tableFighters->get(2);
+    //$this->Events->createEventDeath($fighter,$enemy);
+    //$this->Events->displayEvents(1);
+    }
+}
 
-}
-}
 ?>
