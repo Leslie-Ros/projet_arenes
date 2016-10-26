@@ -2,6 +2,7 @@
 //à inserer : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 namespace App\Controller;
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 /**
 * Personal Controller
 * User personal interface
@@ -38,7 +39,14 @@ public function sight()
 }
 public function diary()
 {
-$this->loadModel('Events');
+    //test
+//$this->loadModel('Events');
+//$this->loadModel('Fighters');
+//        $tableFighters = TableRegistry::get('Fighters');
+//        $fighter= $tableFighters->get(1);
+//        $enemy= $tableFighters->get(2);
+//$this->Events->createEventDeath($fighter,$enemy);
+//$this->Events->displayEvents(1);
 }
 }
 ?>
