@@ -1,1 +1,1 @@
-Bienvenue <?php echo $myname;?> dans WebArena
+Bienvenue dans WebArena
