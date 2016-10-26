@@ -2,6 +2,7 @@
 //à inserer : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 namespace App\Controller;
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 /**
 * Personal Controller
 * User personal interface
@@ -27,6 +28,7 @@ $this->loadModel('Fighters');
 //$bestfighter=$this->Fighters->getBestFighter()->toArray();
 //$this->set('bestfighter',$bestfighter );
 
+
     //Exemple d'utilisation de la fonction createFighter
     //$this->Fighters->createFighter('Sheeta', 'fb14a4c2-9aea-11e6-988d-ac220b153e06');
     //Exemple d'utilisation de la fonction deleteFighter
@@ -48,6 +50,10 @@ $this->loadModel('Fighters');
         $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
     }
 
+    //Exemple d'utilisation de la fonction createFighter
+    //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
+    //Exemple d'utilisation de la fonction deleteFighter
+    //$this->Fighters->deleteFighter(3);
 }
 public function sight()
 {
@@ -55,7 +61,14 @@ public function sight()
 }
 public function diary()
 {
-
+    //test
+//$this->loadModel('Events');
+//$this->loadModel('Fighters');
+//        $tableFighters = TableRegistry::get('Fighters');
+//        $fighter= $tableFighters->get(1);
+//        $enemy= $tableFighters->get(2);
+//$this->Events->createEventDeath($fighter,$enemy);
+//$this->Events->displayEvents(1);
 }
 }
 ?>
