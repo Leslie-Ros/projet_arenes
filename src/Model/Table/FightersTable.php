@@ -82,9 +82,9 @@ class FightersTable extends Table {
         $att = $this->get($attId);
         $def = $this->get($defId);
         //test pour toucher ;
-        $dice = rand(20, 0);
+        $dice = rand(20, 1);
         pr($dice);
-        if (10 + $att['level'] - $def['level'] <= $dice) {
+        if (10 + $def['level'] - $att['level'] >= $dice) {
             $def['skill_health'] -= $att['skill_strength'];
             //appel updateFighter
             $this->updateFighter($def);
