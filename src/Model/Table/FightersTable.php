@@ -99,11 +99,42 @@ class FightersTable extends Table {
         }
         pr($def['skill_health']);
     }
-    
-    
-    public function updateFighter($fighter){
-            $table = TableRegistry::get('Fighters');
-            $table->save($fighter);
+
+    public function updateFighter($fighter) {
+        $table = TableRegistry::get('Fighters');
+        $table->save($fighter);
+    }
+
+    public function levelUp($id, $comp) {
+        //récupération du tuple
+        $table = TableRegistry::get('Fighters');
+        $amodif = $table->get($id);
+        //augmentation de niveau
+        $amodif->level += 1;
+        //amélioration de la caractéristique choisie
+        switch ($comp) {
+            case "vue" :
+                $amodif->skill_sight +=1;
+                break;
+            case "force" :
+                $amodif->skill_strength +=1;
+                break;
+            case "vie" :
+                $amodif->skill_health +=3;
+                break;
+        }
+        //sauvegarde des modifications
+        $table->save($amodif);
+    }
+
+    public function mayLevelUp($id) {
+        $table = TableRegistry::get('Fighters');
+        $combattant = $table->get($id);
+
+        if ($combattant->xp % 4 == 0 && $combattant->xp != 0) {
+            return TRUE;
+        }
+        return FALSE;
     }
 
 }
