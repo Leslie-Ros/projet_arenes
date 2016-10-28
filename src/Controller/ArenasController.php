@@ -51,35 +51,33 @@ class ArenasController extends AppController {
         }
     }
 
-    public function sight() {
+    public function creerArena(){
         $arena = array();
-        //initialiser $arena
         for ($row = 0; $row < 15; $row++) {
             for ($col = 0; $col < 10; $col++) {
                 $arena[$row][$col] = '_';
             }
         }
-        $idAtt = 1;
-        $idDef = 2;
-        //récupérer les personnages
         $this->loadModel('Fighters');
-        //$this->Fighters->attack($idAtt, $idDef);
         $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //peupler $arena avec les personnages*
+        //peupler $arena avec les personnages
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
         }
-        $this->Fighters->move('N', 1, $arena);
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
-                $arena[$row][$col] = '_';
-            }
+        return $arena;
+    }
+    
+    public function sight() {
+        //initialiser arena
+        $arena = $this->creerArena();
+        
+        if ($this->request->is("post")) {
+            //pr($this->request->data);
+            $this->Fighters->move($this->request->data['direction'], 1, $arena);
+            $arena = $this->creerArena();
         }
-        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        foreach ($fightersList as $value) {
-            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
-        }
-        $mask = $this->Fighters->canSee($arena, $fightersList[0]['id']);
+
+        $mask = $this->Fighters->canSee($arena, 1);
         //pr($arena);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
