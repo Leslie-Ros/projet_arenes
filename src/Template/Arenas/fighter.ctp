@@ -6,9 +6,15 @@
     if ($hasFighter) {
         ?>
     <h2>Votre combattant</h2>
+        
+    <table class='fighterPrint'>
+        <?php echo $this->Html->tableHeaders(['Nom', 'Niveau', 'xp', 'Vue', 'Force', 'Santé max', 'PV']);
+        echo $this->Html->tableCells([$combattant->name, $combattant->level, $combattant->xp, $combattant->skill_sight, $combattant->skill_strength, $combattant->skill_health, $combattant->current_health]);
+        ?>
+    </table>
+        
+        
         <?php
-        pr($combattant);
-
         if ($mayLevelUp == TRUE) {
             echo "Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?";
         } else {
