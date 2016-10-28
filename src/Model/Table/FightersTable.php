@@ -77,8 +77,13 @@ class FightersTable extends Table {
         return $fighters;
     }
 
+    /**
+     * Un fighter attaque un autre fighter
+     * @param type $attId
+     * @param type $defId
+     */
     public function attack($attId, $defId) {
-        //$table = TableRegistry::get('Fighters');
+        $this->loadModel('Events');
         $att = $this->get($attId);
         $def = $this->get($defId);
         //test pour toucher ;
@@ -95,14 +100,14 @@ class FightersTable extends Table {
                 //xp pour tué
                 $att['xp'] += $def['level'];
                 $this->deleteFighter($defId);
-                //appel eventTue
+                $this->Events->createEventDeath($att, $def);
             } else {
-                //appel eventBlesse
+                $this->Events->createEventHurt($att, $def);
             }
             //appel updateFighter pour $att
             $this->updateFighter($att);
         } else {
-            //appel eventRate
+            $this->Events->createEventMiss($att, $def);
         }
         pr($def['skill_health']);
     }
@@ -143,8 +148,14 @@ class FightersTable extends Table {
         }
         return FALSE;
     }
-    
-    public function canSee($arena, $id){
+
+    /**
+     * détermine le chant de vision d'un fighter
+     * @param type $arena
+     * @param type $id
+     * @return string
+     */
+    public function canSee($arena, $id) {
         $mask = $arena;
         $fighter = $this->get($id);
         $x = $fighter['coordinate_x'];
@@ -152,7 +163,7 @@ class FightersTable extends Table {
         $sight = $fighter['skill_sight'];
         for ($row = 0; $row < 15; $row++) {
             for ($col = 0; $col < 10; $col++) {
-                if(abs($row-$x) <= $sight && abs($col-$y) <= $sight){
+                if (abs($row - $x) <= $sight && abs($col - $y) <= $sight) {
                     $mask[$row][$col] = "#";
                 }
             }
@@ -160,50 +171,56 @@ class FightersTable extends Table {
         //pr($mask);
         return $mask;
     }
-    
-    public function validMove($x, $y, $arena, $id){
+
+    /**
+     * vérifie si le mouvement est valid, tape l'ennemi le cas échéant
+     * @param type $x
+     * @param type $y
+     * @param type $arena
+     * @param type $id
+     * @return boolean
+     */
+    public function validMove($x, $y, $arena, $id) {
         $valid = false;
-        if($x >= 0 && $y >= 0 && $x < 15 && $y < 10){
+        if ($x >= 0 && $y >= 0 && $x < 15 && $y < 10) {
             pr("dans les bornes");
-            if($arena[$x][$y] == '_'){
+            if ($arena[$x][$y] == '_') {
                 pr("valid");
                 $valid = true;
-            }else {
-                $this->attack($id ,$arena[$x][$y]);
+            } else {
+                $this->attack($id, $arena[$x][$y]);
             }
         }
         return $valid;
     }
-    public function move($direction, $id, $arena){
+
+    /**
+     * déplacer un fighter 
+     * @param type $direction
+     * @param type $id
+     * @param type $arena
+     */
+    public function move($direction, $id, $arena) {
         $fighter = $this->get($id);
-        $x = $fighter['coordinate_x'];
-        $y = $fighter['coordinate_y'];
         switch ($direction) {
             case 'N' :
-                $x -= 1;
+                $fighter['coordinate_x'] -= 1;
                 break;
             case 'S' :
-                $x += 1;
+                $fighter['coordinate_x'] += 1;
                 break;
             case 'W' :
-                $y -= 1;
+                $fighter['coordinate_y'] -= 1;
                 break;
             case 'E' :
-                $y += 1;
+                $fighter['coordinate_y'] += 1;
                 break;
         }
         pr("move");
-        if($this->validMove($x, $y, $arena, $id)){
+        if ($this->validMove($fighter['coordinate_x'], $fighter['coordinate_y'], $arena, $id)) {
             pr("validmove");
-            $fighter['coordinate_x'] = $x;
-            $fighter['coordinate_y'] = $y;
             $this->updateFighter($fighter);
         }
-        /*if($arena[$fighter['coordinate_x']][$fighter['coordinate_y']] == "_"){
-            $this->updateFighter($fighter);
-        }else {
-            $def = $this->get($arena[$fighter['coordinate_x']][$fighter['coordinate_y']])['id'];
-            $this->attack(fighter['id'], $def);
-        }*/
     }
+
 }

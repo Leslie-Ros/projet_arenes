@@ -5,7 +5,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
 use Cake\ORM\TableRegistry;
 
 /**
@@ -70,7 +69,7 @@ class ArenasController extends AppController {
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
         }
-        $this->Fighters->move('S', 1, $arena);
+        $this->Fighters->move('N', 1, $arena);
         for ($row = 0; $row < 15; $row++) {
             for ($col = 0; $col < 10; $col++) {
                 $arena[$row][$col] = '_';
@@ -84,7 +83,6 @@ class ArenasController extends AppController {
         //pr($arena);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
-        
     }
 
     //Exemple d'utilisation de la fonction createFighter
@@ -92,17 +90,17 @@ class ArenasController extends AppController {
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
 
-public function diary()
-{
-    //test
-    //$this->loadModel('Events');
-    //$this->loadModel('Fighters');
-    //        $tableFighters = TableRegistry::get('Fighters');
-    //        $fighter= $tableFighters->get(1);
-    //        $enemy= $tableFighters->get(2);
-    //$this->Events->createEventDeath($fighter,$enemy);
-    //$this->Events->displayEvents(1);
+    public function diary() {
+        //test
+        //$this->loadModel('Events');
+        //$this->loadModel('Fighters');
+        //        $tableFighters = TableRegistry::get('Fighters');
+        //        $fighter= $tableFighters->get(1);
+        //        $enemy= $tableFighters->get(2);
+        //$this->Events->createEventDeath($fighter,$enemy);
+        //$this->Events->displayEvents(1);
     }
+
 }
 
 ?>
