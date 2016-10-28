@@ -5,7 +5,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\ORM\TableRegistry;
 
 /**
  * Personal Controller
@@ -51,6 +50,7 @@ class ArenasController extends AppController {
         }
     }
 
+    //creer l'arène
     public function creerArena(){
         $arena = array();
         for ($row = 0; $row < 15; $row++) {
@@ -74,10 +74,12 @@ class ArenasController extends AppController {
         if ($this->request->is("post")) {
             //pr($this->request->data);
             $this->Fighters->move($this->request->data['direction'], 1, $arena);
+            //1 id du fighter, à changer par $this->request->session->read($fighterId)
             $arena = $this->creerArena();
         }
 
         $mask = $this->Fighters->canSee($arena, 1);
+        //1 id du fighter, à changer par $this->request->session->read($fighterId)
         //pr($arena);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
