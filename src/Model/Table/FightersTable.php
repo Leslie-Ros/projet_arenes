@@ -131,7 +131,7 @@ class FightersTable extends Table {
         $table = TableRegistry::get('Fighters');
         $combattant = $table->get($id);
 
-        if ($combattant->xp % 4 == 0 && $combattant->xp != 0) {
+        if ($combattant->xp >= 4*$combattant->level) {
             return TRUE;
         }
         return FALSE;
