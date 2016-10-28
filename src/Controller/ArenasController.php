@@ -66,12 +66,25 @@ class ArenasController extends AppController {
         $this->loadModel('Fighters');
         //$this->Fighters->attack($idAtt, $idDef);
         $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //peupler $arena avec les personnages
+        //peupler $arena avec les personnages*
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
         }
+        $this->Fighters->move('S', 1, $arena);
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                $arena[$row][$col] = '_';
+            }
+        }
+        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        foreach ($fightersList as $value) {
+            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        }
+        $mask = $this->Fighters->canSee($arena, $fightersList[0]['id']);
         //pr($arena);
+        $this->set('mask', $mask);
         $this->set('arena', $arena);
+        
     }
 
     //Exemple d'utilisation de la fonction createFighter
