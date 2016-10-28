@@ -28,12 +28,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+   
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    
+    
 </head>
 <body>
+
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
@@ -45,6 +48,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
                 <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
             </ul>
+        
+        <ul class="header">  
+<li><?php echo $this->Html->link('Accueil', '/'); ?></li>
+   <li>    <?php echo $this->Html->link('Se connecter', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
+<li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Arenas', 'action' => 'login')); ?></li>
+    <li>    <?php echo $this->Html->link('Forum', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
         </div>
     </nav>
     <?= $this->Flash->render() ?>
@@ -52,6 +61,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('content') ?>
     </div>
     <footer>
+    
+    <ul>
+    <li id="gpop"><b>Groupe:</b> SI1 - <b>Options:</b> CG</li>
+   <li id="auteur"> <b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS.</li>
+   </ul>
+   
+    
     </footer>
 </body>
 </html>
