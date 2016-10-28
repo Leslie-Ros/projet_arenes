@@ -3,22 +3,31 @@ a.disabled {
     pointer-events: none;
 }
 
+
+
 a:hover {
-    color: #15848F;
+    color: #990000;
 }
 
 a {
-    color: #1798A5;
+    color: #a70097;
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: #990000;
 }
 
 .side-nav li a:not(.button):hover {
-    color: #15848F;
+    color: #990000;
 }
-
+body
+{
+    background-image: url(../webroot/img/arenegladiateur.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+   
+} 
 header {
     background-color: #D33C44;
     color: #ffffff;
@@ -29,12 +38,39 @@ header {
     box-shadow: 0px 1px rgba(0, 0, 0, 0.24);
 }
 
+footer {
+    background: #890000;
+    font-family: serif, arial;
+    color: #FFF;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+footer ul
+{
+    list-style-type : none;
+}
+footer li 
+{
+    float: center;
+    background: #890000;
+    display: inline;
+}
+#opgr
+{
+    float : left;
+}
+#auteur
+{
+    float : right;
+}
+
+
 header .header-title {
     padding-left:80px
 }
 
 legend {
-    color:#15848F;
+    color:#990000;
 }
 
 .row {
@@ -43,13 +79,13 @@ legend {
 
 .actions.columns {
     margin-top:1rem;
-    border-left: 5px solid #15848F;
+    border-left: 5px solid #990000;
     padding-left: 15px;
     padding: 32px 20px;
 }
 
 .actions.columns h3 {
-    color:#15848F;
+    color:#990000;
 }
 
 .index table {
@@ -378,11 +414,11 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: #890000;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: #990000;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -391,7 +427,7 @@ pre {
 }
 
 .side-nav li.heading {
-    color: #1798A5;
+    color: #a70097;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -424,15 +460,15 @@ table tr {
 }
 
 table thead tr {
-    border-bottom: 1px solid #1798A5;
+    border-bottom: 1px solid #a70097;
 }
 
 table tr th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #a70097;
     text-align: left;
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #a70097;
 }
 
 table tr:nth-of-type(even) {
@@ -446,7 +482,7 @@ fieldset {
 }
 
 fieldset legend {
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #a70097;
     width: 100%;
     line-height: 2rem;
 }
@@ -519,7 +555,7 @@ div.message.hidden {
 .vertical-table th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #a70097;
     border: none;
     text-align: left;
 }

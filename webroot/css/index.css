@@ -1,32 +1,42 @@
-body
+#texte
 {
-	font-family: 'notmarykateregular';
-	text-align: center;
-	margin: 10px;
+    text-shadow: #FFF 1px 1px 10px;   
 } 
-
-
 
 h1
 {
 	font-family: 'notmarykateregular';
+    position: top;
+    text-align: center;
 }
+
 #police
 {
 	font-family: 'bloodynormal';
 	font-size: 1cm;
+    color: #FFF
+    text-shadow: #000 2px 2px 10px; 
+    text-align: center;
 }
 
-#inscription
+#texte1 
 {
-	background-color: orange;
-	color: white;
-	font-weight: bold;
-	border-style: none;
-	border-radius: 10px;
-	background-size: cover;
-
+    font-family: 'notmarykateregular', arial;
+    text-align: left;
+    margin-left: 1cm;
+margin-top: 1cm; 
+    font-size-adjust: 0.9;
 }
+
+.texte2
+{
+    font-family: 'notmarykateregular', arial;
+    text-align: center;
+    font-size-adjust: 0.9;
+}
+
+
+
 
 @font-face {
     font-family: 'bloodynormal';
@@ -47,20 +57,6 @@ h1
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.woff') format('woff'),
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.ttf') format('truetype'),
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.svg#notmarykateregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'rapscallionregular';
-    src: url('/projet_arenes/webroot/web_fonts/rapscallion_regular_macroman/RAPSCALL-webfont.eot');
-    src: url('/projet_arenes/webroot/web_fonts/rapscallion_regular_macroman/RAPSCALL-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/projet_arenes/webroot/web_fonts/rapscallion_regular_macroman/RAPSCALL-webfont.woff') format('woff'),
-         url('/projet_arenes/webroot/web_fonts/rapscallion_regular_macroman/RAPSCALL-webfont.ttf') format('truetype'),
-         url('/projet_arenes/webroot/web_fonts/rapscallion_regular_macroman/RAPSCALL-webfont.svg#rapscallionregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
 }
 
