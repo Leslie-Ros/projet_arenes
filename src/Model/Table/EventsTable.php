@@ -19,6 +19,7 @@ namespace App\Model\Table;
 use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
+use Cake\Error\Debugger;
 
 class EventsTable extends Table {
 
@@ -119,32 +120,21 @@ $time->setTimezone(new \DateTimeZone('Europe/Paris'));
     public function displayEvents($fighterId) {
 
         $tableFighters = TableRegistry::get('Fighters');
-        $tableEvents = TableRegistry::get('Events');
-                $fighter=$tableFighters->get($fighterId);
+        $fighter=$tableFighters->get($fighterId);
         $sight=$fighter['skill_sight'];
         $x=$fighter['coordinate_x'];
         $y=$fighter['coordinate_y'];
-//        $time = Time::now();
-//$time->setTimezone(new \DateTimeZone('Europe/Paris'));
-//$time->modify('-24 hours');
         $datelist=$this->find('all');
         foreach($datelist as $value){
-//            $event=$tableEvents->get($date);
             $xe=$value['coordinate_x'];
             $ye=$value['coordinate_y'];
-            if($value['date']->wasWithinLast(1) and ($xe <= ($x+$sight)) and ($xe >= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye >= ($y-$sight))){
-                echo $value; 
-        }}
+            $date= $value['date']->modify('-2 hours');
+            if(($date->wasWithinLast(1)) and ($xe <= ($x+$sight)) and ($xe >= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye >= ($y-$sight))){
+              $event[]=$value['name'];             
+        }
+        
+            }return $event;
 
-//        foreach ($datelist as $date){
-//            $event=$tableEvents->get($date);
-//            $xe=$event['coordinate_x'];
-//            $ye=$event['coordinate_y'];
-//            if (($xe <= ($x+$sight)) and ($xe <= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye <= ($y-$sight))) 
-//            echo $event;
-//        }
-        
-        
         
  
     }
