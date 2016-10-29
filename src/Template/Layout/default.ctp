@@ -46,14 +46,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="top-bar-section">
             <ul class="right">
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
             </ul>
         
         <ul class="header">  
 <li><?php echo $this->Html->link('Accueil', '/'); ?></li>
    <li>    <?php echo $this->Html->link('Se connecter', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
 <li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Arenas', 'action' => 'login')); ?></li>
-    <li>    <?php echo $this->Html->link('Forum', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
         </div>
     </nav>
     <?= $this->Flash->render() ?>

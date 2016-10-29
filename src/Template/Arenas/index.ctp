@@ -6,7 +6,7 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 
 
 <div id="texte1">
-<p>Nomdujeu captive déjà des centaines de milliers de joueurs</br> qui tentent tous, sûrement comme toi, d'élaborer les meilleures</br> stratégies et d’être le meilleur combattant.</p>
+<p>WebArena captive déjà des centaines de milliers de joueurs</br> qui tentent tous, sûrement comme toi, d'élaborer les meilleures</br> stratégies et d’être le meilleur combattant.</p>
 <div class="texte2"><p> Ce jeu est porté sur la compétition qui mettra à l'épreuve tes talents et tes réflexion.</p></div>
 
 
