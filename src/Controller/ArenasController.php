@@ -14,9 +14,7 @@ use App\Controller\AppController;
 class ArenasController extends AppController {
 
     public function index() {
-        $this->loadModel('Fighters');
-        $figterlist = $this->Fighters->find('all');
-        pr($figterlist->toArray());
+        
     }
 
     public function login() {
