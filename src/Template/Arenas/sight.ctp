@@ -3,13 +3,17 @@ Bienvenue dans webArena
 echo "<br>";
 for ($row = 0; $row < 15; $row++) {
     for ($col = 0; $col < 10; $col++) {
-            echo "<div style=\"height: 40px;width: 40x; border-style: solid;float: left\">";
+            echo "<section style=\"text-align: center; height: 45px;width: 45px; border-style: solid;float: left;";
         if($mask[$row][$col] == "#"){
-            echo $arena[$row][$col];
+            echo "background-color: #890000;\">";
+            if($arena[$row][$col] == "_")
+                echo " ";
+            else
+                echo $arena[$row][$col];
         }else {
-            echo "#";
+            echo "background-color: #000000;\">";
         }
-            echo "</div>";
+            echo "</section>";
     }
     echo "<div style=\"clear: both\"></div>";
 }
