@@ -1,4 +1,5 @@
 <!-- src/Template/Users/add.ctp -->
+<?php $this->assign('title', 'Inscription');?>
 
 <div class="users form">
 <?= $this->Form->create() ?>

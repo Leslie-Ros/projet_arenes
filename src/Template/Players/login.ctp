@@ -1,4 +1,5 @@
 <!-- src/Template/Users/login.ctp -->
+<?php $this->assign('title', 'Connexion');?>
 
 <div class="users form">
 <?= $this->Flash->render('auth') ?>
