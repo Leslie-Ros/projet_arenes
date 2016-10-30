@@ -3,6 +3,7 @@ Bienvenue dans webArena
 echo "<br>";
 for ($row = 0; $row < 15; $row++) {
     for ($col = 0; $col < 10; $col++) {
+
         if($mask[$row][$col] == "#"){
             echo $arena[$row][$col];
         }else {
@@ -16,4 +17,5 @@ $options = ['N' => 'North', 'W' => 'West', 'S' => 'South', 'E' => 'East'];
 echo $this->Form->select('direction', $options);
 echo $this->Form->button('GO!');
 echo $this->Form->end();
+
 ?>
