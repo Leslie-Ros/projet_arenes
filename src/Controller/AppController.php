@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -43,8 +43,41 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Arenas',
+                'action' => 'fighter'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Players',
+                'action' => 'login'
+            ],
+            'loginAction' => [
+                'controller' => 'Players',
+                'action' => 'login'
+            ],
+            'addRedirect' => [
+                'controller' => 'Arenas',
+                'action' => 'fighter'
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Players',
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password',
+                    ]
+                ]
+            ]
+        ]);
     }
 
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index', 'view', 'display']);
+    }
+
+    
     /**
      * Before render callback.
      *
