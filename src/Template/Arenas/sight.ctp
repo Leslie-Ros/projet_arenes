@@ -22,4 +22,5 @@ $options = ['N' => 'North', 'W' => 'West', 'S' => 'South', 'E' => 'East'];
 echo $this->Form->select('direction', $options);
 echo $this->Form->button('GO!');
 echo $this->Form->end();
+
 ?>

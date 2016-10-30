@@ -6,6 +6,9 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+
+use Cake\ORM\TableRegistry;
+
 /**
  * Personal Controller
  * User personal interface
@@ -23,7 +26,9 @@ class ArenasController extends AppController {
 
     public function fighter() {
         $this->loadModel('Fighters');
-
+        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
+        $persos = $this->Fighters->getFightersForUser($userid);
+        
         //Exemple d'utilisation de la fonction createFighter
         //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
@@ -34,11 +39,28 @@ class ArenasController extends AppController {
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction levelUp
         //$this->Fighters->levelUp(4, "vie");
+        
+        
+        //traitement des formulaires
+        if($this->request->is('post'))
+        {
+            //pr($this->request->data);
+            switch ($this->request->data['idform']){
+                case 'creation' :
+                    if (!empty($this->request->data['name'])){
+                        $this->Fighters->createFighter($this->request->data['name'], $userid);
+                    }
+                    break;
+                case 'levelup':
+                    $this->Fighters->levelUp($persos[0]['id'],$this->request->data['competence']);
+                    break;
+            }
+        }
 
-        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
-        $persos = $this->Fighters->getFightersForUser($userid);
+        //AFFICHAGE DE LA PAGE
         //Soit le joueur a un personnage et on lui propose toutes les actions associées,
         //soit il n'en a pas et on lui propose d'en créer un
+        $persos = $this->Fighters->getFightersForUser($userid);
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
@@ -46,6 +68,7 @@ class ArenasController extends AppController {
             $this->set('combattant', $persos[0]);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
         }
+        
     }
     
     public function sight() {
@@ -89,6 +112,7 @@ class ArenasController extends AppController {
         //$this->Events->createEventDeath($fighter,$enemy);
         //$this->Events->displayEvents(1);
     }
+
 
 }
 

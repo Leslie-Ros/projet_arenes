@@ -27,3 +27,4 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 <p> <?php echo $this->Html->link('> à toi de jouer ! <', array('controller' => 'Arenas', 'action' => 'login')); ?> </p>
 </div>
 </section>
+

@@ -77,12 +77,15 @@ class FightersTable extends Table {
         return $fighters;
     }
 
+
     /**
      * Un fighter attaque un autre fighter
      * @param type $attId
      * @param type $defId
      */
     public function attack($attId, $defId) {
+        $this->loadModel('Events');
+        //$table = TableRegistry::get('Fighters');
         $att = $this->get($attId);
         $def = $this->get($defId);
         $this->Events = TableRegistry::get('Events');
@@ -91,7 +94,8 @@ class FightersTable extends Table {
         pr($dice);
         if (10 + $def['level'] - $att['level'] >= $dice) {
             $def['skill_health'] -= $att['skill_strength'];
-            //xp pour attaque réussi
+
+            //xp pour attaque réussie
             $att['xp'] += 1;
             //appel updateFighter pour $def
             $this->updateFighter($def);
@@ -108,6 +112,7 @@ class FightersTable extends Table {
             $this->updateFighter($att);
         } else {
             $this->Events->createEventMiss($att, $def);
+
         }
         pr($def['skill_health']);
     }
@@ -135,6 +140,8 @@ class FightersTable extends Table {
                 $amodif->skill_health +=3;
                 break;
         }
+        //régénération des PV
+        $amodif->current_health = $amodif->skill_health;
         //sauvegarde des modifications
         $table->save($amodif);
     }
@@ -143,7 +150,8 @@ class FightersTable extends Table {
         $table = TableRegistry::get('Fighters');
         $combattant = $table->get($id);
 
-        if ($combattant->xp % 4 == 0 && $combattant->xp != 0) {
+
+        if ($combattant->xp >= 4*$combattant->level) {
             return TRUE;
         }
         return FALSE;
