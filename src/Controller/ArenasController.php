@@ -28,7 +28,8 @@ class ArenasController extends AppController {
     public function fighter() {
         $this->loadModel('Fighters');
         $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
-       
+        $persos = $this->Fighters->getFightersForUser($userid);
+        
         //Exemple d'utilisation de la fonction createFighter
         //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
@@ -51,12 +52,16 @@ class ArenasController extends AppController {
                         $this->Fighters->createFighter($this->request->data['name'], $userid);
                     }
                     break;
+                case 'levelup':
+                    $this->Fighters->levelUp($persos[0]['id'],$this->request->data['competence']);
+                    break;
             }
         }
 
-         $persos = $this->Fighters->getFightersForUser($userid);
+        //AFFICHAGE DE LA PAGE
         //Soit le joueur a un personnage et on lui propose toutes les actions associées,
         //soit il n'en a pas et on lui propose d'en créer un
+        $persos = $this->Fighters->getFightersForUser($userid);
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {

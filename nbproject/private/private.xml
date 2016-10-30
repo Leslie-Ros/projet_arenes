@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?><project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/var/www/html/projet_arenes/src/Controller/ArenasController.php</file>
-        <file>file:/var/www/html/projet_arenes/src/Model/Table/FightersTable.php</file>
-        <file>file:/var/www/html/projet_arenes/src/Template/Arenas/fighter.ctp</file>
-    </open-files>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Arenas/diary.ctp</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Arenas/fighter.ctp</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Arenas/index.ctp</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Model/Table/EventsTable.php</file>
-=======
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
->>>>>>> d7ab85627e19ac57d16c5eeff2076808678b2b9e
-        </group>
-    </open-files>
 </project-private>
