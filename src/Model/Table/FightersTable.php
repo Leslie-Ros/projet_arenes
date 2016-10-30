@@ -84,7 +84,6 @@ class FightersTable extends Table {
      * @param type $defId
      */
     public function attack($attId, $defId) {
-        $this->loadModel('Events');
         //$table = TableRegistry::get('Fighters');
         $att = $this->get($attId);
         $def = $this->get($defId);

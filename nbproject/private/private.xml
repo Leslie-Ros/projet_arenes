@@ -5,6 +5,8 @@
         <group>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Layout/default.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/AppController.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/EventsTable.php</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
         </group>

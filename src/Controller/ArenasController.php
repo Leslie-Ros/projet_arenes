@@ -10,9 +10,6 @@ use Cake\ORM\TableRegistry;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
 
-
-use Cake\ORM\TableRegistry;
-
 /**
  * Personal Controller
  * User personal interface
@@ -103,23 +100,6 @@ class ArenasController extends AppController {
     //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
-
-    public function diary() {
-        $this->loadModel('Fighters');
-        $f= $this->Fighters->getBestFighter()->toArray();
-        pr($f);
-        $this->loadModel('Events');
-        $this->Events->createEventDeath($f[0],$f[0]);
-        $this->Events->displayEvents($f[0]['id']);
-        //test
-        //$this->loadModel('Events');
-        //$this->loadModel('Fighters');
-        //        $tableFighters = TableRegistry::get('Fighters');
-        //        $fighter= $tableFighters->get(1);
-        //        $enemy= $tableFighters->get(2);
-        //$this->Events->createEventDeath($fighter,$enemy);
-        //$this->Events->displayEvents(1);
-    }
 
 public function diary()
 {
