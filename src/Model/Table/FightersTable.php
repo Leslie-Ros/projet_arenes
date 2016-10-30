@@ -84,10 +84,10 @@ class FightersTable extends Table {
      * @param type $defId
      */
     public function attack($attId, $defId) {
-        $this->loadModel('Events');
         //$table = TableRegistry::get('Fighters');
         $att = $this->get($attId);
         $def = $this->get($defId);
+        $this->Events = TableRegistry::get('Events');
         //test pour toucher ;
         $dice = rand(20, 1);
         pr($dice);
@@ -228,6 +228,22 @@ class FightersTable extends Table {
             pr("validmove");
             $this->updateFighter($fighter);
         }
+    }
+    
+    //creer l'arène
+    public function createArena(){
+        $arena = array();
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                $arena[$row][$col] = '_';
+            }
+        }
+        $fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //peupler $arena avec les personnages
+        foreach ($fightersList as $value) {
+            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        }
+        return $arena;
     }
 
 }

@@ -75,36 +75,21 @@ class ArenasController extends AppController {
         }
         
     }
-
-    //creer l'arène
-    public function creerArena(){
-        $arena = array();
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
-                $arena[$row][$col] = '_';
-            }
-        }
-        $this->loadModel('Fighters');
-        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //peupler $arena avec les personnages
-        foreach ($fightersList as $value) {
-            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
-        }
-        return $arena;
-    }
     
     public function sight() {
         //initialiser arena
-        $arena = $this->creerArena();
+        $this->loadModel('Fighters');
+        $arena = $this->Fighters->createArena();
         
+        //post traitemnt
         if ($this->request->is("post")) {
             //pr($this->request->data);
             $this->Fighters->move($this->request->data['direction'], 1, $arena);
             //1 id du fighter, à changer par $this->request->session->read($fighterId)
-            $arena = $this->creerArena();
+            $arena = $this->Fighters->createArena();
         }
-
         $mask = $this->Fighters->canSee($arena, 1);
+        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
         //1 id du fighter, à changer par $this->request->session->read($fighterId)
         //pr($arena);
         $this->set('mask', $mask);
@@ -115,7 +100,6 @@ class ArenasController extends AppController {
     //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
-
 
 public function diary()
 {
