@@ -123,6 +123,8 @@ class FightersTable extends Table {
                 $amodif->skill_health +=3;
                 break;
         }
+        //régénération des PV
+        $amodif->current_health = $amodif->skill_health;
         //sauvegarde des modifications
         $table->save($amodif);
     }
