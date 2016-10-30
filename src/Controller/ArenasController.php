@@ -10,9 +10,6 @@ use Cake\ORM\TableRegistry;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
 
-
-use Cake\ORM\TableRegistry;
-
 /**
  * Personal Controller
  * User personal interface
