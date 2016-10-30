@@ -9,7 +9,7 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 
 <div id="texte1">
 <p>WebArena captive déjà des centaines de milliers de joueurs</br> qui tentent tous, sûrement comme toi, d'élaborer les meilleures</br> stratégies et d’être le meilleur combattant.</p>
-<div class="texte2"><p> Ce jeu est porté sur la compétition qui mettra à l'épreuve tes talents et tes réflexion.</p></div>
+<div class="texte2"><p> Ce jeu est porté sur la compétition qui mettra à l'épreuve tes talents et tes réflexions.</p></div>
 
 
 <p id="police">CASSE-LEUR LA FIGURE EN LIGNE !</p>
@@ -20,7 +20,7 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 <div class="texte2">
 <p>Défie des joueurs du monde entier dans un jeu en ligne qui mêle stratégie et batailles !</br> Crée ton propre héros, prépare tes coups... et FRAPPE FORT !</p>
 
-<p>Gagne un maximum de point d’expérience et augmente tes caractéristiques !</p>
+<p>Gagne un maximum de points d’expérience et augmente tes caractéristiques !</p>
 
 <p>Grâce à cette arène en ligne, retrouve les sensations fortes en affrontant des joueurs du monde entier !</p>
 
@@ -260,4 +260,4 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </div>
     </div>
 </body>
-</html>
+</html>*/
