@@ -6,6 +6,10 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
+use Cake\Error\Debugger;
+
 /**
  * Personal Controller
  * User personal interface
@@ -14,18 +18,22 @@ use App\Controller\AppController;
 class ArenasController extends AppController {
 
     public function index() {
-        
+
     }
 
     public function login() {
         
+        $this->loadModel('Fighters');
+        $figterlist = $this->Fighters->find('all');
+        pr($figterlist->toArray());
+        $this->set('players', $this->Players->find('all'));
     }
 
     public function fighter() {
         $this->loadModel('Fighters');
 
         //Exemple d'utilisation de la fonction createFighter
-        //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        $this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction createFighter
@@ -88,17 +96,20 @@ class ArenasController extends AppController {
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
 
-    public function diary() {
-        //test
-        //$this->loadModel('Events');
-        //$this->loadModel('Fighters');
-        //        $tableFighters = TableRegistry::get('Fighters');
-        //        $fighter= $tableFighters->get(1);
-        //        $enemy= $tableFighters->get(2);
-        //$this->Events->createEventDeath($fighter,$enemy);
-        //$this->Events->displayEvents(1);
-    }
 
+public function diary()
+{
+    //test
+    $this->loadModel('Events');
+    $this->loadModel('Fighters');
+            $tableFighters = TableRegistry::get('Fighters');
+            $fighter= $tableFighters->get(1);
+            $enemy= $tableFighters->get(2);
+  //  $this->Events->createEventDeath($fighter,$enemy);
+    $this->set('event',$this->Events->displayEvents(1));
+    
+    }
+    
 }
 
 ?>
