@@ -62,8 +62,8 @@ class ArenasController extends AppController {
             //1 id du fighter, à changer par $this->request->session->read($fighterId)
             $arena = $this->Fighters->createArena();
         }
-
         $mask = $this->Fighters->canSee($arena, 1);
+        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
         //1 id du fighter, à changer par $this->request->session->read($fighterId)
         //pr($arena);
         $this->set('mask', $mask);

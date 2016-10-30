@@ -83,9 +83,9 @@ class FightersTable extends Table {
      * @param type $defId
      */
     public function attack($attId, $defId) {
-        $this->loadModel('Events');
         $att = $this->get($attId);
         $def = $this->get($defId);
+        $this->Events = TableRegistry::get('Events');
         //test pour toucher ;
         $dice = rand(20, 1);
         pr($dice);
