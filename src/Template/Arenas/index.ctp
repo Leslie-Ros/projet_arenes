@@ -1,4 +1,3 @@
- <?= $this->Html->css('index.css',['block' => true]) ?>
 <?php $this->assign('title', 'accueil');?>
 
 <section id="texte">
