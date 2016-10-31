@@ -33,16 +33,13 @@ class FightersTable extends Table {
         return $figterlist;
     }
 
-    public function createFighter($nom, $joueur) {
-
-
-        //initialisation des coordonnées de départ (susceptibles d'etre modifiées)
-        $x = 0;
-        $y = 0;
+    public function createFighter($nom, $joueur, $arena) {
 
         //création d'un nouveau tuple
         $table = TableRegistry::get('Fighters'/* ,['className' => 'FightersTable'] */);
         $combattant = $table->newEntity();
+        
+        $x=0; $y=0;
 
         //remplissage des attributs de ce nouveau tuple
         $combattant->name = $nom;
@@ -58,7 +55,19 @@ class FightersTable extends Table {
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
         //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
         //$combattant->guild_id;
+        
         //insertion du nouveau tuple
+        $table->save($combattant);
+        
+        //initialisation des vraies coordonnées de départ
+        $cpt = 500; //on évite la boucle infinie dans le cas où tout serait plein
+        do {
+            $combattant->coordinate_x = rand(0, $this->longueur-1);
+            $combattant->coordinate_y = rand(0, $this->largeur-1);
+            $cpt--;
+        }while ($this->validMove($combattant->coordinate_x, $combattant->coordinate_y, $arena, $combattant->id) == FALSE && $cpt >1);
+        
+        //sauvegarde des modifications
         $table->save($combattant);
 
         //à améliorer : tester la réussite pour informer l'utilisateur de la réussite de l'opération
