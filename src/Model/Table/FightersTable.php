@@ -88,6 +88,11 @@ class FightersTable extends Table {
         $fighters = $this->find()->where(['player_id' => $userid])->toArray();
         return $fighters;
     }
+    
+    public function getAllFighters() {
+        $fighters = $this->find('all')->toArray();
+        return $fighters;
+    }
 
 
     /**
@@ -250,7 +255,8 @@ class FightersTable extends Table {
                 $arena[$row][$col] = '_';
             }
         }
-        $fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //$fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        $fightersList = $this->getAllFighters();
         //peupler $arena avec les personnages
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];

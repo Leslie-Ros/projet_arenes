@@ -44,7 +44,7 @@ class ArenasController extends AppController {
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction levelUp
         //$this->Fighters->levelUp(4, "vie");
-        
+        //$this->Fighters->getAllFighters();
         
         //traitement des formulaires
         if($this->request->is('post'))
