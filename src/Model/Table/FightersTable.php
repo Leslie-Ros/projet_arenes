@@ -241,7 +241,7 @@ class FightersTable extends Table {
                 $arena[$row][$col] = '_';
             }
         }
-        $fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        $fightersList = $this->find('all');
         //peupler $arena avec les personnages
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
