@@ -23,6 +23,9 @@ class FightersTable extends Table {
     function test() {
         return 'ok';
     }
+    
+    var $largeur=15;
+    var $longueur=10;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
@@ -168,8 +171,8 @@ class FightersTable extends Table {
         $x = $fighter['coordinate_x'];
         $y = $fighter['coordinate_y'];
         $sight = $fighter['skill_sight'];
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
+        for ($row = 0; $row < $this->largeur; $row++) {
+            for ($col = 0; $col < $this->longueur; $col++) {
                 if (abs($row - $x) <= $sight && abs($col - $y) <= $sight) {
                     $mask[$row][$col] = "#";
                 }
@@ -189,7 +192,7 @@ class FightersTable extends Table {
      */
     public function validMove($x, $y, $arena, $id) {
         $valid = false;
-        if ($x >= 0 && $y >= 0 && $x < 15 && $y < 10) {
+        if ($x >= 0 && $y >= 0 && $x < $this->largeur && $y < $this->longueur) {
             pr("dans les bornes");
             if ($arena[$x][$y] == '_') {
                 pr("valid");
@@ -233,8 +236,8 @@ class FightersTable extends Table {
     //creer l'arène
     public function createArena(){
         $arena = array();
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
+        for ($row = 0; $row < $this->largeur; $row++) {
+            for ($col = 0; $col < $this->longueur; $col++) {
                 $arena[$row][$col] = '_';
             }
         }
