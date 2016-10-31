@@ -78,6 +78,8 @@ class ArenasController extends AppController {
         //initialiser arena
         $this->loadModel('Fighters');
         $arena = $this->Fighters->createArena();
+        $this->set('largeur', $this->Fighters->largeur);
+        $this->set('longueur', $this->Fighters->longueur);
         
         //post traitemnt
         if ($this->request->is("post")) {
