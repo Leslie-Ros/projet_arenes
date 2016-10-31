@@ -3,6 +3,8 @@ a.disabled {
     pointer-events: none;
 }
 
+
+
 a:hover {
     color: #990000;
 }
@@ -23,8 +25,8 @@ body
     background-image: url(../webroot/img/arenegladiateur.png);
     background-size: cover;
     background-repeat: no-repeat;
- font-family:"trebuchet ms",sans-serif;
- font-size:16px; 
+    font-family:"trebuchet ms",sans-serif;
+    font-size:16px;
 } 
 header {
     background-color: #D33C44;
@@ -636,7 +638,7 @@ form {
 {
     font-family: 'bloodynormal';
     font-size: 1cm;
-    color: #FFF
+    color: #FFF;
     text-shadow: #000 2px 2px 10px; 
     text-align: center;
 }

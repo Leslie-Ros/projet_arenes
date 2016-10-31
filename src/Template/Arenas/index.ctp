@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php $this->assign('title', 'accueil');?>
+=======
+    <?= $this->Html->css('index.css',['block' => true]) ?>
+>>>>>>> a8338b43e2492b7eb77860d5fcb5b48ef48dbf65
 
 <section id="texte">
 <p><h1>DÉCOUVRE LE JEU MULTIJOUEUR QUI RÉUNIT
@@ -23,7 +27,7 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 <p>Grâce à cette arène en ligne, retrouve les sensations fortes en affrontant des joueurs du monde entier !</p>
 
 
-<p> <?php echo $this->Html->link('> à toi de jouer ! <', array('controller' => 'Players', 'action' => 'login')); ?> </p>
+<p> <?php echo $this->Html->link('> à toi de jouer ! <', array('controller' => 'Arenas', 'action' => 'login')); ?> </p>
 </div>
 </section>
 

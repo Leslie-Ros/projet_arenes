@@ -10,11 +10,6 @@ use Cake\ORM\TableRegistry;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
 
-/**
- * Personal Controller
- * User personal interface
- *
- */
 class ArenasController extends AppController {
 
     public function index() {
