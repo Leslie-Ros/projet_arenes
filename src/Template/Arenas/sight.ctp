@@ -1,4 +1,4 @@
-Bienvenue dans webArena
+<?= $this->assign('title', 'Flêche dans le genou');?>
 <?php
 echo "<br>";
 for ($row = 0; $row < $largeur; $row++) {
