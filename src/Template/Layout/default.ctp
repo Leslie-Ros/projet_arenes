@@ -51,6 +51,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <li><?php echo $this->Html->link('Accueil', '/'); ?></li>
    <li>    <?php echo $this->Html->link('Se connecter', array('controller' => 'Players', 'action' => 'login')); ?></li>
 <li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Players', 'action' => 'add')); ?></li>
+<li><?php echo $this->Html->link("Se déconnecter", array('controller' => 'Arenas', 'action' => 'index')); ?></li>
+
         </div>
     </nav>
     <?= $this->Flash->render() ?>
