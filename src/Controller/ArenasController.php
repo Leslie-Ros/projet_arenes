@@ -22,11 +22,16 @@ class ArenasController extends AppController {
 //        $figterlist = $this->Fighters->find('all');
 //        pr($figterlist->toArray());
 //        $this->set('players', $this->Players->find('all'));
+
+
     }
+
 
     public function fighter() {
         $this->loadModel('Fighters');
-
+        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
+        $persos = $this->Fighters->getFightersForUser($userid);
+        
         //Exemple d'utilisation de la fonction createFighter
         $this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
@@ -37,11 +42,28 @@ class ArenasController extends AppController {
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction levelUp
         //$this->Fighters->levelUp(4, "vie");
+        
+        
+        //traitement des formulaires
+        if($this->request->is('post'))
+        {
+            //pr($this->request->data);
+            switch ($this->request->data['idform']){
+                case 'creation' :
+                    if (!empty($this->request->data['name'])){
+                        $this->Fighters->createFighter($this->request->data['name'], $userid);
+                    }
+                    break;
+                case 'levelup':
+                    $this->Fighters->levelUp($persos[0]['id'],$this->request->data['competence']);
+                    break;
+            }
+        }
 
-        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
-        $persos = $this->Fighters->getFightersForUser($userid);
+        //AFFICHAGE DE LA PAGE
         //Soit le joueur a un personnage et on lui propose toutes les actions associées,
         //soit il n'en a pas et on lui propose d'en créer un
+        $persos = $this->Fighters->getFightersForUser($userid);
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
@@ -49,27 +71,26 @@ class ArenasController extends AppController {
             $this->set('combattant', $persos[0]);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
         }
+        
     }
-
+    
     public function sight() {
-        $arena = array();
-        //initialiser $arena
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
-                $arena[$row][$col] = '_';
-            }
-        }
-        $idAtt = 1;
-        $idDef = 2;
-        //récupérer les personnages
+        //initialiser arena
         $this->loadModel('Fighters');
-        //$this->Fighters->attack($idAtt, $idDef);
-        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //peupler $arena avec les personnages
-        foreach ($fightersList as $value) {
-            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        $arena = $this->Fighters->createArena();
+        
+        //post traitemnt
+        if ($this->request->is("post")) {
+            //pr($this->request->data);
+            $this->Fighters->move($this->request->data['direction'], 1, $arena);
+            //1 id du fighter, à changer par $this->request->session->read($fighterId)
+            $arena = $this->Fighters->createArena();
         }
+        $mask = $this->Fighters->canSee($arena, 1);
+        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
+        //1 id du fighter, à changer par $this->request->session->read($fighterId)
         //pr($arena);
+        $this->set('mask', $mask);
         $this->set('arena', $arena);
     }
 
@@ -91,6 +112,7 @@ public function diary()
     
     }
     
+
 }
 
 ?>

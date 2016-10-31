@@ -1,0 +1,64 @@
+#texte
+{
+    text-shadow: #FFF 1px 1px 10px;   
+} 
+
+h1
+{
+	font-family: 'notmarykateregular';
+    position: top;
+    text-align: center;
+}
+
+#police
+{
+	font-family: 'bloodynormal';
+	font-size: 1cm;
+    color: #FFF;
+    text-shadow: #000 2px 2px 10px; 
+    text-align: center;
+}
+
+#texte1 
+{
+    font-family: 'notmarykateregular', arial;
+    text-align: left;
+    margin-left: 1cm;
+margin-top: 1cm; 
+    font-size-adjust: 0.9;
+}
+
+.texte2
+{
+    font-family: 'notmarykateregular', arial;
+    text-align: center;
+    font-size-adjust: 0.9;
+}
+
+
+
+
+@font-face {
+    font-family: 'bloodynormal';
+    src: url('/projet_arenes/webroot/web_fonts/bloody_normal_macroman/BLOODY-webfont.eot');
+    src: url('/projet_arenes/webroot/web_fonts/bloody_normal_macroman/BLOODY-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/projet_arenes/webroot/web_fonts/bloody_normal_macroman/BLOODY-webfont.woff') format('woff'),
+         url('/projet_arenes/webroot/web_fonts/bloody_normal_macroman/BLOODY-webfont.ttf') format('truetype'),
+         url('/projet_arenes/webroot/web_fonts/bloody_normal_macroman/BLOODY-webfont.svg#bloodynormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notmarykateregular';
+    src: url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.eot');
+    src: url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.woff') format('woff'),
+         url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.ttf') format('truetype'),
+         url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.svg#notmarykateregular') format('svg');
+
+}
+
+
+

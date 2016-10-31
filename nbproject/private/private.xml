@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/wamp64/www/projet_arenes/src/Controller/PlayersController.php</file>
             <file>file:/C:/wamp64/www/projet_arenes/src/Controller/AppController.php</file>
             <file>file:/C:/wamp64/www/projet_arenes/src/Template/Players/login.ctp</file>
+=======
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Layout/default.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/AppController.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/EventsTable.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
+>>>>>>> cbacb8cb581dc505029a1f3385b47f9fb75593ab
         </group>
     </open-files>
 </project-private>

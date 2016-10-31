@@ -77,25 +77,41 @@ class FightersTable extends Table {
         return $fighters;
     }
 
+
+    /**
+     * Un fighter attaque un autre fighter
+     * @param type $attId
+     * @param type $defId
+     */
     public function attack($attId, $defId) {
         //$table = TableRegistry::get('Fighters');
         $att = $this->get($attId);
         $def = $this->get($defId);
+        $this->Events = TableRegistry::get('Events');
         //test pour toucher ;
         $dice = rand(20, 1);
         pr($dice);
         if (10 + $def['level'] - $att['level'] >= $dice) {
             $def['skill_health'] -= $att['skill_strength'];
-            //appel updateFighter
+
+            //xp pour attaque réussie
+            $att['xp'] += 1;
+            //appel updateFighter pour $def
             $this->updateFighter($def);
             //test si tué
             if ($def['skill_health'] <= 0) {
-                //appel eventTue
+                //xp pour tué
+                $att['xp'] += $def['level'];
+                $this->deleteFighter($defId);
+                $this->Events->createEventDeath($att, $def);
             } else {
-                //appel eventBlesse
+                $this->Events->createEventHurt($att, $def);
             }
+            //appel updateFighter pour $att
+            $this->updateFighter($att);
         } else {
-            //appel eventRate
+            $this->Events->createEventMiss($att, $def);
+
         }
         pr($def['skill_health']);
     }
@@ -123,6 +139,8 @@ class FightersTable extends Table {
                 $amodif->skill_health +=3;
                 break;
         }
+        //régénération des PV
+        $amodif->current_health = $amodif->skill_health;
         //sauvegarde des modifications
         $table->save($amodif);
     }
@@ -131,10 +149,101 @@ class FightersTable extends Table {
         $table = TableRegistry::get('Fighters');
         $combattant = $table->get($id);
 
-        if ($combattant->xp % 4 == 0 && $combattant->xp != 0) {
+
+        if ($combattant->xp >= 4*$combattant->level) {
             return TRUE;
         }
         return FALSE;
+    }
+
+    /**
+     * détermine le chant de vision d'un fighter
+     * @param type $arena
+     * @param type $id
+     * @return string
+     */
+    public function canSee($arena, $id) {
+        $mask = $arena;
+        $fighter = $this->get($id);
+        $x = $fighter['coordinate_x'];
+        $y = $fighter['coordinate_y'];
+        $sight = $fighter['skill_sight'];
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                if (abs($row - $x) <= $sight && abs($col - $y) <= $sight) {
+                    $mask[$row][$col] = "#";
+                }
+            }
+        }
+        //pr($mask);
+        return $mask;
+    }
+
+    /**
+     * vérifie si le mouvement est valid, tape l'ennemi le cas échéant
+     * @param type $x
+     * @param type $y
+     * @param type $arena
+     * @param type $id
+     * @return boolean
+     */
+    public function validMove($x, $y, $arena, $id) {
+        $valid = false;
+        if ($x >= 0 && $y >= 0 && $x < 15 && $y < 10) {
+            pr("dans les bornes");
+            if ($arena[$x][$y] == '_') {
+                pr("valid");
+                $valid = true;
+            } else {
+                $this->attack($id, $arena[$x][$y]);
+            }
+        }
+        return $valid;
+    }
+
+    /**
+     * déplacer un fighter 
+     * @param type $direction
+     * @param type $id
+     * @param type $arena
+     */
+    public function move($direction, $id, $arena) {
+        $fighter = $this->get($id);
+        switch ($direction) {
+            case 'N' :
+                $fighter['coordinate_x'] -= 1;
+                break;
+            case 'S' :
+                $fighter['coordinate_x'] += 1;
+                break;
+            case 'W' :
+                $fighter['coordinate_y'] -= 1;
+                break;
+            case 'E' :
+                $fighter['coordinate_y'] += 1;
+                break;
+        }
+        pr("move");
+        if ($this->validMove($fighter['coordinate_x'], $fighter['coordinate_y'], $arena, $id)) {
+            pr("validmove");
+            $this->updateFighter($fighter);
+        }
+    }
+    
+    //creer l'arène
+    public function createArena(){
+        $arena = array();
+        for ($row = 0; $row < 15; $row++) {
+            for ($col = 0; $col < 10; $col++) {
+                $arena[$row][$col] = '_';
+            }
+        }
+        $fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //peupler $arena avec les personnages
+        foreach ($fightersList as $value) {
+            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
+        }
+        return $arena;
     }
 
 }
