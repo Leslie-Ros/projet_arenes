@@ -18,10 +18,10 @@ use Cake\Error\Debugger;
 class ArenasController extends AppController {
 
     public function index() {
-        $this->loadModel('Fighters');
-        $figterlist = $this->Fighters->find('all');
-        pr($figterlist->toArray());
-        $this->set('players', $this->Players->find('all'));
+//        $this->loadModel('Fighters');
+//        $figterlist = $this->Fighters->find('all');
+//        pr($figterlist->toArray());
+//        $this->set('players', $this->Players->find('all'));
     }
 
     public function fighter() {

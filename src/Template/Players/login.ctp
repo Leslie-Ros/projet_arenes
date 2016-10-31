@@ -10,4 +10,8 @@
     </fieldset>
 <?= $this->Form->button(__('Se Connecter')); ?>
 <?= $this->Form->end() ?>
+ <a href="<?php echo $this->Url->build([
+                'controller' => 'Players',
+                'action' => 'googleLogin'
+            ]); ?>" class="btn btn-lg btn-primary">Se connecter avec Google+</a>
 </div>
