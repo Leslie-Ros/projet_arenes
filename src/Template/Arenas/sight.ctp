@@ -1,8 +1,8 @@
 Bienvenue dans webArena
 <?php
 echo "<br>";
-for ($row = 0; $row < 15; $row++) {
-    for ($col = 0; $col < 10; $col++) {
+for ($row = 0; $row < $largeur; $row++) {
+    for ($col = 0; $col < $longueur; $col++) {
             echo "<section style=\"text-align: center; height: 45px;width: 45px; border-style: solid;float: left;";
         if($mask[$row][$col] == "#"){
             echo "background-color: #890000;\">";
