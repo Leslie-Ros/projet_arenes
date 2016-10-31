@@ -6,8 +6,9 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
-
 use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
+use Cake\Error\Debugger;
 
 /**
  * Personal Controller
@@ -17,11 +18,15 @@ use Cake\ORM\TableRegistry;
 class ArenasController extends AppController {
 
     public function index() {
-        
+
     }
 
     public function login() {
         
+        $this->loadModel('Fighters');
+        $figterlist = $this->Fighters->find('all');
+        pr($figterlist->toArray());
+        $this->set('players', $this->Players->find('all'));
     }
 
     public function fighter() {
@@ -30,7 +35,7 @@ class ArenasController extends AppController {
         $persos = $this->Fighters->getFightersForUser($userid);
         
         //Exemple d'utilisation de la fonction createFighter
-        //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        $this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction createFighter
@@ -70,36 +75,21 @@ class ArenasController extends AppController {
         }
         
     }
-
-    //creer l'arène
-    public function creerArena(){
-        $arena = array();
-        for ($row = 0; $row < 15; $row++) {
-            for ($col = 0; $col < 10; $col++) {
-                $arena[$row][$col] = '_';
-            }
-        }
-        $this->loadModel('Fighters');
-        $fightersList = $this->Fighters->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //peupler $arena avec les personnages
-        foreach ($fightersList as $value) {
-            $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
-        }
-        return $arena;
-    }
     
     public function sight() {
         //initialiser arena
-        $arena = $this->creerArena();
+        $this->loadModel('Fighters');
+        $arena = $this->Fighters->createArena();
         
+        //post traitemnt
         if ($this->request->is("post")) {
             //pr($this->request->data);
             $this->Fighters->move($this->request->data['direction'], 1, $arena);
             //1 id du fighter, à changer par $this->request->session->read($fighterId)
-            $arena = $this->creerArena();
+            $arena = $this->Fighters->createArena();
         }
-
         $mask = $this->Fighters->canSee($arena, 1);
+        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
         //1 id du fighter, à changer par $this->request->session->read($fighterId)
         //pr($arena);
         $this->set('mask', $mask);
@@ -111,17 +101,19 @@ class ArenasController extends AppController {
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
 
-    public function diary() {
-        //test
-        //$this->loadModel('Events');
-        //$this->loadModel('Fighters');
-        //        $tableFighters = TableRegistry::get('Fighters');
-        //        $fighter= $tableFighters->get(1);
-        //        $enemy= $tableFighters->get(2);
-        //$this->Events->createEventDeath($fighter,$enemy);
-        //$this->Events->displayEvents(1);
+public function diary()
+{
+    //test
+    $this->loadModel('Events');
+    $this->loadModel('Fighters');
+            $tableFighters = TableRegistry::get('Fighters');
+            $fighter= $tableFighters->get(1);
+            $enemy= $tableFighters->get(2);
+  //  $this->Events->createEventDeath($fighter,$enemy);
+    $this->set('event',$this->Events->displayEvents(1));
+    
     }
-
+    
 
 }
 

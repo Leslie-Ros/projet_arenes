@@ -1,4 +1,3 @@
- <?= $this->Html->css('index.css',['block' => true]) ?>
 <?php $this->assign('title', 'accueil');?>
 
 <section id="texte">
@@ -24,7 +23,7 @@ LES PLUS GRANDS GUERRIERS SUR UNE ARENE !</h1> </p>
 <p>Grâce à cette arène en ligne, retrouve les sensations fortes en affrontant des joueurs du monde entier !</p>
 
 
-<p> <?php echo $this->Html->link('> à toi de jouer ! <', array('controller' => 'Arenas', 'action' => 'login')); ?> </p>
+<p> <?php echo $this->Html->link('> à toi de jouer ! <', array('controller' => 'Players', 'action' => 'login')); ?> </p>
 </div>
 </section>
 
