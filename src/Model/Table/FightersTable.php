@@ -17,15 +17,18 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table/* Registry */;
 use Cake\ORM\TableRegistry;
+use Cake\I18n\Time;
 
 class FightersTable extends Table {
 
     function test() {
         return 'ok';
     }
-    
-    var $largeur=15;
-    var $longueur=10;
+
+    var $largeur = 15;
+    var $longueur = 10;
+    var $maxAp = 3;
+    var $delay = 10;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
@@ -80,7 +83,6 @@ class FightersTable extends Table {
         return $fighters;
     }
 
-
     /**
      * Un fighter attaque un autre fighter
      * @param type $attId
@@ -114,7 +116,6 @@ class FightersTable extends Table {
             $this->updateFighter($att);
         } else {
             $this->Events->createEventMiss($att, $def);
-
         }
         pr($def['skill_health']);
     }
@@ -153,7 +154,7 @@ class FightersTable extends Table {
         $combattant = $table->get($id);
 
 
-        if ($combattant->xp >= 4*$combattant->level) {
+        if ($combattant->xp >= 4 * $combattant->level) {
             return TRUE;
         }
         return FALSE;
@@ -230,11 +231,12 @@ class FightersTable extends Table {
         if ($this->validMove($fighter['coordinate_x'], $fighter['coordinate_y'], $arena, $id)) {
             pr("validmove");
             $this->updateFighter($fighter);
+            $this->removeActionPoint($fighter['id']);
         }
     }
-    
+
     //creer l'arène
-    public function createArena(){
+    public function createArena() {
         $arena = array();
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
@@ -249,4 +251,29 @@ class FightersTable extends Table {
         return $arena;
     }
 
+    //vérifie si l'on a des points d'actions
+    public function hasActionPoints($id) {
+        $fighter = $this->get($id);
+        $time = $fighter['next_action_time'];
+        $ap = intval($time->diffInSeconds() / $this->delay);
+        if ($ap > $this->maxAp) {
+            $ap = $this->maxAp;
+        }
+        pr("has ".$ap);
+        return $ap;
+    }
+
+    //enlève un point d'action et réajuste la date de référence (now - paRestants*delai secondes)
+    public function removeActionPoint($id) {
+        $fighter = $this->get($id);
+        $ap = $this->hasActionPoints($fighter['id']);
+        $ap -= 1;
+        $time = Time::now();
+        for ($i = 0; $i < $ap; $i++) {
+            $time->subSeconds($this->delay);
+        }
+        $fighter['next_action_time'] = $time;
+        $this->updateFighter($fighter);
+        pr($ap);
+    }
 }
