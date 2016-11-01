@@ -1,16 +1,13 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 namespace App\Controller;
 define('GOOGLE_OAUTH_CLIENT_ID', '829209634329-n85t946nfo3tdjoh7aasrkn90knodjvg.apps.googleusercontent.com');
 define('GOOGLE_OAUTH_CLIENT_SECRET', 'WZ5byDnZBqeBMSxx4eZ1-Hf0');
 define('GOOGLE_OAUTH_REDIRECT_URI', 'http://localhost/projet_arenes/Players/googlecallback');
-
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
@@ -18,10 +15,8 @@ use \Cake\Network\Exception;
 use Cake\Utility\Text;
 use Google_Client;
 use Google_Service_Oauth2;
-
 class PlayersController extends AppController
 {
-
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -45,7 +40,6 @@ class PlayersController extends AppController
 //        $players = $this->Players->get($id);
 //        $this->set(compact('players'));
 //    }
-
     public function add()
     {
         $player = $this->Players->newEntity();
@@ -73,7 +67,6 @@ class PlayersController extends AppController
             $this->Flash->error(__('Invalid username or password, try again'));
         }
     }
-
     public function logout()
     {
         $this->request->session()->destroy('access_token');
@@ -87,7 +80,6 @@ class PlayersController extends AppController
         $client->setClientId(GOOGLE_OAUTH_CLIENT_ID);
         $client->setClientSecret(GOOGLE_OAUTH_CLIENT_SECRET);
         $client->setRedirectUri(GOOGLE_OAUTH_REDIRECT_URI);
-
         $client->setScopes(array(
             "https://www.googleapis.com/auth/userinfo.profile",
             'https://www.googleapis.com/auth/userinfo.email'
@@ -96,7 +88,6 @@ class PlayersController extends AppController
         $url = $client->createAuthUrl();
         $this->redirect($url);
     }
-
     public function googlecallback()
     {     
         $this->loadModel('Players');
@@ -105,7 +96,6 @@ class PlayersController extends AppController
         $client->setClientId(GOOGLE_OAUTH_CLIENT_ID);
         $client->setClientSecret(GOOGLE_OAUTH_CLIENT_SECRET);
         $client->setRedirectUri(GOOGLE_OAUTH_REDIRECT_URI);
-
         $client->setScopes(array(
             "https://www.googleapis.com/auth/userinfo.profile",
             'https://www.googleapis.com/auth/userinfo.email'
@@ -175,7 +165,4 @@ class PlayersController extends AppController
             }
         }
     }
-
-
-
 }
