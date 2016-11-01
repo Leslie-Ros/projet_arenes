@@ -606,7 +606,7 @@ div.message.hidden {
 }
 
 .content .related h4 {
-    color: #89000;
+    color: #890000;
     padding-bottom: 0.5rem;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -665,7 +665,7 @@ h1
 
 /*Mise en forme Diary*/
 
-#diarycss
+.cadrecss
 {
  margin-top: 10px;
  margin-left: 150px;
@@ -699,6 +699,20 @@ h1
 
 }
 
+/*Mise en forme de sight*/
+#bselection form {
+    float: right;
+    margin-left: 0px;
+    margin-right: 300px;
+    margin-top: 200px;
+    width: 300px;
+}
+
+#jeu
+{
+    float: left;
+    margin-left: 100px;
+}
 #arene{
     text-align: center;
     height: 45px;width: 45px;
@@ -712,4 +726,11 @@ h1
 
 .backgroundFog{
     background-color: #000000;
+}
+/*Mise en forme fighter*/
+
+h2
+{
+     text-shadow: #FFF 1px 1px 10px; 
+    
 }

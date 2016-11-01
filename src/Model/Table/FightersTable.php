@@ -51,10 +51,10 @@ class FightersTable extends Table {
         $combattant->coordinate_y = $y;
         $combattant->level = 1;
         $combattant->xp = 0;
-        $combattant->skill_sight = 0;
+        $combattant->skill_sight = 2;
         $combattant->skill_strength = 1;
-        $combattant->skill_health = 3;
-        $combattant->current_health = 3;
+        $combattant->skill_health = 5;
+        $combattant->current_health = $combattant->skill_health;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
         //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
         //$combattant->guild_id;
@@ -97,7 +97,6 @@ class FightersTable extends Table {
         return $fighters;
     }
 
-
     /**
      * Un fighter attaque un autre fighter
      * @param type $attId
@@ -131,7 +130,6 @@ class FightersTable extends Table {
             $this->updateFighter($att);
         } else {
             $this->Events->createEventMiss($att, $def);
-
         }
         pr($def['skill_health']);
     }
@@ -170,7 +168,7 @@ class FightersTable extends Table {
         $combattant = $table->get($id);
 
 
-        if ($combattant->xp >= 4*$combattant->level) {
+        if ($combattant->xp >= 4 * $combattant->level) {
             return TRUE;
         }
         return FALSE;
@@ -250,15 +248,17 @@ class FightersTable extends Table {
             $this->removeActionPoint($fighter['id']);
         }
     }
-    
+
     //creer l'arène
-    public function createArena(){
+    public function createArena() {
         $arena = array();
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
                 $arena[$row][$col] = '_';
             }
         }
+
+        //$fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
         $fightersList = $this->getAllFighters();
         //peupler $arena avec les personnages
         foreach ($fightersList as $value) {
@@ -296,5 +296,4 @@ class FightersTable extends Table {
         $this->updateFighter($fighter);
         pr($ap);
     }
-
 }

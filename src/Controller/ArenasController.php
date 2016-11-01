@@ -9,6 +9,7 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
+use Cake\I18n\Time;
 
 /**
  * Personal Controller
@@ -78,11 +79,14 @@ class ArenasController extends AppController {
     }
     
     public function sight() {
+        //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
         $arena = $this->Fighters->createArena();
         $this->set('largeur', $this->Fighters->largeur);
         $this->set('longueur', $this->Fighters->longueur);
+        /*$this->Fighters->hasActionPoints(1);
+        $this->Fighters->removeActionPoint(1);*/
         
         //post traitemnt
         if ($this->request->is("post")) {
