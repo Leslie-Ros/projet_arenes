@@ -2,7 +2,7 @@
 
 <h1>Evènements à portée de vue de moins de 24h.</h1>
 
-<div id="diarycss">
+<div class="cadrecss">
 <?php
 
 foreach ($event as $row){
