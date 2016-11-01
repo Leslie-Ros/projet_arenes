@@ -285,8 +285,12 @@ class FightersTable extends Table {
         $ap = $this->hasActionPoints($fighter['id']);
         $ap -= 1;
         $time = Time::now();
-        for ($i = 0; $i < $ap; $i++) {
-            $time->subSeconds($this->delay);
+        if($fighter['next_action_time']->diffInSeconds() >= $this->maxAp*$this->delay){
+            for ($i = 0; $i < $ap; $i++) {
+                $time->subSeconds($this->delay);
+            }
+        }else {
+            $fighter['next_action_time']->addSeconds($this->delay);
         }
         $fighter['next_action_time'] = $time;
         $this->updateFighter($fighter);

@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/webroot/css/cake.css</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Layout/default.ctp</file>
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/AppController.php</file>
-            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/EventsTable.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/PlayersTable.php</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
             <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
         </group>
