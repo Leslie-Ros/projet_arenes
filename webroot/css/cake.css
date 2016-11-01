@@ -606,7 +606,7 @@ div.message.hidden {
 }
 
 .content .related h4 {
-    color: #89000;
+    color: #890000;
     padding-bottom: 0.5rem;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -697,4 +697,19 @@ h1
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.ttf') format('truetype'),
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.svg#notmarykateregular') format('svg');
 
+}
+
+/*Mise en forme de sight*/
+Form {
+    float: right;
+    margin-left: 0px;
+    margin-right: 300px;
+    margin-top: 200px;
+    width: 300px;
+}
+
+#jeu
+{
+    float: left;
+    margin-left: 100px;
 }
