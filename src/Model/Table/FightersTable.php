@@ -290,30 +290,4 @@ class FightersTable extends Table {
         $this->updateFighter($fighter);
         pr($ap);
     }
-
-    //vérifie si l'on a des points d'actions
-    public function hasActionPoints($id) {
-        $fighter = $this->get($id);
-        $time = $fighter['next_action_time'];
-        $ap = intval($time->diffInSeconds() / $this->delay);
-        if ($ap > $this->maxAp) {
-            $ap = $this->maxAp;
-        }
-        pr("has ".$ap);
-        return $ap;
-    }
-
-    //enlève un point d'action et réajuste la date de référence (now - paRestants*delai secondes)
-    public function removeActionPoint($id) {
-        $fighter = $this->get($id);
-        $ap = $this->hasActionPoints($fighter['id']);
-        $ap -= 1;
-        $time = Time::now();
-        for ($i = 0; $i < $ap; $i++) {
-            $time->subSeconds($this->delay);
-        }
-        $fighter['next_action_time'] = $time;
-        $this->updateFighter($fighter);
-        pr($ap);
-    }
 }
