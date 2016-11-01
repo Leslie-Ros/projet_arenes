@@ -32,9 +32,18 @@ class ArenasController extends AppController {
 
     public function fighter() {
         $this->loadModel('Fighters');
-        $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
-        $persos = $this->Fighters->getFightersForUser($userid);
+        //$userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
         
+        //s'il n'y a pas d'utilisateur connecté on redirige de suite vers le login
+        if ($this->request->session()->check('User.player_id')){
+            $userid=$this->request->session()->read('User.player_id');
+            $persos = $this->Fighters->getFightersForUser($userid);
+        }
+        else{
+            //rediriger vers login
+            $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //provisoire pour ne pas crash
+            pr("Nous n'etes pas co");
+        }
         
         //traitement des formulaires
         if($this->request->is('post'))
@@ -60,6 +69,7 @@ class ArenasController extends AppController {
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
+            $this->request->session()->write('User.fighter_id', $persos[0]['id']);//A CHANGER SI PERSOS MULTIPLES
             $this->set('hasFighter', TRUE);
             $this->set('combattant', $persos[0]);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));

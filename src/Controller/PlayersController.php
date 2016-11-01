@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <?php
 
 /*
@@ -54,7 +53,7 @@ class PlayersController extends AppController
             Debugger::dump($player);
             if ($player) {
                 $session = $this->request->session();
-                $session->write('User.payer_id', $player['id']);
+                $session->write('User.player_id', $player['id']);
                 $this->Auth->setUser($player);
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -65,7 +64,7 @@ class PlayersController extends AppController
     public function logout()
     {
         $this->Flash->success(__("Vous êtes maintenant déconnecté."));
-        $this->request->session()->delete('User.payer_id');
+        $this->request->session()->delete('User.player_id');
         return $this->redirect($this->Auth->logout());
     }
 
