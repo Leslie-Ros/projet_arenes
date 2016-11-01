@@ -48,10 +48,10 @@ class FightersTable extends Table {
         $combattant->coordinate_y = $y;
         $combattant->level = 1;
         $combattant->xp = 0;
-        $combattant->skill_sight = 0;
+        $combattant->skill_sight = 2;
         $combattant->skill_strength = 1;
-        $combattant->skill_health = 3;
-        $combattant->current_health = 3;
+        $combattant->skill_health = 5;
+        $combattant->current_health = $combattant->skill_health;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
         //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
         //$combattant->guild_id;
