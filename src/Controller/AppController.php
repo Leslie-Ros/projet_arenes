@@ -43,22 +43,15 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth', [
+$this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
+            'loginAction' => array(
+                    'admin' => false,
+                    'controller' => 'Players',
+                    'action' => 'login'),
             'loginRedirect' => [
                 'controller' => 'Arenas',
-                'action' => 'fighter'
-            ],
-            'logoutRedirect' => [
-                'controller' => 'Players',
-                'action' => 'login'
-            ],
-            'loginAction' => [
-                'controller' => 'Players',
-                'action' => 'login'
-            ],
-            'addRedirect' => [
-                'controller' => 'Arenas',
-                'action' => 'fighter'
+                'action' => 'index'
             ],
             'authenticate' => [
                 'Form' => [
@@ -68,6 +61,11 @@ class AppController extends Controller
                         'password' => 'password',
                     ]
                 ]
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Arenas',
+                'action' => 'index',
+                'home'
             ]
         ]);
     }
@@ -91,5 +89,10 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+    
+        public function isAuthorized($user)
+    {
+        return true;
     }
 }

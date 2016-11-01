@@ -19,16 +19,14 @@ use Cake\I18n\Time;
 class ArenasController extends AppController {
 
     public function index() {
+//        $this->loadModel('Fighters');
+//        $figterlist = $this->Fighters->find('all');
+//        pr($figterlist->toArray());
+//        $this->set('players', $this->Players->find('all'));
+
 
     }
 
-    public function login() {
-        
-        $this->loadModel('Fighters');
-        $figterlist = $this->Fighters->find('all');
-        pr($figterlist->toArray());
-        $this->set('players', $this->Players->find('all'));
-    }
 
     public function fighter() {
         $this->loadModel('Fighters');
