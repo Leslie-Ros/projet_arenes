@@ -31,11 +31,11 @@ class ArenasController extends AppController {
 
     public function fighter() {
         $this->loadModel('Fighters');
-        $userid = 'fb14a4c2-9aea-11e6-988d-ac220b153e06'; //à changer : récupérer l'iduser lors de la connexion
+        $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
         $persos = $this->Fighters->getFightersForUser($userid);
         
         //Exemple d'utilisation de la fonction createFighter
-        $this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
         //Exemple d'utilisation de la fonction deleteFighter
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction createFighter
@@ -44,7 +44,7 @@ class ArenasController extends AppController {
         //$this->Fighters->deleteFighter(3);
         //Exemple d'utilisation de la fonction levelUp
         //$this->Fighters->levelUp(4, "vie");
-        
+        //$this->Fighters->getAllFighters();
         
         //traitement des formulaires
         if($this->request->is('post'))
@@ -53,7 +53,8 @@ class ArenasController extends AppController {
             switch ($this->request->data['idform']){
                 case 'creation' :
                     if (!empty($this->request->data['name'])){
-                        $this->Fighters->createFighter($this->request->data['name'], $userid);
+                        $arena = $this->Fighters->createArena(); //on crée une arène virtuelle pour savoir où il est possible de placer le nouveau personnage
+                        $this->Fighters->createFighter($this->request->data['name'], $userid, $arena);
                     }
                     break;
                 case 'levelup':
@@ -86,9 +87,12 @@ class ArenasController extends AppController {
         //post traitemnt
         if ($this->request->is("post")) {
             //pr($this->request->data);
-            $this->Fighters->move($this->request->data['direction'], 1, $arena);
-            //1 id du fighter, à changer par $this->request->session->read($fighterId)
-            $arena = $this->Fighters->createArena();
+            if($this->Fighters->hasActionPoints(1)){
+                pr('form');
+                $this->Fighters->move($this->request->data['direction'], 1, $arena);
+                //1 id du fighter, à changer par $this->request->session->read($fighterId)
+                $arena = $this->Fighters->createArena();
+            }
         }
         $mask = $this->Fighters->canSee($arena, 1);
         //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
