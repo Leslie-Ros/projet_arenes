@@ -625,6 +625,15 @@ form {
  font-family: serif;
  margin-top:5px;
  }
+ #cogoogle
+ {
+    text-align: center;
+    margin-top: 100px;
+ margin-left: 250px;
+ background-color:#FAFAFA;
+ padding:10px;
+ width:600px;
+ }
 
 /*Mise en forme index*/
 #texte
