@@ -19,16 +19,14 @@ use Cake\I18n\Time;
 class ArenasController extends AppController {
 
     public function index() {
+//        $this->loadModel('Fighters');
+//        $figterlist = $this->Fighters->find('all');
+//        pr($figterlist->toArray());
+//        $this->set('players', $this->Players->find('all'));
+
 
     }
 
-    public function login() {
-        
-        $this->loadModel('Fighters');
-        $figterlist = $this->Fighters->find('all');
-        pr($figterlist->toArray());
-        $this->set('players', $this->Players->find('all'));
-    }
 
     public function fighter() {
         $this->loadModel('Fighters');
@@ -40,7 +38,7 @@ class ArenasController extends AppController {
             $persos = $this->Fighters->getFightersForUser($userid);
         }
         else{
-            //rediriger vers login
+            //rediriger vers login (n'est pas censé se produire)
             $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //provisoire pour ne pas crash
             pr("Nous n'etes pas co");
         }

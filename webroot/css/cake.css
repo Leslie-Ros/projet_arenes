@@ -625,6 +625,15 @@ form {
  font-family: serif;
  margin-top:5px;
  }
+ #cogoogle
+ {
+    text-align: center;
+    margin-top: 100px;
+ margin-left: 250px;
+ background-color:#FAFAFA;
+ padding:10px;
+ width:600px;
+ }
 
 /*Mise en forme index*/
 #texte
@@ -665,7 +674,7 @@ h1
 
 /*Mise en forme Diary*/
 
-#diarycss
+.cadrecss
 {
  margin-top: 10px;
  margin-left: 150px;
@@ -700,7 +709,7 @@ h1
 }
 
 /*Mise en forme de sight*/
-Form {
+#bselection form {
     float: right;
     margin-left: 0px;
     margin-right: 300px;
@@ -726,4 +735,11 @@ Form {
 
 .backgroundFog{
     background-color: #000000;
+}
+/*Mise en forme fighter*/
+
+h2
+{
+     text-shadow: #FFF 1px 1px 10px; 
+    
 }
