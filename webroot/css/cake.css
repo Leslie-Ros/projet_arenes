@@ -698,3 +698,18 @@ h1
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.svg#notmarykateregular') format('svg');
 
 }
+
+#arene{
+    text-align: center;
+    height: 45px;width: 45px;
+    border-style: solid;
+    float: left;
+}
+
+.backgroundSight{
+    background-color: #890000;
+}
+
+.backgroundFog{
+    background-color: #000000;
+}
