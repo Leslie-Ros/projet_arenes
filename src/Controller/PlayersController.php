@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <?php
 
 /*
@@ -14,7 +15,6 @@ use Cake\Error\Debugger;
 
 class PlayersController extends AppController
 {
-
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -53,6 +53,8 @@ class PlayersController extends AppController
             $player = $this->Auth->identify();
             Debugger::dump($player);
             if ($player) {
+                $session = $this->request->session();
+                $session->write('User.payer_id', $player['id']);
                 $this->Auth->setUser($player);
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -63,6 +65,7 @@ class PlayersController extends AppController
     public function logout()
     {
         $this->Flash->success(__("Vous êtes maintenant déconnecté."));
+        $this->request->session()->delete('User.payer_id');
         return $this->redirect($this->Auth->logout());
     }
 

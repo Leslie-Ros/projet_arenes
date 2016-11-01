@@ -35,17 +35,6 @@ class ArenasController extends AppController {
         $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
         $persos = $this->Fighters->getFightersForUser($userid);
         
-        //Exemple d'utilisation de la fonction createFighter
-        //$this->Fighters->createFighter('Mononoke', '545f827c-576c-4dc5-ab6d-27c33186dc3e');
-        //Exemple d'utilisation de la fonction deleteFighter
-        //$this->Fighters->deleteFighter(3);
-        //Exemple d'utilisation de la fonction createFighter
-        //$this->Fighters->createFighter('Sheeta', 'fb14a4c2-9aea-11e6-988d-ac220b153e06');
-        //Exemple d'utilisation de la fonction deleteFighter
-        //$this->Fighters->deleteFighter(3);
-        //Exemple d'utilisation de la fonction levelUp
-        //$this->Fighters->levelUp(4, "vie");
-        //$this->Fighters->getAllFighters();
         
         //traitement des formulaires
         if($this->request->is('post'))
