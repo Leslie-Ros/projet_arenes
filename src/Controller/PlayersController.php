@@ -1,4 +1,4 @@
-<?php
+<<?php
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56,7 +56,9 @@ class PlayersController extends AppController
     
      public function login()
     {
-        if ($this->request->is('post')) {
+         $this->loadModel('Fighters');
+         
+         if ($this->request->is('post')) {
             debug($this->Auth->identify());
             $player = $this->Auth->identify();
             Debugger::dump($player);
@@ -64,6 +66,8 @@ class PlayersController extends AppController
                 $session = $this->request->session();
                 $session->write('User.player_id', $player['id']);
                 $this->Auth->setUser($player);
+                
+                
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again'));
