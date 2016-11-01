@@ -713,3 +713,17 @@ Form {
     float: left;
     margin-left: 100px;
 }
+#arene{
+    text-align: center;
+    height: 45px;width: 45px;
+    border-style: solid;
+    float: left;
+}
+
+.backgroundSight{
+    background-color: #890000;
+}
+
+.backgroundFog{
+    background-color: #000000;
+}

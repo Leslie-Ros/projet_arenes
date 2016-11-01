@@ -4,15 +4,15 @@ echo "<br>";
 ?>
 <div id = "jeu"><?php for ($row = 0; $row < $largeur; $row++) {
     for ($col = 0; $col < $longueur; $col++) {
-            echo "<section style=\"text-align: center; height: 45px;width: 45px; border-style: solid;float: left;";
+            echo "<section id=\"arene\"";
         if($mask[$row][$col] == "#"){
-            echo "background-color: #890000;\">";
+            echo "class=\"backgroundSight\">";
             if($arena[$row][$col] == "_")
                 echo " ";
             else
                 echo $arena[$row][$col];
         }else {
-            echo "background-color: #000000;\">";
+            echo "class=\"backgroundFog\">";
         }
             echo "</section>";
     }
