@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Controller/PlayersController.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Arenas/diary.ctp</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Controller/AppController.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/config/app.default.php</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Layout/default.ctp</file>
-            <file>file:/C:/wamp64/www/projet_arenes/webroot/css/cake.css</file>
-            <file>file:/C:/wamp64/www/projet_arenes/src/Template/Pages/home.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/diary.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/webroot/css/cake.css</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/index.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/fighter.ctp</file>
         </group>
     </open-files>
 </project-private>
