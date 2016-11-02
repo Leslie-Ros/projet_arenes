@@ -18,3 +18,10 @@
             ]); ?>" class="btn btn-lg btn-primary">Se connecter avec Google+</a>
 
 </div>
+<div id="forgetpassword">
+ <a href="<?php echo $this->Url->build([
+                'controller' => 'Players',
+                'action' => 'forgetpassword'
+            ]); ?>" class="btn btn-lg btn-primary">Mot de passe oublié</a>
+
+</div>

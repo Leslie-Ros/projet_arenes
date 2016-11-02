@@ -29,7 +29,7 @@ class FightersTable extends Table {
     var $longueur = 15;
     var $maxAp = 3;
     var $delay = 1;
-
+    
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
         $figterlist = $this->find('all')->where(['level =' => ($max['level'])]);
