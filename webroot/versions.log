@@ -1,3 +1,209 @@
+commit f5ebca40c636821327f65694907e09f41ddc8eb1
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 23:11:16 2016 +0100
+
+    mise en forme fighter non fini
+
+commit f899be27522ea10de856229115e7607af86e7b35
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 23:01:30 2016 +0100
+
+    mise en forme fighter pas fini
+
+commit 89f5fc4fbe1104cb0df8d79c1aa5021360d44ed0
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 23:00:59 2016 +0100
+
+    ajout option footer
+
+commit 2fa8f40da6a1e65449d018370fa00736630f40b7
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 18:49:14 2016 +0100
+
+    Commentaires
+
+commit 1751070cebe58be808f53b1b4145a46ebb10fd88
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 18:48:18 2016 +0100
+
+    Mise en place complète du bonus multi fighter
+
+commit c298cab8dde86a9e8660d94334d212fb13a317de
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 18:28:55 2016 +0100
+
+    Formulaire de selection du combattant  utiliser
+
+commit feeed97a7f78508476fb7f003fc33aa120e5e98b
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 18:01:59 2016 +0100
+
+    Modification du level up pour l'appliquer à un fighter particulier
+
+commit df374f7cae4cd99afb669ccafc859b49f55a9d9c
+Merge: 5242f30 1120fae
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 17:46:53 2016 +0100
+
+    Récupérations modifs Aurelie
+
+commit 1120fae7bc5355a3bb910fdcb00577b4d1ddef43
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 17:09:10 2016 +0100
+
+    modif footer et menu
+
+commit e89b00d1701003a1696888b72890366a76fc7402
+Merge: 0d93b3e 64dbc1a
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:59:50 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 0d93b3ec358875ad36788dd9de185798e1c35801
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:59:02 2016 +0100
+
+    mise en forme mdp oublie
+
+commit 64dbc1aac4fd8bacb86fe247e3fe2049bccb767f
+Merge: afdc6fc 4b3a69b
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 16:58:51 2016 +0100
+
+    Merge branch 'ameliorations' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit 4b3a69ba1b25c351bf467b295119994f437d963d
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 16:57:36 2016 +0100
+
+    Correction combat
+
+commit f83517f1a7f8dcbeb9ec0656533a2e3cb566c99f
+Merge: fe44c2f afdc6fc
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:43:25 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit afdc6fc9f3882680c59e43202aa68c92a0b7377c
+Merge: 3bb36ec cef19ee
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 16:41:31 2016 +0100
+
+    reso conflits
+
+commit 3bb36ec232d8ed48509b7ecedab7ba29e912daca
+Merge: a191526 7df722d
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 16:37:35 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit cef19eea41354877618eb1fd0f1d62efc9295519
+Merge: 8e8d02c 7df722d
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 16:35:38 2016 +0100
+
+    mpdo
+
+commit fe44c2fa0eff083b802e3d236860a173e0d2ee67
+Merge: f96d0c5 7df722d
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:34:11 2016 +0100
+
+    reso conflit
+
+commit f96d0c5a9582ac9133ebd901f361ed0f18e6e01f
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:31:31 2016 +0100
+
+    mise en forme sight
+
+commit 7df722d8883fa08b182a539299e14f02487edf95
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 16:18:55 2016 +0100
+
+    sight
+
+commit 8e8d02c5e6193351d73f1a06288176b467935b2f
+Merge: 9e7e9f6 42fd074
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 16:18:06 2016 +0100
+
+    mot de passe oublie
+
+commit 2450e1da783ff880c5330c698cad206817dc586c
+Merge: bd2aaac aa00a5b
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 16:10:41 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit bd2aaac7b9d3c1759d896b360e5d7792dcdc3b9d
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 16:10:26 2016 +0100
+
+    merge
+
+commit 71f35795c20a5e56e076d0084b46fcde42f6d490
+Merge: 89c58df aa00a5b
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 16:09:30 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into ameliorations
+
+commit aa00a5b69225959a63a1a70d53887d7463db2702
+Merge: 86d7420 5e007ed
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:05:38 2016 +0100
+
+    reso conflit
+
+commit 89c58dfe61f14c0d28c2762a31916595b9630af7
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 16:03:34 2016 +0100
+
+    Le menu s'adapte à si on est connecté ou pas
+
+commit 86d7420f03a4ad39d5f70f5886f8c73c1ca6cac6
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 16:00:42 2016 +0100
+
+    modif footer
+
+commit 5e007ede6b9fdf5a8e05181e8fb59463b5eefb51
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 15:57:29 2016 +0100
+
+    messages d'erreur
+
+commit 1bbaabb5a75b8e244992c697fcd9e0b4dff5d55a
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 15:55:14 2016 +0100
+
+    ajout de version.log dans footer
+
+commit 83f1c35f38ccc9fb8b979787ad3495390cb11e83
+Merge: c96dfcf 31e72d9
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 15:33:30 2016 +0100
+
+    Merge branch 'sight2' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit c96dfcfa3b43297e1ab1ccf4a956cc653b46b995
+Merge: bd3e6b9 81373dd
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 15:32:05 2016 +0100
+
+    Merge branch 'sight2' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit 31e72d9737bebc44167e946637bae681953328b5
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 15:31:06 2016 +0100
+
+    blindage sight
+
 commit e0f122cb4b60b809fda124110801fe81d1903b42
 Merge: 998affa bd3e6b9
 Author: aurelie <aurelie@lampaurelie>
@@ -35,12 +241,24 @@ Date:   Wed Nov 2 14:35:31 2016 +0100
 
     changement du nom de la classe cadrecssfighter
 
+commit 9e7e9f6eae0fbefcaf435fe854ae1f399a21d4ad
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 14:28:40 2016 +0100
+
+     forgetPassword
+
 commit 905a4c876e6517e7dbfd39f591de58cb201ff67d
 Merge: d9a65a1 42fd074
 Author: aurelie <aurelie@lampaurelie>
 Date:   Wed Nov 2 14:26:08 2016 +0100
 
     reso conflit
+
+commit 81373dddaa5c7cc524385631d0f30fa208a3068a
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 14:25:55 2016 +0100
+
+    log
 
 commit d728d1170008466e73fe643cfd0002f38086f0fb
 Merge: 7ba4798 42fd074
@@ -81,6 +299,12 @@ Date:   Wed Nov 2 13:43:46 2016 +0100
 
     Mise en sessions des varibales quand connection par Google
 
+commit 5242f30a1e50cb8d7ffd869f2b21fdcf182ad55f
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:27:51 2016 +0100
+
+    Adaptation du MayLevelUp à chaque fighter
+
 commit e4ac386b630c73a9186feb4a1aa37096924b23c9
 Merge: f6a68bd 6acde8d
 Author: Lasgnes <lasgnes@yahoo.fr>
@@ -93,6 +317,12 @@ Author: Lasgnes <lasgnes@yahoo.fr>
 Date:   Wed Nov 2 13:23:00 2016 +0100
 
     nettoyage
+
+commit c36e38d9b17fda23f6de4f3a5eb76694a0eb433a
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:16:49 2016 +0100
+
+    Affichage de plusieurs combattants
 
 commit f6a68bd1a155110dc57ab4d11119abd89880d7ba
 Merge: 482a647 0996b40
@@ -126,6 +356,18 @@ Date:   Wed Nov 2 13:05:17 2016 +0100
 
     get id session
 
+commit b3455dd7890c4fa73ef36f05dbfe43cd4b5ef025
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:00:49 2016 +0100
+
+    Possibilité de créer un fighter même si on en a déjà un
+
+commit a191526ca5aeb2a92db87c936b8d75956168c1e5
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 12:58:54 2016 +0100
+
+    rien
+
 commit 482a647ce673621330b7762ab5b6111c30e12ab9
 Merge: 2d37b0d 2f06a76
 Author: Lasgnes <lasgnes@yahoo.fr>
@@ -144,6 +386,13 @@ Author: CarolineMienne <caro.eleve@gmail.com>
 Date:   Wed Nov 2 12:33:31 2016 +0100
 
     Récupération automatique d'un fighter par défaut si existant
+
+commit 42840911375a44d08c2accd22a2df50a7cd14c35
+Merge: 3923039 bd968bd
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 12:08:25 2016 +0100
+
+    Merge branch 'events' of https://github.com/Leslie-Ros/projet_arenes into events
 
 commit f52692f5809bd4a1b5abdd23772833fff622689c
 Merge: 914c078 5cbc9a4
@@ -164,6 +413,12 @@ Author: Lasgnes <lasgnes@yahoo.fr>
 Date:   Wed Nov 2 12:05:16 2016 +0100
 
     pr commentés
+
+commit 3923039685f662093763816f9f7787a73874e877
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Wed Nov 2 12:03:13 2016 +0100
+
+    Vous etes bien connectés
 
 commit 1eb06ea7c328cbb704859c9a5e21f66bc63a6351
 Author: Lasgnes <lasgnes@yahoo.fr>
