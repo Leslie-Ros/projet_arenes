@@ -625,9 +625,9 @@ div.message.hidden {
     border-bottom: 0px;
 }
 
-/*Mise en forme de add.ctp*/
+/*Mise en forme de add.ctp et login.ctp*/
 form {
- margin-top: 100px;
+ margin-top: 80px;
  margin-left: 250px;
  background-color:#FAFAFA;
  padding:10px;
@@ -641,6 +641,15 @@ form {
  {
     text-align: center;
     margin-top: 100px;
+ margin-left: 250px;
+ background-color:#FAFAFA;
+ padding:10px;
+ width:600px;
+ }
+  #forgetpassword
+ {
+    text-align: center;
+    margin-top: 10px;
  margin-left: 250px;
  background-color:#FAFAFA;
  padding:10px;
