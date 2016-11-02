@@ -77,6 +77,16 @@ class PlayersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
     
+    public function envoiEmail()
+    {
+       $email = new Email();
+       $email->template('welcome', 'fancy')
+          ->emailFormat('html')
+          ->to('bob@example.com')
+          ->from('app@domain.com')
+          ->send();
+    }
+    
  public function googlelogin()
     {
         $client = new Google_Client();
