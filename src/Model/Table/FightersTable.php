@@ -25,10 +25,10 @@ class FightersTable extends Table {
         return 'ok';
     }
     
-    var $largeur=15;
-    var $longueur=10;
+    var $largeur=10;
+    var $longueur=15;
     var $maxAp = 3;
-    var $delay = 10;
+    var $delay = 1;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
@@ -117,7 +117,7 @@ class FightersTable extends Table {
         $this->Events = TableRegistry::get('Events');
         //test pour toucher ;
         $dice = rand(20, 1);
-        pr($dice);
+        //pr($dice);
         if (10 + $def['level'] - $att['level'] >= $dice) {
             $def['skill_health'] -= $att['skill_strength'];
 
@@ -139,7 +139,7 @@ class FightersTable extends Table {
         } else {
             $this->Events->createEventMiss($att, $def);
         }
-        pr($def['skill_health']);
+        //pr($def['skill_health']);
     }
 
     public function updateFighter($fighter) {
@@ -216,9 +216,9 @@ class FightersTable extends Table {
     public function validMove($x, $y, $arena, $id) {
         $valid = false;
         if ($x >= 0 && $y >= 0 && $x < $this->largeur && $y < $this->longueur) {
-            pr("dans les bornes");
+            //pr("dans les bornes");
             if ($arena[$x][$y] == '_') {
-                pr("valid");
+                //pr("valid");
                 $valid = true;
             } else {
                 $this->attack($id, $arena[$x][$y]);
@@ -249,9 +249,9 @@ class FightersTable extends Table {
                 $fighter['coordinate_y'] += 1;
                 break;
         }
-        pr("move");
+        //pr("move");
         if ($this->validMove($fighter['coordinate_x'], $fighter['coordinate_y'], $arena, $id)) {
-            pr("validmove");
+            //pr("validmove");
             $this->updateFighter($fighter);
             $this->removeActionPoint($fighter['id']);
         }
@@ -283,7 +283,7 @@ class FightersTable extends Table {
         if ($ap > $this->maxAp) {
             $ap = $this->maxAp;
         }
-        pr("has ".$ap);
+        //pr("has ".$ap);
         return $ap;
     }
 
@@ -293,11 +293,15 @@ class FightersTable extends Table {
         $ap = $this->hasActionPoints($fighter['id']);
         $ap -= 1;
         $time = Time::now();
-        for ($i = 0; $i < $ap; $i++) {
-            $time->subSeconds($this->delay);
+        if($fighter['next_action_time']->diffInSeconds() >= $this->maxAp*$this->delay){
+            for ($i = 0; $i < $ap; $i++) {
+                $time->subSeconds($this->delay);
+            }
+        }else {
+             $time->addSeconds($this->delay);
         }
         $fighter['next_action_time'] = $time;
         $this->updateFighter($fighter);
-        pr($ap);
+        //pr($ap);
     }
 }
