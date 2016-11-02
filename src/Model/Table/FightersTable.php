@@ -28,7 +28,7 @@ class FightersTable extends Table {
     var $largeur=10;
     var $longueur=15;
     var $maxAp = 3;
-    var $delay = 10;
+    var $delay = 1;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();

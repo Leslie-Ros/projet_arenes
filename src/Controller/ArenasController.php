@@ -86,24 +86,20 @@ class ArenasController extends AppController {
         $this->Fighters->removeActionPoint(1);*/
         
         //post traitemnt
-        
+        $fid = $this->request->session()->read('User.fighter_id');
         if ($this->request->is("post")) {
             //pr($this->request->data);
-            if($this->Fighters->hasActionPoints(1)){
+            if($this->Fighters->hasActionPoints($fid)){
                 //pr('form');$this->request->session()->read('User.fighter_id')
-                $this->Fighters->move($this->request->data['direction'], 1, $arena);
+                $this->Fighters->move($this->request->data['direction'], $fid, $arena);
                 //1 id du fighter, à changer par $this->request->session->read($fighterId)
                 $arena = $this->Fighters->createArena();
             }
         }
-        //pr($this->request->session()->read('User.fighter_id'));
-        $mask = $this->Fighters->canSee($arena, 1);
-        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
-        //1 id du fighter, à changer par $this->request->session->read($fighterId)
-        //pr($arena);
+        $mask = $this->Fighters->canSee($arena, $fid);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
-        $this->set('ap', $this->Fighters->hasActionPoints(1));
+        $this->set('ap', $this->Fighters->hasActionPoints($fid));
     }
 
     //Exemple d'utilisation de la fonction createFighter
@@ -123,8 +119,6 @@ public function diary()
     $this->set('event',$this->Events->displayEvents(1));
     
     }
-    
-
 }
 
 ?>

@@ -7,11 +7,14 @@ echo "<br>";
     for ($col = 0; $col < $longueur; $col++) {
             echo "<section id=\"arene\"";
         if($mask[$row][$col] == "#"){
-            echo "class=\"backgroundSight\">";
+            echo "class=\"backgroundSight";
             if($arena[$row][$col] == "_")
-                echo " ";
+                echo "\"> ";
+            else if ($arena[$row][$col] == $this->request->session()->read('User.fighter_id')){
+                echo "  monPerso\">".$arena[$row][$col];
+            }
             else
-                echo $arena[$row][$col];
+                echo "\">".$arena[$row][$col];
         }else {
             echo "class=\"backgroundFog\">";
         }

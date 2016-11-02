@@ -799,3 +799,8 @@ h2
     color: white;
     font-family: 'notmarykateregular', arial;
 }
+
+.monPerso {
+    color: green;
+    border-color: #000000;
+}
