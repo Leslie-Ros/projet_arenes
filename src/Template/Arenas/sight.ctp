@@ -1,10 +1,16 @@
 <?= $this->assign('title', 'Flêche dans le genou');?>
+<div class="cadrecss">
 <?php
 if($hasFighter){
 echo $log;
+echo "<br>";
 echo "Il vous reste ".$ap." points d'actions";
-echo "<br>";}
+} else {
+    echo "Pour jouer, crée-toi un combattant !";
+ }
+echo "<br>";
 ?>
+</div>
 <?php if($hasFighter){ ?><div id = "jeu"><?php
     for ($row = 0; $row < $largeur; $row++) {
         for ($col = 0; $col < $longueur; $col++) {
@@ -44,6 +50,4 @@ echo "<br>";}
      ]); }?>" class="btn btn-lg btn-primary">JOURNAL DES EVENEMENTS</a>
 
     </div>
-<?php }else { ?>
-    <section id="creetoiunfighterboulet">Pour jouer, crée-toi un combattant !</section>
- <?php }?>
+<?php }?>
