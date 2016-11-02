@@ -50,7 +50,9 @@ class ArenasController extends AppController {
                     }
                     break;
                 case 'levelup':
-                    $this->Fighters->levelUp($persos[0]['id'], $this->request->data['competence']);
+                    $selected=$this->request->data['id_f'];
+                    //$this->Fighters->levelUp($persos[0]['id'], $this->request->data['competence']);
+                    $this->Fighters->levelUp($selected, $this->request->data['competence']);
                     break;
             }
         }

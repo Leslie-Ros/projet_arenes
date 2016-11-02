@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <h1>Combattant</h1>
 
     <?php 
@@ -19,6 +19,7 @@
                      $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
                      echo $this->Form->select('competence', $options);
                      echo $this->Form->hidden('idform', ['value' => 'levelup']);
+                     echo $this->Form->hidden('id_f', ['value' => $combattant->id]);
                      echo $this->Form->button('Passer au niveau supérieur !');
                      echo $this->Form->end();
                      ?>
