@@ -25,3 +25,10 @@ echo $this->Form->select('direction', $options);
 echo $this->Form->button('GO!');
 echo $this->Form->end();
 ?></div>
+    <div id="evensight">
+ <a href="<?php echo $this->Url->build([
+                'controller' => 'Arenas',
+                'action' => 'diary'
+            ]); ?>" class="btn btn-lg btn-primary">JOURNAL DES EVENEMENTS</a>
+
+</div>
