@@ -100,7 +100,7 @@ class PlayersController extends AppController
     }
     public function googlecallback()
     {     
-        $this->loadModel('Players');
+        $this->loadModel('Players'); $this->loadModel('Fighters');
         $client = new Google_Client();
         /* Création de notre client Google */
         $client->setClientId(GOOGLE_OAUTH_CLIENT_ID);
@@ -142,6 +142,11 @@ class PlayersController extends AppController
                     if ($result) {
                         // si l'email existe alors nous déclarons l'utilisateur comme authentifié sur CakePHP
                         $this->Auth->setUser($result->toArray());
+                        //on initialise les mêmes variables de session que pour la connexion classique
+                        /*pr($result);*/$this->request->session()->write('User.player_id', $result['id']);
+                        if ($this->Fighters->getDefaultFighterId($result['id'])!=null)
+                            $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($result['id'])); 
+           
                         // et nous redirigeons vers la page de succès de connexion
                         $this->redirect($this->Auth->redirectUrl());
                     } else {
@@ -157,6 +162,11 @@ class PlayersController extends AppController
                             // et ensuite nous déclarons l'utilisateur comme authentifié sur CakePHP
                             $data['id'] = $entity->id;
                             $this->Auth->setUser($data);
+                            //on initialise les mêmes variables de session que pour la connexion classique
+                            $this->request->session()->write('User.player_id', $data['id']);
+                            if ($this->Fighters->getDefaultFighterId($data['id'])!=null)
+                                   $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($data['id'])); 
+               
                             $this->redirect($this->Auth->redirectUrl());
                         } else {
                             $this->Flash->set('Erreur de connection');

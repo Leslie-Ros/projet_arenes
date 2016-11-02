@@ -45,6 +45,8 @@ class ArenasController extends AppController {
                     if (!empty($this->request->data['name'])) {
                         $arena = $this->Fighters->createArena(); //on crée une arène virtuelle pour savoir où il est possible de placer le nouveau personnage
                         $this->Fighters->createFighter($this->request->data['name'], $userid, $arena);
+                        $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($userid));
+                   
                     }
                     break;
                 case 'levelup':
@@ -60,7 +62,7 @@ class ArenasController extends AppController {
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
-            $this->request->session()->write('User.fighter_id', $persos[0]['id']); //A CHANGER SI PERSOS MULTIPLES
+            //$this->request->session()->write('User.fighter_id', $persos[0]['id']); //A CHANGER SI PERSOS MULTIPLES
             $this->set('hasFighter', TRUE);
             $this->set('combattant', $persos[0]);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
