@@ -1,5 +1,5 @@
 <?= $this->assign('title', 'Flêche dans le genou');?>
-<div class="cadrecss">
+<div class="cadrecssfighter">
 <?php
 if($hasFighter){
 echo $log;
