@@ -724,6 +724,7 @@ h1
 
 #explication
 {
+ margin-top: 10px;
  text-align: center;
  background-color:#000;
  margin-left: 750px;
@@ -762,7 +763,8 @@ h1
     font-family: 'notmarykateregular', arial;
 }
 #jeu
-{
+{   
+    margin-top: 10px;
     float: left;
     margin-left: 50px;
 }
@@ -782,6 +784,17 @@ h1
 }
 .monPerso {
     background-color: green;
+}
+.situation
+{
+    margin-top: 20px;
+ margin-left: 50px;
+ background-color:#FAFAFA;
+ opacity: 0.7;
+ padding:10px;
+ width:679px;
+ color: black;
+ border-style: double;
 }
 
 /*Mise en forme fighter*/

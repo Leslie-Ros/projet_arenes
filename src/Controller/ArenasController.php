@@ -82,7 +82,7 @@ class ArenasController extends AppController {
           $this->Fighters->removeActionPoint(1); */
 
         //post traitemnt
-        $log = "Bienvenue !";
+        $log = "Vous entrez dans l'arène:";
         $fid = $this->request->session()->read('User.fighter_id');
         if ($this->request->is("post")) {
             //pr($this->request->data);

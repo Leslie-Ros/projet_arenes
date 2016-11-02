@@ -1,16 +1,5 @@
 <?= $this->assign('title', 'Flêche dans le genou');?>
-<div class="cadrecss">
-<?php
-if($hasFighter){
-echo $log;
-echo "<br>";
-echo "Il vous reste ".$ap." points d'actions";
-} else {
-    echo "Pour jouer, crée-toi un combattant !";
- }
-echo "<br>";
-?>
-</div>
+
 <?php if($hasFighter){ ?><div id = "jeu"><?php
     for ($row = 0; $row < $largeur; $row++) {
         for ($col = 0; $col < $longueur; $col++) {
@@ -48,4 +37,18 @@ echo $this->Form->end();
 
 
     </div>
+
+    <div class="situation">
+<?php
+if($hasFighter){
+echo $log;
+echo "<br>";
+echo "Il vous reste ".$ap." points d'actions";
+} else {
+    echo "Pour jouer, crée-toi un combattant !";
+ }
+echo "<br>";
+?>
+</div>
+
 <?php }?>
