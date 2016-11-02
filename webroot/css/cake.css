@@ -45,6 +45,8 @@ footer {
 footer ul
 {
     list-style-type : none;
+    margin: 1px;
+ 
 }
 footer li 
 {
