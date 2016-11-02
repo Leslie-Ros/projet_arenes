@@ -827,6 +827,11 @@ margin-left: 5px;
 float: left;
 }
 
+#selected_f{
+    border-style: solid;
+    border-color: red; 
+}
+
 h2
 {
     text-shadow: #FFF 1px 1px 10px;    

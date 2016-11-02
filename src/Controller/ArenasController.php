@@ -26,7 +26,6 @@ class ArenasController extends AppController {
 
     public function fighter() {
         $this->loadModel('Fighters');
-        //$userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
         //s'il n'y a pas d'utilisateur connecté on redirige de suite vers le login
         if ($this->request->session()->check('User.player_id')) {
             $userid = $this->request->session()->read('User.player_id');

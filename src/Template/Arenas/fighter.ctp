@@ -4,7 +4,7 @@
     <?php 
     if ($hasFighter) { ?> <h2>Vos combattants</h2> <?php
         foreach($combattants as $key=>$combattant){?>
-        <div class='uncombattant'></div>
+        <div class='uncombattant' <?php if ($combattant->id == $this->request->session()->read('User.fighter_id')) echo" id='selected_f'"?> >
 
         <!-- Affichage du joueur -->
         <table class='fighterPrint'>
@@ -37,7 +37,7 @@
             echo $this->Form->button('Selectionner ce personnage');
             echo $this->Form->end();
             
-        ?></div><?php} //fin du foreach
+        ?></div><?php } //fin du foreach
     }
     
     //Desormais on laisse toujours la possibilité de créer d'autres fighters
