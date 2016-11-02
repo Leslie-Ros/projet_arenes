@@ -40,8 +40,7 @@ footer {
     background: #890000;
     font-family: serif, arial;
     color: #FFF;
-    padding-bottom: 1px;
-    padding-top: 1px;
+
 }
 footer ul
 {
@@ -49,17 +48,28 @@ footer ul
 }
 footer li 
 {
-    float: center;
-    background: #890000;
+    background: #890000;  
+}
+footer a
+{
+    color: white;
+    font-family: serif, arial;
     display: inline;
+}
+footer a:hover
+{
+    color: black;
+
 }
 #opgr
 {
-    float : left;
+    float : left; 
+    display: inline;
 }
 #auteur
 {
-    float : right;
+    float : right;   
+    display: inline;
 }
 
 
