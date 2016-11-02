@@ -56,6 +56,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <li><?php echo $this->Html->link("Se déconnecter", array('controller' => 'Players', 'action' => 'logout')); ?></li>
 <li><?php echo $this->Html->link("Journal", array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
 
+
         </div>
     </nav>
     <?= $this->Flash->render() ?>
@@ -67,7 +68,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <ul>
     <li id="gpop"><b>Groupe:</b> SI1 - <b>Options:</b> CG</li>
    <li id="auteur"> <b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS.</li>
-   </ul>
+<li><a href="<?php echo $this->Url->build([
+                'controller' => 'webroot',
+                'action' => 'versions.log'
+            ]); ?>" class="btn btn-lg btn-primary">versions.log</a>
+  </li> </ul>
    
     
     </footer>

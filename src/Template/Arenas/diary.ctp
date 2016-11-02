@@ -1,10 +1,9 @@
-<?=
 
-$this->assign('title', 'Journal des évènement');?>
+<?= $this->assign('title', 'Journal des évènements');?>
 
 <h1>Evènements à portée de vue de moins de 24h.</h1>
 
-<div class="cadrecss">
+<div class="cadrecssdiary">
 <?php
 if($this->request->session()->read('User.fighter_id')){
     foreach ($event as $row){
