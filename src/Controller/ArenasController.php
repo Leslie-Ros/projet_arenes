@@ -68,6 +68,7 @@ class ArenasController extends AppController {
     }
 
     public function sight() {
+    if($this->request->session()->read('User.fighter_id') > 0){
         //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
@@ -96,6 +97,10 @@ class ArenasController extends AppController {
         $this->set('arena', $arena);
         $this->set('ap', $this->Fighters->hasActionPoints($fid));
         $this->set('log', $log);
+        $this->set('hasFighter', true);
+    }else {
+        $this->set('hasFighter', false);
+    }
     }
 
     //Exemple d'utilisation de la fonction createFighter
