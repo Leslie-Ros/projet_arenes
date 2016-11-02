@@ -3,7 +3,7 @@
 
     <?php 
     if ($hasFighter) { ?> <h2>Vos combattants</h2> <?php
-        foreach($combattants as $combattant){?>
+        foreach($combattants as $key=>$combattant){?>
 
         <table class='fighterPrint'>
             <?php echo $this->Html->tableHeaders(['Nom', 'Niveau', 'xp', 'Vue', 'Force', 'Vie max', 'PV']);
@@ -13,7 +13,7 @@
 
 
             <?php
-            if ($mayLevelUp == TRUE) { ?>
+            if ($mayLevelUp[$key] == TRUE) { ?>
                 Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
                      <?php echo $this->Form->create();
                      $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
