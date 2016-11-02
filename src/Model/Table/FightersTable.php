@@ -96,6 +96,14 @@ class FightersTable extends Table {
         $fighters = $this->find('all')->toArray();
         return $fighters;
     }
+    
+    public function getDefaultFighterId($userid){
+        $fighters=$this->getFightersForUser($userid);
+        if (empty($fighters)){
+            return null;
+        }
+        return $fighters[0]['id'];
+    }
 
     /**
      * Un fighter attaque un autre fighter
