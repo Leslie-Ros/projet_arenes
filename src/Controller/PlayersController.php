@@ -61,6 +61,8 @@ class PlayersController extends AppController
             $player = $this->Auth->identify();
             Debugger::dump($player);
             if ($player) {
+                $session = $this->request->session();
+                $session->write('User.player_id', $player['id']);
                 $this->Auth->setUser($player);
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -71,6 +73,7 @@ class PlayersController extends AppController
     {
         $this->request->session()->destroy('access_token');
         $this->Flash->success(__("Vous êtes maintenant déconnecté."));
+        $this->request->session()->delete('User.player_id');
         return $this->redirect($this->Auth->logout());
     }
     
@@ -165,4 +168,5 @@ class PlayersController extends AppController
             }
         }
     }
+
 }

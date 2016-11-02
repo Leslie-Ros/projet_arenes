@@ -45,3 +45,18 @@
         //echo $this->element('creation');
     }
     ?></section>
+
+    <div id="jouer">
+ <a href="<?php echo $this->Url->build([
+                'controller' => 'Arenas',
+                'action' => 'sight'
+            ]); ?>" class="btn btn-lg btn-primary">JOUER MAINTENANT</a>
+
+</div>
+ <div id="evenfighter">
+ <a href="<?php echo $this->Url->build([
+                'controller' => 'Arenas',
+                'action' => 'diary'
+            ]); ?>" class="btn btn-lg btn-primary">JOURNAL DES EVENEMENTS</a>
+
+</div>

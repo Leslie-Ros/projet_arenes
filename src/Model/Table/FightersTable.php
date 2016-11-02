@@ -56,7 +56,7 @@ class FightersTable extends Table {
         $combattant->skill_health = 5;
         $combattant->current_health = $combattant->skill_health;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
-        //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
+        $combattant->next_action_time=Time::now();
         //$combattant->guild_id;
         
         //insertion du nouveau tuple
