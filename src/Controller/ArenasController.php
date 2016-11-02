@@ -70,7 +70,7 @@ class ArenasController extends AppController {
     }
 
     public function sight() {
-    if($this->request->session()->read('User.fighter_id') > 0){
+    if($this->request->session()->read('User.fighter_id')){//renvoie null si la variable n'existe pas
         //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
@@ -112,13 +112,14 @@ class ArenasController extends AppController {
 
     public function diary() {
         //test
-        $this->loadModel('Events');
-        $this->loadModel('Fighters');
-        $tableFighters = TableRegistry::get('Fighters');
-        //  $this->Events->createEventDeath($fighter,$enemy);
-        $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
+        if($this->request->session()->read('User.fighter_id')){
+            $this->loadModel('Events');
+            $this->loadModel('Fighters');
+            $tableFighters = TableRegistry::get('Fighters');
+            //  $this->Events->createEventDeath($fighter,$enemy);
+            $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
+        }
     }
-
 }
 
 ?>
