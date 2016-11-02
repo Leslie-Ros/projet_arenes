@@ -53,8 +53,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Combattant", array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
 <li><?php if (! $this->request->session()->check('User.player_id'))echo $this->Html->link('Se connecter', array('controller' => 'Players', 'action' => 'login')); ?></li>
 <li><?php if (! $this->request->session()->check('User.player_id'))echo $this->Html->link("S'inscrire", array('controller' => 'Players', 'action' => 'add')); ?></li>
-<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Se déconnecter", array('controller' => 'Players', 'action' => 'logout')); ?></li>
 <li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Journal", array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
+<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Se déconnecter", array('controller' => 'Players', 'action' => 'logout')); ?></li>
 
 
         </div>
@@ -66,14 +66,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <footer>
     
     <ul>
-        <li id="gpop"><b>Groupe:</b> SI1 - <b>Options:</b> CG</li>
-        <li id="auteur"> <b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS.</li>
-        <li><a href="<?php echo $this->Url->build([
+        <li id="gpop"><b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS. - <b>Groupe:</b> SI1 - <b>Options:</b> - CG - <a href="<?php echo $this->Url->build([
                 'controller' => 'webroot',
                 'action' => 'versions.log'
-            ]); ?>" class="btn btn-lg btn-primary">versions.log</a>
-        </li>
-        <li>A l'attention du correcteur : la limite temporelle étant implémentée, il faut veiller à ne pas utiliser une base de données contenant déjà des fighters sans next_action_time</li>
+            ]); ?>" class="btn btn-lg btn-primary">versions.log</a> </li>
+     
+        <li id="attention">A l'attention du correcteur : la limite temporelle étant implémentée, il faut veiller à ne pas utiliser une base de données contenant déjà des fighters sans next_action_time</li>
     </ul>
    
     

@@ -57,6 +57,8 @@ footer a
     color: white;
     font-family: serif, arial;
     display: inline;
+    float: right;
+
 }
 footer a:hover
 {
@@ -68,12 +70,10 @@ footer a:hover
     float : left; 
     display: inline;
 }
-#auteur
+#attention
 {
-    float : right;   
-    display: inline;
+    text-align: center;
 }
-
 
 header .header-title {
     padding-left:80px
