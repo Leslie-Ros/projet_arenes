@@ -25,6 +25,7 @@ body
     background-repeat: no-repeat;
  font-family:"trebuchet ms",sans-serif;
  font-size:16px; 
+
 } 
 header {
     background-color: #D33C44;
@@ -57,7 +58,6 @@ footer a
     color: white;
     font-family: serif, arial;
     display: inline;
-    float: right;
 
 }
 footer a:hover
@@ -826,11 +826,14 @@ opacity: 0.8;
 margin-left: 5px;
 float: left;
 }
-
-#selected_f{
-    border-style: solid;
-    border-color: red; 
+#selected_f .fighterPrint{
+    background-color: red; 
 }
+
+.uncombattant button
+{
+    border-radius: 20px;
+ }   
 
 h2
 {
