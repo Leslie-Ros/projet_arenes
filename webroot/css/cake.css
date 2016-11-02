@@ -709,43 +709,56 @@ h1
 }
 
 /*Mise en forme de sight*/
+
+#explication
+{
+ text-align: center;
+ background-color:#000;
+ margin-left: 750px;
+ color: white;
+ font-weight: bold;
+ padding:10px;
+ width:500px;
+ border-style: ridge;
+ opacity: 0.7;
+}
 #bselection form {
     float: right;
+     margin-top: 10px;
     margin-left: 0px;
-    margin-right: 300px;
-    margin-top: 100px;
-    width: 300px;
+    margin-right: 150px;
+    width: 250px;
+    border-style: ridge;
 }
 #evensight 
 {
- text-align: center;
- margin-top: 350px;
- margin-left: 700px;
+ text-align: center; 
+ margin-top: 170px;
+ margin-left: 870px;
  background-color:#990000;
  color: white;
  font-weight: bold;
  padding:10px;
  width:250px;
  border-style: ridge;
- opacity: 0.7;
+ opacity: 0.8;
 }
 
 #evensight a
 {
     color: white;
-    font-family: notmarykateregular;
+    font-family: 'notmarykateregular', arial;
 }
 #jeu
 {
     float: left;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 #arene{
     text-align: center;
     height: 45px;width: 45px;
     border-style: solid;
     float: left;
-
 }
 
 .backgroundSight{
@@ -755,6 +768,10 @@ h1
 .backgroundFog{
     background-color: #000000;
 }
+.monPerso {
+    background-color: green;
+}
+
 /*Mise en forme fighter*/
 .cadrecssfighter
 {
@@ -798,8 +815,5 @@ h2
 {
     color: white;
     font-family: 'notmarykateregular', arial;
-
-.monPerso {
-    color: green;
-    border-color: #000000;
 }
+

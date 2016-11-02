@@ -196,7 +196,7 @@ class FightersTable extends Table {
         $sight = $fighter['skill_sight'];
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
-                if (abs($row - $x) <= $sight && abs($col - $y) <= $sight) {
+                if (abs($x - $row) +  abs($y - $col) <= $sight){
                     $mask[$row][$col] = "#";
                 }
             }
