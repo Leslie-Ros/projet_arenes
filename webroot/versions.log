@@ -1,0 +1,890 @@
+commit e0f122cb4b60b809fda124110801fe81d1903b42
+Merge: 998affa bd3e6b9
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:45:08 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 998affaf4e83a04bf9776985630e8a9489404b36
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:42:59 2016 +0100
+
+    modif nom class : cadrecssfighter
+
+commit af62a08c450395c430498bfd7ee1bb042d34dd11
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:42:25 2016 +0100
+
+    correction faute orthographe
+
+commit bd3e6b9d9744bcf8f70a53ac774207d29277b4e6
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 14:37:21 2016 +0100
+
+    Correction Google
+
+commit d964de55c10a60554ffe908f9eb3ca24907ddcd6
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:35:55 2016 +0100
+
+    ajout explication
+
+commit 3581ff2631f66b798d1381f6ab6eb8615f1ca401
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:35:31 2016 +0100
+
+    changement du nom de la classe cadrecssfighter
+
+commit 905a4c876e6517e7dbfd39f591de58cb201ff67d
+Merge: d9a65a1 42fd074
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 14:26:08 2016 +0100
+
+    reso conflit
+
+commit d728d1170008466e73fe643cfd0002f38086f0fb
+Merge: 7ba4798 42fd074
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:56:34 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into ameliorations
+
+commit 7ba47989dfd8fd57b66689d606fedeb511a725c8
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:55:52 2016 +0100
+
+    Correction session via google
+
+commit d9a65a1faad80a0651ebba8d6264988f8735c465
+Merge: d2d8950 e4ac386
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 13:47:19 2016 +0100
+
+    reso conflit
+
+commit 42fd0741d836d4c048272931d7cafb0a539bf488
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:45:07 2016 +0100
+
+    La grosse pomme est peine de vers
+
+commit ab5c5bcb2f9978d6ba6bf84b88a9508cde40b909
+Merge: de75608 e4ac386
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:44:38 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into ameliorations
+
+commit de7560865fe7989842b14e22ac5ecbe979aebe6e
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 13:43:46 2016 +0100
+
+    Mise en sessions des varibales quand connection par Google
+
+commit e4ac386b630c73a9186feb4a1aa37096924b23c9
+Merge: f6a68bd 6acde8d
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:24:32 2016 +0100
+
+    Merge branch 'sight2' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit 6acde8d0829f4e3d1cbedea8485bd6bb31c252f2
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:23:00 2016 +0100
+
+    nettoyage
+
+commit f6a68bd1a155110dc57ab4d11119abd89880d7ba
+Merge: 482a647 0996b40
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:11:42 2016 +0100
+
+    merge
+
+commit 0996b4043207900891fe598456a0c9564146730a
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:09:09 2016 +0100
+
+    ctrl alt f
+
+commit d2d8950861e634fc768954000f7e62c7b95eb981
+Merge: 30d3d5d 2f06a76
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 13:09:00 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 30d3d5d589fff9ea8a81d6bd819aae6b79481c95
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 13:08:24 2016 +0100
+
+    modif css
+
+commit 9b05528b2f203838f27fc0b2fcbc1b70736515be
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 13:05:17 2016 +0100
+
+    get id session
+
+commit 482a647ce673621330b7762ab5b6111c30e12ab9
+Merge: 2d37b0d 2f06a76
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 12:38:09 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit 2e5e89a72f2fc6f25b9e47eda17a70bd266fa29a
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 12:37:20 2016 +0100
+
+    cas où il n'y a pas d'event
+
+commit 2f06a766fff9d7fb581fabe2a89bdc62214898d2
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 12:33:31 2016 +0100
+
+    Récupération automatique d'un fighter par défaut si existant
+
+commit f52692f5809bd4a1b5abdd23772833fff622689c
+Merge: 914c078 5cbc9a4
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 12:07:34 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into ameliorations
+
+commit 83ae638b688bc381bee2110b5723db14dfa1f711
+Merge: 1eb06ea 5cbc9a4
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 12:05:57 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into sight2
+
+commit 2d37b0d0c4ac410f01fc705751d16a99639f61c8
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 12:05:16 2016 +0100
+
+    pr commentés
+
+commit 1eb06ea7c328cbb704859c9a5e21f66bc63a6351
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Nov 2 09:31:51 2016 +0100
+
+    vendor
+
+commit 5cbc9a488732e032fa3e0f7e61cb260aaf17a21e
+Merge: 4a6d4c2 9215317
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 01:11:33 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit 982b7f51928901666a4e1cac77451ff136fb98f2
+Merge: 4a6d4c2 9215317
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 01:07:48 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 4a6d4c295da401d7c7fd4807632c3bea31300670
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 01:06:31 2016 +0100
+
+    ajout des liens entre les pages
+
+commit 914c07818c0e589ed565a57d612f86b20de6fa8a
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Nov 2 00:33:00 2016 +0100
+
+    Création d'une méthode getDefaultFighter
+
+commit a7a464546ddae1d5b28e4f4f6f771d3ed9751f70
+Author: aurelie <aurelie@lampaurelie>
+Date:   Wed Nov 2 00:13:03 2016 +0100
+
+    ajout vendor
+
+commit 3df0edf1b1df5a100b90f7fcc5d9b09cb8f3f920
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 23:55:31 2016 +0100
+
+    ajout vendor
+
+commit 921531719eec41ad9e104ca5ce0bd72472855c88
+Merge: 6bee44a f767323
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 23:46:14 2016 +0100
+
+    Les conflits c'est kawaii
+
+commit f76732344b234fd1e9e683501df592dfbfcba197
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 23:38:21 2016 +0100
+
+    Commentaires
+
+commit 8e6023a947f1b743d84f7f4c0c52388be018c8a0
+Merge: e6569f1 6bee44a
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 23:34:39 2016 +0100
+
+    merge (google)
+
+commit c191d09c0c774095c1cbdc83b2ea1a8200a84676
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 23:17:18 2016 +0100
+
+    Prise en compte du temps dans createFighter
+
+commit b05b8e5fda19c0d198a3fc0259a97a6895bd1aa9
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 18:41:32 2016 +0100
+
+    Tentative d'ajout du fighter_id en session (pas encore utilisé dans sight)
+
+commit 6bee44a94fb96f429726049caae2cc55fbeb87c7
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 17:55:40 2016 +0100
+
+    mise en forme logi.ctp pour se co avec google
+
+commit 5f5a5cd74611dde344264cc30c3e4de0d3dbf6c9
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 17:54:18 2016 +0100
+
+    Mise en place de la session pour identifier l'utilisateur à la connexion/déconnexion
+
+commit e6569f1dd2310af0e290c291da8884d041a32e4f
+Merge: 596f3d6 e877ec7
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 17:30:46 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into sight2
+
+commit 596f3d6ff9f8614420c6f9c295712609ada2e873
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 17:30:33 2016 +0100
+
+    times change
+
+commit 005ebcfbf467cc824dfc71c8018f9dc5223fc558
+Merge: 20451eb bd968bd
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 17:29:24 2016 +0100
+
+    Merge branch 'events' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit bd968bd95adc19e3a95446246b446123b1d69a0e
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 17:27:52 2016 +0100
+
+    aucune modif
+
+commit 20451eb40a1435a0cac04569bd82c940bbd1da1e
+Merge: ce3a4d5 e877ec7
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 16:39:28 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit e877ec744ec11f3d41e16e71c6d24146e08be41b
+Merge: 7e26638 19076d3
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 16:36:12 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into develop
+
+commit ce3a4d5a1ec945794aa57b8578d6fac210f95397
+Merge: 7e26638 19076d3
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 16:28:32 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 19076d3fe22a72dcb3704d466bd9b80df7262bc6
+Merge: b5b2ba2 3f0fc0e
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 16:21:22 2016 +0100
+
+    Livraison corrctions
+
+commit 7e266388793bee481b4dd65f4e973395bb51fd9b
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 15:35:35 2016 +0100
+
+    ajout id=cadrecss
+
+commit aa3f3f6a16a413fc2666d3b96a768e0e8033de5e
+Merge: 49b17c7 b5b2ba2
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 14:25:04 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit 49b17c7238297f863902fc7b2127630db1783def
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 14:24:32 2016 +0100
+
+    modif sight
+
+commit b5b2ba2f58ed5145f82bc17a76ef07a87170e927
+Merge: 1f834ca f393551
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 13:31:43 2016 +0100
+
+    livreaison sight2
+
+commit f393551bfe305f93a7e5e64a12011cdc7c9ee11f
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 13:29:37 2016 +0100
+
+    css sight déplacé dans cake.css
+
+commit 1f834ca2a0786a3d45f2139d088ff041bb16f36e
+Author: aurelie <aurelie@lampaurelie>
+Date:   Tue Nov 1 12:43:18 2016 +0100
+
+    mise en forme du bouton sight
+
+commit 8c4963db04160a8b841dd1706fd0f92dabf9a5c9
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 11:07:51 2016 +0100
+
+    résolution conflit
+
+commit 000e78b86decea7b7aacfb9d5206c04459f91f2b
+Merge: 5568f1d 0ed2901
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 11:02:12 2016 +0100
+
+    merge sight2
+
+commit 0ed290186e22c852694768f82d1f4f90e21ad0c0
+Merge: 7376a8c 911eb93
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 11:00:59 2016 +0100
+
+    time and actions ponts
+
+commit 5568f1d5604d9deccbeab4be7a8293ac0d23c443
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Nov 1 10:55:40 2016 +0100
+
+    temps et points d'ation
+
+commit ea16df85840fe29154bac4d3a0fe326b6cfd12d5
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Tue Nov 1 09:44:49 2016 +0100
+
+     Lien logout corrigé
+
+commit 796c0a7179c589d22c7eb9caa0af987fae5b997f
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Tue Nov 1 09:22:41 2016 +0100
+
+    mise à jour co google
+
+commit 3f0fc0e25eb642933a61687d3af9458efa22a322
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Nov 1 01:14:32 2016 +0100
+
+    Mise à jour des caractéristiques à la creation du perso
+
+commit 911eb93f90501a0d2663af727893c71d09d72d1f
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 31 19:04:50 2016 +0100
+
+    Livraison corrections
+
+commit 0aa9fdfaf8f7fbac973ec8cb7bb043c6ef3a6ce0
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 31 19:01:51 2016 +0100
+
+    Correction de createArena pour inclure les personnages de tous les joueurs
+
+commit 7376a8c4d5bbe76f52ba59f3e0df4a0b895ec0eb
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Mon Oct 31 17:56:23 2016 +0100
+
+    titre page
+
+commit e95885a38d99b4346f692c8cc5d6529cf9456754
+Merge: e6becad 78deec1
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 17:42:59 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into events
+
+commit 78deec1fe37e609a2e643303e92b272867aab691
+Merge: edb260e 1e4e9d0
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 17:34:00 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit edb260ec864ec4383052c02ab40f6b7bd5924789
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 17:33:31 2016 +0100
+
+    erreur corriger a la ligne 639
+
+commit e6becad05940b4222871d6ca3f0868a3b9603a05
+Merge: 255d2db cbbb472
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 17:33:19 2016 +0100
+
+    Merge branch 'sight2' of https://github.com/Leslie-Ros/projet_arenes into events
+
+commit 12faa670eeb2388a965ab1c1e359940869a5329f
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 17:32:51 2016 +0100
+
+    ajout onglet se deco
+
+commit 0aea3058e5bece5a8506b3481dc73f73d4936ea0
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 31 17:23:26 2016 +0100
+
+    Le combattant  apparaît désormais à une position aléatoire libre sur le terrain
+
+commit cbbb472907039b4efd82287ed405ed6fa9e912f4
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Mon Oct 31 17:17:42 2016 +0100
+
+    ;
+
+commit 255d2db1c723d7bfbf87206d82cdc759f097fa13
+Merge: d649ead 1e4e9d0
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 16:15:25 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into events
+
+commit 1e4e9d0835f71a2da45e7a1bcc61cbadde46d42c
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 31 16:04:53 2016 +0100
+
+    Remplacement des constantes magiques dimensions de l'arène par des variables
+
+commit c15a78ad42eb17f9f12dd26e12ae0c7cf7e25524
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 31 15:42:44 2016 +0100
+
+    Correction du warning dans home.cpt
+
+commit d649eaddb8dc7294e926d0088b0b75e8aa90f37a
+Merge: 5bdb821 61501e0
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 14:20:43 2016 +0100
+
+    reso conf
+
+commit 5bdb82105aa3b2a5d9a080581a5d09a37ada2dae
+Merge: fc6a264 cbacb8c
+Author: Leslie-Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 12:52:43 2016 +0100
+
+    reso conflits
+
+commit fc6a2644189794731b619c41648425c9e3e95769
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 12:12:02 2016 +0100
+
+    co avec google suite
+
+commit b0fee02eb140d0ca9fced4b10d5b28ae653630d4
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 31 11:20:53 2016 +0100
+
+    connexion avec google
+
+commit 61501e03d79425d291b245a3677b126ed373b3a2
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 00:24:23 2016 +0100
+
+    ajout de la mise en forme pour diary et index
+
+commit 2776a5472ebc70086ab84b3f95a5e83c3a56b2f9
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 00:23:56 2016 +0100
+
+    supp du lien vers index.css
+
+commit 0e504894e46af4ee91ee9c1c605997a6dd8062fc
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 00:23:07 2016 +0100
+
+    suppression de index.css
+
+commit a7da54d49b9cb1243fd308db1125be013ac4f051
+Author: aurelie <aurelie@lampaurelie>
+Date:   Mon Oct 31 00:22:35 2016 +0100
+
+    ajout du titre et id diarycss pour cake.css
+
+commit a061a618f25c690958f17fb63653ad07e4ad44c6
+Merge: c3869ed cbacb8c
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 23:27:36 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into index_view
+
+commit c3869edba8b9f39ffa06d8fbd04ad757249c151d
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 23:07:57 2016 +0100
+
+    ajout de la mise en forme pour formulaire add et login
+
+commit ce1dd9e05b1a33293f56def3298318eb9ec2e961
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 23:07:27 2016 +0100
+
+    ajout des titres de page
+
+commit cbacb8cb581dc505029a1f3385b47f9fb75593ab
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 23:06:36 2016 +0100
+
+    reparere ce que le merge a cassé
+
+commit c8e317257ed9fcd50f29c702bc531bad66b864b4
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 23:06:22 2016 +0100
+
+    ajout des lien pour login et add
+
+commit f5ed34d82ee8984c43f4c22b06e33a02a76bd070
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 23:05:25 2016 +0100
+
+    reso conflit
+
+commit fc27057346b1ce1ac82a384708ea79b129bc2978
+Merge: d295f17 8657a5e
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 22:31:34 2016 +0100
+
+    pull develop
+
+commit 8657a5e2808cbdf80a4360e47a443412098d3e0e
+Merge: 72b7e7b e41dc6f
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 21:15:34 2016 +0100
+
+    resolution de conflit
+
+commit d295f170a84d1266342f5fb777ff728fdb8f187a
+Merge: 549ffeb e41dc6f
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 21:01:25 2016 +0100
+
+    merge
+
+commit 72b7e7b5dbc0f5d7c0b931311b0c809ef4225665
+Merge: b2f0e1b 0015a50
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 20:58:18 2016 +0100
+
+    conflit resolu
+
+commit b2f0e1be956b62a5ef07c693c75043d9be908717
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 20:02:04 2016 +0100
+
+    msg erreur jai du commit cet modif
+
+commit e41dc6fe7cc64c12da98e3af86436fe5433600df
+Merge: e471e8c 4607eb2
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 30 18:09:40 2016 +0100
+
+    Livraison fonctionnalités Fighters
+
+commit 4607eb25b0259110b0d2314cd25cb410163e870c
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 30 17:37:51 2016 +0100
+
+    Correction de levelUp pour régénérer les PV
+
+commit 16a697013e45f02c1273fd30b535a2b26a32014f
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 30 17:23:58 2016 +0100
+
+    Traitement du formulaire de level up (opérationnel)
+
+commit e471e8c63cac72cc96e27f61303580bf9824d630
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 15:11:16 2016 +0100
+
+    font
+
+commit 549ffeb6e649abff848560c668731d99804dc5ed
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 15:09:09 2016 +0100
+
+    jolie petite arène
+
+commit 19f78d82783c23cfc00e51d75a96a1738b9335bf
+Merge: 413ae41 3ad79ad
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 11:03:46 2016 +0100
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into sight
+
+commit 413ae41e6dd3fe246e3a66566f0d82385e1f1aa6
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sun Oct 30 11:02:28 2016 +0100
+
+    message
+
+commit 3ad79add4543f68e3f03c9daf42217cd2a197ed3
+Author: aurelie <aurelie@lampaurelie>
+Date:   Sun Oct 30 10:38:05 2016 +0100
+
+    ajout de la police, image et index css + modif index default home et cake.css
+
+commit 0015a5031bee7d3db5173db1e102ab3939fe3491
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Sun Oct 30 10:05:54 2016 +0100
+
+    Login Logout Add sans session
+
+commit b2ad6d3ff7e11581de1590fb6cdb274690d624cf
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Sat Oct 29 16:09:17 2016 +0200
+
+    carte(design)
+
+commit e3f5f38de883981135b3b8ffbe2944c9be00e7aa
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Sat Oct 29 13:25:26 2016 +0200
+
+    Nouvelle fonction displayevent
+
+commit 5fac1b17d2d42f70b79074e251811def17860e00
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Fri Oct 28 11:51:02 2016 +0200
+
+    Correction de la méthode mayLevelUp pour tenir compte du fait qu'on puisse continuer à cumuler l'xp sans levelup de suite
+
+commit 8afa18acfc43046cc78743f67678e0487ee5a77a
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Fri Oct 28 11:40:48 2016 +0200
+
+    Création du formulaire de level up (sans effet)
+
+commit 338554b5a8c09984cd413363a1f87852df06e5e5
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Fri Oct 28 11:38:40 2016 +0200
+
+    i don't know what i am comminting
+
+commit 915be9e62966398a17f74dfd61a3cb554baf93cf
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Fri Oct 28 11:27:53 2016 +0200
+
+    form pour bouger/attaquer
+
+commit 4c915db45fffdeb824fae4eb68d716f9422fbcf7
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Fri Oct 28 11:11:48 2016 +0200
+
+    Implémentation de l'affichage du combattant
+
+commit 5b88e6809daec312897caf1a78c5faa655630efc
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Fri Oct 28 11:08:12 2016 +0200
+
+    events lors d'une attaque
+
+commit ecb9f86ccb999251b5589e06e6fe120987e665b5
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Fri Oct 28 10:46:55 2016 +0200
+
+    move fighter + cas où il rencontre un ennemi
+
+commit 3b379f72669076d8cad10651a3861d67f86f35fc
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Fri Oct 28 10:31:10 2016 +0200
+
+    suppression des Elements : finalement les différents affichages sont directement gérés dans la vue Fighter
+
+commit c379de38af2ce5863d85a4c1a173084f236388f6
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Fri Oct 28 10:28:40 2016 +0200
+
+    Implémentation du formulaire de création de personnage (opérationnel)
+
+commit ad70e526f0a2ccae7be7040f4789df9a0431feff
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Thu Oct 27 23:29:27 2016 +0200
+
+    Création d'un formulaire sommaire de création de combattant (n'a pas encore d'effet)
+
+commit 3ab3e73c7d87bf4ce76d86e010c120e003bd4c59
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Thu Oct 27 23:04:31 2016 +0200
+
+    Mise en place de deux Elements creation et selection pour la vue Fighter
+
+commit 6e13043a18ae373f50fa2b6ee1a2a7a4083f0756
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Oct 26 14:17:51 2016 +0200
+
+    tentative 2
+
+commit e6f62e6e9274cf2c70b5f27b3dd490150e25cf46
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Wed Oct 26 14:15:55 2016 +0200
+
+    fusion
+
+commit b8a0ca3c16c5ea79ee803cb4cf073976f03c4010
+Merge: 116c38f d7ab856
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Wed Oct 26 13:58:26 2016 +0200
+
+    encore resolution conflits
+
+commit 116c38f082b1ae5bc171b1427fb93838ae9da8af
+Merge: 07fbdd3 2e66825
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Wed Oct 26 13:48:12 2016 +0200
+
+    resolution conflits
+
+commit d7ab85627e19ac57d16c5eeff2076808678b2b9e
+Merge: b90b817 07fbdd3
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Oct 26 13:26:34 2016 +0200
+
+    résolution de conflits
+
+commit b90b8178b0316c72ada28a1cf221fe09372150f5
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Oct 26 13:19:14 2016 +0200
+
+    index
+
+commit 2e66825b597b035059d8cd5a6853b0b802016c34
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Wed Oct 26 12:25:32 2016 +0200
+
+    Fonctions de création d'events + fonction d'affichage des events
+    
+    fonctions createEventDeath($fighter, $enemy)
+    fonctions createEventMiss($fighter, $enemy)
+    fonctions createEventHurt($fighter, $enemy)
+    createEventAdd($fighter)
+    createEventQuit($fighter)
+    displayEvents($fighterId)
+
+commit 4847f9b59fdef5fe1f9779f7c728881d59ac3371
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Wed Oct 26 12:24:28 2016 +0200
+
+    formule pour toucher changee
+
+commit 07fbdd38cee0b9a03d6b2adc10720f372ca674bc
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Oct 25 21:48:23 2016 +0200
+
+    Implémentation de la méthode mayLevelUp et ajustement de l'affichage en fonction de son retour (pour proposer ou non à l'utilisateur de levelup
+
+commit ab9711ea645eb38d5de3a6778375ae7823cf33c8
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Tue Oct 25 20:21:43 2016 +0200
+
+    Correction de la fonction levelUp : améliore désormais la caractéristique choisie
+
+commit bd3eb1a61e0668e591437051460fc496f1209e72
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Oct 25 17:36:41 2016 +0200
+
+    updateFighter
+
+commit a77d397a51de0ef698a87598008e303af2d61608
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Tue Oct 25 14:56:09 2016 +0200
+
+    display map + attack (faut encore mettre les appels des events
+
+commit 65eefcdf478e097ec10bf7cf39d91feb4c8c1007
+Merge: b4cf116 5100bc0
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Mon Oct 24 20:48:03 2016 +0200
+
+    Merge branch 'develop' of https://github.com/Leslie-Ros/projet_arenes into sight
+
+commit 331fd18936aba59aaa0fadedef43926b6560c620
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 24 20:24:50 2016 +0200
+
+    Implémentation de la fonction levelUp (opérationnelle, attention ne teste pas si c'est le bon moment ou pas de levelup)
+
+commit 26fb40c500a3c4699ba421bffcf83553728cd40b
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 24 20:12:37 2016 +0200
+
+    Différenciation du comportement de la page Fighter en fonction de l'existence ou non d'un personnage
+
+commit 5100bc0d8722afa78fea20dba4b0bd375acfd363
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Mon Oct 24 14:40:10 2016 +0200
+
+    OK
+
+commit 0cbd57ffeb7d4343423140a876ab376ecede9e3a
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 24 13:41:50 2016 +0200
+
+    Mise à jour
+
+commit 3d737125b10e950b5fa8f169abc6e0ec21d1b026
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Mon Oct 24 13:26:05 2016 +0200
+
+    essai
+
+commit 1ae7741c8f89048b42b5ac4e34053305fa90f043
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 23 13:48:13 2016 +0200
+
+    Implementation de la méthode getFightersForUser
+
+commit 2273b785216ae5d3c4395978935c47348f8b8af8
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 23 13:21:13 2016 +0200
+
+    Implémentation de la méthode deleteFighter (opérationnelle, pas encore de bouton)
+
+commit 60d3e8a6dfdd3865890c910585d909f53160594f
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 23 02:48:05 2016 +0200
+
+    Test et débug de la fonction createFighter (operationnelle, pas encore de bouton)
+
+commit 4df4951cae21bdcfe03f833033e60fff088c7d74
+Author: CarolineMienne <caro.eleve@gmail.com>
+Date:   Sun Oct 23 02:22:54 2016 +0200
+
+    Ajout de la fonction createFighter (buguée)
+
+commit b4cf116e956706c1f13db04fb4e58a4fec0eb4ed
+Author: Lasgnes <lasgnes@yahoo.fr>
+Date:   Fri Oct 21 13:06:33 2016 +0200
+
+    essai
+
+commit ef9c29155310be1fa0abdb74283d8502156071dd
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Wed Oct 19 16:22:57 2016 +0200
+
+    TP1+TP2
+    
+    Pour que tout le monde ai les mêmes bases pour commencer le projet.
+
+commit 6f76f719bd41eca69d46ec4e1e14b5831bd6dcdd
+Author: Leslie Ros <aspire-one@hotmail.fr>
+Date:   Wed Oct 19 16:13:41 2016 +0200
+
+    :confetti_ball: Added .gitattributes & .gitignore files

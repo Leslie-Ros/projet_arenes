@@ -24,12 +24,12 @@ class FightersTable extends Table {
     function test() {
         return 'ok';
     }
-    
-    var $largeur=10;
-    var $longueur=15;
+
+    var $largeur = 10;
+    var $longueur = 15;
     var $maxAp = 3;
     var $delay = 1;
-
+    
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
         $figterlist = $this->find('all')->where(['level =' => ($max['level'])]);
@@ -41,8 +41,9 @@ class FightersTable extends Table {
         //création d'un nouveau tuple
         $table = TableRegistry::get('Fighters'/* ,['className' => 'FightersTable'] */);
         $combattant = $table->newEntity();
-        
-        $x=0; $y=0;
+
+        $x = 0;
+        $y = 0;
 
         //remplissage des attributs de ce nouveau tuple
         $combattant->name = $nom;
@@ -56,20 +57,19 @@ class FightersTable extends Table {
         $combattant->skill_health = 5;
         $combattant->current_health = $combattant->skill_health;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
-        $combattant->next_action_time=Time::now();
+        $combattant->next_action_time = Time::now();
         //$combattant->guild_id;
-        
         //insertion du nouveau tuple
         $table->save($combattant);
-        
+
         //initialisation des vraies coordonnées de départ
         $cpt = 500; //on évite la boucle infinie dans le cas où tout serait plein
         do {
-            $combattant->coordinate_x = rand(0, $this->longueur-1);
-            $combattant->coordinate_y = rand(0, $this->largeur-1);
+            $combattant->coordinate_x = rand(0, $this->longueur - 1);
+            $combattant->coordinate_y = rand(0, $this->largeur - 1);
             $cpt--;
-        }while ($this->validMove($combattant->coordinate_x, $combattant->coordinate_y, $arena, $combattant->id) == FALSE && $cpt >1);
-        
+        } while ($this->validMove($combattant->coordinate_x, $combattant->coordinate_y, $arena, $combattant->id) == FALSE && $cpt > 1);
+
         //sauvegarde des modifications
         $table->save($combattant);
 
@@ -91,15 +91,15 @@ class FightersTable extends Table {
         $fighters = $this->find()->where(['player_id' => $userid])->toArray();
         return $fighters;
     }
-    
+
     public function getAllFighters() {
         $fighters = $this->find('all')->toArray();
         return $fighters;
     }
-    
-    public function getDefaultFighterId($userid){
-        $fighters=$this->getFightersForUser($userid);
-        if (empty($fighters)){
+
+    public function getDefaultFighterId($userid) {
+        $fighters = $this->getFightersForUser($userid);
+        if (empty($fighters)) {
             return null;
         }
         return $fighters[0]['id'];
@@ -196,7 +196,7 @@ class FightersTable extends Table {
         $sight = $fighter['skill_sight'];
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
-                if (abs($x - $row) +  abs($y - $col) <= $sight){
+                if (abs($x - $row) + abs($y - $col) <= $sight) {
                     $mask[$row][$col] = "#";
                 }
             }
@@ -234,6 +234,7 @@ class FightersTable extends Table {
      * @param type $arena
      */
     public function move($direction, $id, $arena) {
+        $this->Events = TableRegistry::get('Events');
         $fighter = $this->get($id);
         switch ($direction) {
             case 'N' :
@@ -254,6 +255,7 @@ class FightersTable extends Table {
             //pr("validmove");
             $this->updateFighter($fighter);
             $this->removeActionPoint($fighter['id']);
+            $this->Events->createEventMove($fighter);
         }
     }
 
@@ -274,7 +276,7 @@ class FightersTable extends Table {
         }
         return $arena;
     }
-    
+
     //vérifie si l'on a des points d'actions
     public function hasActionPoints($id) {
         $fighter = $this->get($id);
@@ -293,15 +295,16 @@ class FightersTable extends Table {
         $ap = $this->hasActionPoints($fighter['id']);
         $ap -= 1;
         $time = Time::now();
-        if($fighter['next_action_time']->diffInSeconds() >= $this->maxAp*$this->delay){
+        if ($fighter['next_action_time']->diffInSeconds() >= $this->maxAp * $this->delay) {
             for ($i = 0; $i < $ap; $i++) {
                 $time->subSeconds($this->delay);
             }
-        }else {
-             $time->addSeconds($this->delay);
+        } else {
+            $time->addSeconds($this->delay);
         }
         $fighter['next_action_time'] = $time;
         $this->updateFighter($fighter);
         //pr($ap);
     }
+
 }

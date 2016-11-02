@@ -45,6 +45,8 @@ class ArenasController extends AppController {
                     if (!empty($this->request->data['name'])) {
                         $arena = $this->Fighters->createArena(); //on crée une arène virtuelle pour savoir où il est possible de placer le nouveau personnage
                         $this->Fighters->createFighter($this->request->data['name'], $userid, $arena);
+                        $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($userid));
+                   
                     }
                     break;
                 case 'levelup':
@@ -60,7 +62,7 @@ class ArenasController extends AppController {
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
-            $this->request->session()->write('User.fighter_id', $persos[0]['id']); //A CHANGER SI PERSOS MULTIPLES
+            //$this->request->session()->write('User.fighter_id', $persos[0]['id']); //A CHANGER SI PERSOS MULTIPLES
             $this->set('hasFighter', TRUE);
             $this->set('combattant', $persos[0]);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
@@ -68,9 +70,11 @@ class ArenasController extends AppController {
     }
 
     public function sight() {
+    if($this->request->session()->read('User.fighter_id')){//renvoie null si la variable n'existe pas
         //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
+        $this->loadModel('Events');
         $arena = $this->Fighters->createArena();
         $this->set('largeur', $this->Fighters->largeur);
         $this->set('longueur', $this->Fighters->longueur);
@@ -78,6 +82,7 @@ class ArenasController extends AppController {
           $this->Fighters->removeActionPoint(1); */
 
         //post traitemnt
+        $log = "Bienvenue !";
         $fid = $this->request->session()->read('User.fighter_id');
         if ($this->request->is("post")) {
             //pr($this->request->data);
@@ -86,12 +91,18 @@ class ArenasController extends AppController {
                 $this->Fighters->move($this->request->data['direction'], $fid, $arena);
                 //1 id du fighter, à changer par $this->request->session->read($fighterId)
                 $arena = $this->Fighters->createArena();
+                $log = $this->Events->getLastEvent()->toArray()['name'];
             }
         }
         $mask = $this->Fighters->canSee($arena, $fid);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
         $this->set('ap', $this->Fighters->hasActionPoints($fid));
+        $this->set('log', $log);
+        $this->set('hasFighter', true);
+    }else {
+        $this->set('hasFighter', false);
+    }
     }
 
     //Exemple d'utilisation de la fonction createFighter
@@ -101,13 +112,14 @@ class ArenasController extends AppController {
 
     public function diary() {
         //test
-        $this->loadModel('Events');
-        $this->loadModel('Fighters');
-        $tableFighters = TableRegistry::get('Fighters');
-        //  $this->Events->createEventDeath($fighter,$enemy);
-        $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
+        if($this->request->session()->read('User.fighter_id')){
+            $this->loadModel('Events');
+            $this->loadModel('Fighters');
+            $tableFighters = TableRegistry::get('Fighters');
+            //  $this->Events->createEventDeath($fighter,$enemy);
+            $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
+        }
     }
-
 }
 
 ?>

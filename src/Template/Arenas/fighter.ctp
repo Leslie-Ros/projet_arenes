@@ -12,7 +12,7 @@
         ?>
     </table>
         
-        <section class="cadrecss">
+        <section class="cadrecssfighter">
         <?php
         if ($mayLevelUp == TRUE) { ?>
             <section>Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
@@ -51,12 +51,5 @@
                 'controller' => 'Arenas',
                 'action' => 'sight'
             ]); ?>" class="btn btn-lg btn-primary">JOUER MAINTENANT</a>
-
-</div>
- <div id="evenfighter">
- <a href="<?php echo $this->Url->build([
-                'controller' => 'Arenas',
-                'action' => 'diary'
-            ]); ?>" class="btn btn-lg btn-primary">JOURNAL DES EVENEMENTS</a>
 
 </div>
