@@ -15,6 +15,9 @@ use \Cake\Network\Exception;
 use Cake\Utility\Text;
 use Google_Client;
 use Google_Service_Oauth2;
+use Cake\Mailer\Email;
+
+
 class PlayersController extends AppController
 {
     public function beforeFilter(Event $event)
@@ -23,6 +26,7 @@ class PlayersController extends AppController
 //         $this->Auth->allow(['add', 'logout']);
         // Pages accessibles sans être connecté 
         $this->Auth->allow('login');
+        $this->Auth->allow('forgetpassword');
         $this->Auth->allow('googlelogin');
         $this->Auth->allow('googlecallback');
         $this->Auth->allow('logout');
@@ -80,9 +84,32 @@ class PlayersController extends AppController
         $this->Flash->success(__("Vous êtes maintenant déconnecté."));
         $this->request->session()->delete('User.player_id');
         if ($this->request->session()->check('User.fighter_id'))
-            $this->request->session()->delete('User.fighter_id');
+        { $this->request->session()->delete('User.fighter_id');}
         return $this->redirect($this->Auth->logout());
     }
+    
+
+ public function forgetpassword() {
+     $this->loadModel('Players');
+     if ($this->request->is('post')) {
+        $email=$this->request->data['email'];
+        $player=$this->Players->findByEmail($email);
+        $newpassword = $this->Players->chaine_aleatoire(5,'azertyuiopqsdfghjklmwxcvbn123456789');
+        $player->password = $newpassword;
+        if ($this->Players->save($player)) {
+            $email = new Email('default');
+            $email
+                    ->to($player->email)
+                    ->subject('Nouveau password webarena')
+                    ->from(['webarenaprojet@gmail.com' => 'WebArena'])
+                    ->send('Voici votre nouveau password: ' . $newpassword);
+        } else {
+            $this->Flash->error(__('Impossible de générer un nouveau password'));
+        }
+        return $this->redirect(['action' => 'login']);
+     }
+ }
+
     
  public function googlelogin()
     {
@@ -149,6 +176,7 @@ class PlayersController extends AppController
            
                         // et nous redirigeons vers la page de succès de connexion
                         $this->redirect($this->Auth->redirectUrl());
+                        $this->Flash->success(__("Vous êtes maintenant connecté."));
                     } else {
                         // si l'utilisateur n'est pas dans notre utilisateur, alors nous le créons avec les informations récupérées par Google+
                         $data = array();
@@ -168,6 +196,7 @@ class PlayersController extends AppController
                                    $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($data['id'])); 
                
                             $this->redirect($this->Auth->redirectUrl());
+                            $this->Flash->success(__("Vous êtes maintenant connecté."));
                         } else {
                             $this->Flash->set('Erreur de connection');
                             // et nous redirigeons vers la page de succès de connexion
