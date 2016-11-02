@@ -606,7 +606,7 @@ div.message.hidden {
 }
 
 .content .related h4 {
-    color: #89000;
+    color: #890000;
     padding-bottom: 0.5rem;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -625,6 +625,15 @@ form {
  font-family: serif;
  margin-top:5px;
  }
+ #cogoogle
+ {
+    text-align: center;
+    margin-top: 100px;
+ margin-left: 250px;
+ background-color:#FAFAFA;
+ padding:10px;
+ width:600px;
+ }
 
 /*Mise en forme index*/
 #texte
@@ -634,7 +643,7 @@ form {
 
 #police
 {
-    font-family: 'bloodynormal';
+    font-family: 'bloodynormal', arial;
     font-size: 1cm;
     color: #FFF;
     text-shadow: #000 2px 2px 10px; 
@@ -659,13 +668,13 @@ margin-top: 1cm;
 h1
 {
      text-shadow: #FFF 1px 1px 10px; 
-     font-family: 'notmarykateregular';
+     font-family: 'notmarykateregular', arial;
      text-align: center;
 }
 
 /*Mise en forme Diary*/
 
-#diarycss
+.cadrecss
 {
  margin-top: 10px;
  margin-left: 150px;
@@ -697,4 +706,100 @@ h1
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.ttf') format('truetype'),
          url('/projet_arenes/webroot/web_fonts/notmarykate_regular_macroman/NOTMK___-webfont.svg#notmarykateregular') format('svg');
 
+}
+
+/*Mise en forme de sight*/
+#bselection form {
+    float: right;
+    margin-left: 0px;
+    margin-right: 300px;
+    margin-top: 100px;
+    width: 300px;
+}
+#evensight 
+{
+ text-align: center;
+ margin-top: 350px;
+ margin-left: 700px;
+ background-color:#990000;
+ color: white;
+ font-weight: bold;
+ padding:10px;
+ width:250px;
+ border-style: ridge;
+ opacity: 0.7;
+}
+
+#evensight a
+{
+    color: white;
+    font-family: notmarykateregular;
+}
+#jeu
+{
+    float: left;
+    margin-left: 100px;
+}
+#arene{
+    text-align: center;
+    height: 45px;width: 45px;
+    border-style: solid;
+    float: left;
+}
+
+.backgroundSight{
+    background-color: #890000;
+}
+
+.backgroundFog{
+    background-color: #000000;
+}
+/*Mise en forme fighter*/
+
+h2
+{
+     text-shadow: #FFF 1px 1px 10px;    
+}
+#jouer
+{
+    text-align: center;
+    margin-top: 70px;
+ margin-left: 350px;
+ float: left;
+ background-color:#990000;
+ color: white;
+ font-weight: bold;
+ padding:10px;
+ width:250px;
+ border-style: ridge;
+}
+
+#jouer a
+{
+    color: white;
+    font-family: 'notmarykateregular', arial;
+}
+#evenfighter 
+{
+ text-align: center;
+ margin-top: 70px;
+ margin-right: 300px;
+ float: right;
+ background-color:#990000;
+ color: white;
+ font-weight: bold;
+ padding:10px;
+ width:300px;
+ border-style: ridge;
+
+}
+
+#evenfighter a
+{
+    color: white;
+    font-family: 'notmarykateregular', arial;
+}
+
+.monPerso {
+    background-color: green;
 }

@@ -24,7 +24,7 @@ class PlayersTable extends Table {
                         ->notEmpty('password', 'Un mot de passe est nécessaire');
     }
 
-    public function chaine_aleatoire($nb_car, $chaine = 'azertyuiopqsdfghjklmwxcvbn123456789') {
+    public function chaine_aleatoire($nb_car, $chaine ) {
         $nb_lettres = strlen($chaine) - 1;
         $generation = '';
         for ($i = 0; $i < $nb_car; $i++) {
@@ -38,8 +38,9 @@ class PlayersTable extends Table {
     
     public function findByEmail($email){
        $player= $this->find('all')
-                ->where(['email'=>$email])
+                ->where(['email ='=>$email])
                 ->first();
        return $player;
+       
     }
 }

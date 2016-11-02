@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/wamp64/www/projet_arenes/src/Controller/PlayersController.php</file>
             <file>file:/C:/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
             <file>file:/C:/wamp64/www/projet_arenes/src/Template/Arenas/diary.ctp</file>
@@ -12,6 +13,15 @@
             <file>file:/C:/wamp64/www/projet_arenes/src/Template/Players/login.ctp</file>
             <file>file:/C:/wamp64/www/projet_arenes/webroot/css/cake.css</file>
             <file>file:/C:/wamp64/www/projet_arenes/src/Template/Pages/home.ctp</file>
+=======
+<<<<<<< HEAD
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Template/Arenas/sight.ctp</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/EventsTable.php</file>
+=======
+>>>>>>> 0996b4043207900891fe598456a0c9564146730a
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Model/Table/FightersTable.php</file>
+            <file>file:/E:/Dev/wamp64/www/projet_arenes/src/Controller/ArenasController.php</file>
+>>>>>>> 42fd0741d836d4c048272931d7cafb0a539bf488
         </group>
     </open-files>
 </project-private>

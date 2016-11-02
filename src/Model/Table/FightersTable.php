@@ -17,6 +17,7 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table/* Registry */;
 use Cake\ORM\TableRegistry;
+use Cake\I18n\Time;
 
 class FightersTable extends Table {
 
@@ -24,8 +25,10 @@ class FightersTable extends Table {
         return 'ok';
     }
     
-    var $largeur=15;
-    var $longueur=10;
+    var $largeur=10;
+    var $longueur=15;
+    var $maxAp = 3;
+    var $delay = 1;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
@@ -33,16 +36,13 @@ class FightersTable extends Table {
         return $figterlist;
     }
 
-    public function createFighter($nom, $joueur) {
-
-
-        //initialisation des coordonnées de départ (susceptibles d'etre modifiées)
-        $x = 0;
-        $y = 0;
+    public function createFighter($nom, $joueur, $arena) {
 
         //création d'un nouveau tuple
         $table = TableRegistry::get('Fighters'/* ,['className' => 'FightersTable'] */);
         $combattant = $table->newEntity();
+        
+        $x=0; $y=0;
 
         //remplissage des attributs de ce nouveau tuple
         $combattant->name = $nom;
@@ -51,14 +51,26 @@ class FightersTable extends Table {
         $combattant->coordinate_y = $y;
         $combattant->level = 1;
         $combattant->xp = 0;
-        $combattant->skill_sight = 0;
+        $combattant->skill_sight = 2;
         $combattant->skill_strength = 1;
-        $combattant->skill_health = 3;
-        $combattant->current_health = 3;
+        $combattant->skill_health = 5;
+        $combattant->current_health = $combattant->skill_health;
         //propriétés ayant une valeur par défaut (à gérer ultérieurement)
-        //$combattant->next_action_time=1; //a modifier quand on en sera à la gestion temporelle
+        $combattant->next_action_time=Time::now();
         //$combattant->guild_id;
+        
         //insertion du nouveau tuple
+        $table->save($combattant);
+        
+        //initialisation des vraies coordonnées de départ
+        $cpt = 500; //on évite la boucle infinie dans le cas où tout serait plein
+        do {
+            $combattant->coordinate_x = rand(0, $this->longueur-1);
+            $combattant->coordinate_y = rand(0, $this->largeur-1);
+            $cpt--;
+        }while ($this->validMove($combattant->coordinate_x, $combattant->coordinate_y, $arena, $combattant->id) == FALSE && $cpt >1);
+        
+        //sauvegarde des modifications
         $table->save($combattant);
 
         //à améliorer : tester la réussite pour informer l'utilisateur de la réussite de l'opération
@@ -79,7 +91,19 @@ class FightersTable extends Table {
         $fighters = $this->find()->where(['player_id' => $userid])->toArray();
         return $fighters;
     }
-
+    
+    public function getAllFighters() {
+        $fighters = $this->find('all')->toArray();
+        return $fighters;
+    }
+    
+    public function getDefaultFighterId($userid){
+        $fighters=$this->getFightersForUser($userid);
+        if (empty($fighters)){
+            return null;
+        }
+        return $fighters[0]['id'];
+    }
 
     /**
      * Un fighter attaque un autre fighter
@@ -93,7 +117,7 @@ class FightersTable extends Table {
         $this->Events = TableRegistry::get('Events');
         //test pour toucher ;
         $dice = rand(20, 1);
-        pr($dice);
+        //pr($dice);
         if (10 + $def['level'] - $att['level'] >= $dice) {
             $def['skill_health'] -= $att['skill_strength'];
 
@@ -114,9 +138,8 @@ class FightersTable extends Table {
             $this->updateFighter($att);
         } else {
             $this->Events->createEventMiss($att, $def);
-
         }
-        pr($def['skill_health']);
+        //pr($def['skill_health']);
     }
 
     public function updateFighter($fighter) {
@@ -153,7 +176,7 @@ class FightersTable extends Table {
         $combattant = $table->get($id);
 
 
-        if ($combattant->xp >= 4*$combattant->level) {
+        if ($combattant->xp >= 4 * $combattant->level) {
             return TRUE;
         }
         return FALSE;
@@ -173,7 +196,7 @@ class FightersTable extends Table {
         $sight = $fighter['skill_sight'];
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
-                if (abs($row - $x) <= $sight && abs($col - $y) <= $sight) {
+                if (abs($x - $row) +  abs($y - $col) <= $sight){
                     $mask[$row][$col] = "#";
                 }
             }
@@ -193,9 +216,9 @@ class FightersTable extends Table {
     public function validMove($x, $y, $arena, $id) {
         $valid = false;
         if ($x >= 0 && $y >= 0 && $x < $this->largeur && $y < $this->longueur) {
-            pr("dans les bornes");
+            //pr("dans les bornes");
             if ($arena[$x][$y] == '_') {
-                pr("valid");
+                //pr("valid");
                 $valid = true;
             } else {
                 $this->attack($id, $arena[$x][$y]);
@@ -226,27 +249,59 @@ class FightersTable extends Table {
                 $fighter['coordinate_y'] += 1;
                 break;
         }
-        pr("move");
+        //pr("move");
         if ($this->validMove($fighter['coordinate_x'], $fighter['coordinate_y'], $arena, $id)) {
-            pr("validmove");
+            //pr("validmove");
             $this->updateFighter($fighter);
+            $this->removeActionPoint($fighter['id']);
         }
     }
-    
+
     //creer l'arène
-    public function createArena(){
+    public function createArena() {
         $arena = array();
         for ($row = 0; $row < $this->largeur; $row++) {
             for ($col = 0; $col < $this->longueur; $col++) {
                 $arena[$row][$col] = '_';
             }
         }
-        $fightersList = $this->find('all');
+
+        //$fightersList = $this->getFightersForUser('545f827c-576c-4dc5-ab6d-27c33186dc3e');
+        $fightersList = $this->getAllFighters();
         //peupler $arena avec les personnages
         foreach ($fightersList as $value) {
             $arena[$value['coordinate_x']][$value['coordinate_y']] = $value['id'];
         }
         return $arena;
     }
+    
+    //vérifie si l'on a des points d'actions
+    public function hasActionPoints($id) {
+        $fighter = $this->get($id);
+        $time = $fighter['next_action_time'];
+        $ap = intval($time->diffInSeconds() / $this->delay);
+        if ($ap > $this->maxAp) {
+            $ap = $this->maxAp;
+        }
+        //pr("has ".$ap);
+        return $ap;
+    }
 
+    //enlève un point d'action et réajuste la date de référence (now - paRestants*delai secondes)
+    public function removeActionPoint($id) {
+        $fighter = $this->get($id);
+        $ap = $this->hasActionPoints($fighter['id']);
+        $ap -= 1;
+        $time = Time::now();
+        if($fighter['next_action_time']->diffInSeconds() >= $this->maxAp*$this->delay){
+            for ($i = 0; $i < $ap; $i++) {
+                $time->subSeconds($this->delay);
+            }
+        }else {
+             $time->addSeconds($this->delay);
+        }
+        $fighter['next_action_time'] = $time;
+        $this->updateFighter($fighter);
+        //pr($ap);
+    }
 }
