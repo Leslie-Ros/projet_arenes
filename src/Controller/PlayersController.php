@@ -144,6 +144,7 @@ class PlayersController extends AppController
                         $this->Auth->setUser($result->toArray());
                         // et nous redirigeons vers la page de succès de connexion
                         $this->redirect($this->Auth->redirectUrl());
+                        $this->Flash->success(__("Vous êtes maintenant connecté."));
                     } else {
                         // si l'utilisateur n'est pas dans notre utilisateur, alors nous le créons avec les informations récupérées par Google+
                         $data = array();
@@ -158,6 +159,7 @@ class PlayersController extends AppController
                             $data['id'] = $entity->id;
                             $this->Auth->setUser($data);
                             $this->redirect($this->Auth->redirectUrl());
+                            $this->Flash->success(__("Vous êtes maintenant connecté."));
                         } else {
                             $this->Flash->set('Erreur de connection');
                             // et nous redirigeons vers la page de succès de connexion
