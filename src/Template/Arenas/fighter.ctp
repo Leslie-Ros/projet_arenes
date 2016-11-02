@@ -12,10 +12,10 @@
         ?>
     </table>
         
-        <section class="cadrecss">
+        
         <?php
         if ($mayLevelUp == TRUE) { ?>
-            <section>Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
+            Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
                  <?php echo $this->Form->create();
                  $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
                  echo $this->Form->select('competence', $options);
@@ -23,19 +23,18 @@
                  echo $this->Form->button('Passer au niveau supérieur !');
                  echo $this->Form->end();
                  ?>
-            </section>
     
         <?php } else {
-            echo "Encore quelques points à gagner !";
+            ?> <section class='cadrecss'>Encore quelques points à gagner !</section><?php
         }
         $parametres = array("combattant" => $combattant, "mayLevelUp" => $mayLevelUp);
         //echo $this->element('selection', $parametres);
     }
     
-    
-    else {//s'il n'y a pas de combattant associé à ce joueur
+    //Desormais on laisse toujours la possibilité de créer d'autres fighters
+    /*else {//s'il n'y a pas de combattant associé à ce joueur*/
         ?>
-    <h2>Créez votre combattant</h2>
+    <h2>Créer un nouveau combattant</h2>
         <?php
         echo $this->Form->create('Fighters');
         echo $this->Form->input('name');
@@ -43,8 +42,8 @@
         echo $this->Form->button('Valider');
         echo $this->Form->end();
         //echo $this->element('creation');
-    }
-    ?></section>
+    /*}*/
+    ?>
 
     <div id="jouer">
  <a href="<?php echo $this->Url->build([
