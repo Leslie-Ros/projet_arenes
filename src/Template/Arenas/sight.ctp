@@ -1,5 +1,6 @@
 <?= $this->assign('title', 'Flêche dans le genou');?>
 <?php
+echo $log;
 echo "Il vous reste ".$ap." points d'actions";
 echo "<br>";
 ?>

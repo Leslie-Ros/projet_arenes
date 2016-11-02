@@ -71,6 +71,7 @@ class ArenasController extends AppController {
         //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
+        $this->loadModel('Events');
         $arena = $this->Fighters->createArena();
         $this->set('largeur', $this->Fighters->largeur);
         $this->set('longueur', $this->Fighters->longueur);
@@ -78,6 +79,7 @@ class ArenasController extends AppController {
           $this->Fighters->removeActionPoint(1); */
 
         //post traitemnt
+        $log = "Bienvenue !";
         $fid = $this->request->session()->read('User.fighter_id');
         if ($this->request->is("post")) {
             //pr($this->request->data);
@@ -86,12 +88,14 @@ class ArenasController extends AppController {
                 $this->Fighters->move($this->request->data['direction'], $fid, $arena);
                 //1 id du fighter, à changer par $this->request->session->read($fighterId)
                 $arena = $this->Fighters->createArena();
+                $log = $this->Events->getLastEvent()->toArray()['name'];
             }
         }
         $mask = $this->Fighters->canSee($arena, $fid);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
         $this->set('ap', $this->Fighters->hasActionPoints($fid));
+        $this->set('log', $log);
     }
 
     //Exemple d'utilisation de la fonction createFighter
