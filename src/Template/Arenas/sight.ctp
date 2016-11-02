@@ -20,10 +20,10 @@ echo "<br>";
                 if($arena[$row][$col] == "_")
                     echo "\"> ";
                 else if ($arena[$row][$col] == $this->request->session()->read('User.fighter_id')){
-                    echo "  monPerso\">".$arena[$row][$col];
+                    echo "  monPerso\">O";
                 }
                 else
-                    echo "\">".$arena[$row][$col];
+                    echo "\">X"/*.$arena[$row][$col]*/;
             }else {
                 echo "class=\"backgroundFog\">";
             }
