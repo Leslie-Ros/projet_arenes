@@ -158,7 +158,7 @@ class PlayersController extends AppController
                             $data['id'] = $entity->id;
                             $this->Auth->setUser($data);
                             //on initialise les mêmes variables de session que pour la connexion classique
-                            $session->write('User.player_id', $data['id']);
+                            $this->request->session()->write('User.player_id', $data['id']);
                             if ($this->Fighters->getDefaultFighterId($data['id'])!=null)
                                    $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($data['id'])); 
                
