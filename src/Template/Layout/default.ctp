@@ -13,7 +13,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 $cakeDescription = 'CakePHP: the rapid development php framework';
-?>
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,13 +66,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <footer>
     
     <ul>
-    <li id="gpop"><b>Groupe:</b> SI1 - <b>Options:</b> CG</li>
-   <li id="auteur"> <b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS.</li>
-<li><a href="<?php echo $this->Url->build([
+        <li id="gpop"><b>Groupe:</b> SI1 - <b>Options:</b> CG</li>
+        <li id="auteur"> <b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS.</li>
+        <li><a href="<?php echo $this->Url->build([
                 'controller' => 'webroot',
                 'action' => 'versions.log'
             ]); ?>" class="btn btn-lg btn-primary">versions.log</a>
-  </li> </ul>
+        </li>
+        <li>A l'attention du correcteur : la limite temporelle étant implémentée, il faut veiller à ne pas utiliser une base de données contenant déjà des fighters sans next_action_time</li>
+    </ul>
    
     
     </footer>

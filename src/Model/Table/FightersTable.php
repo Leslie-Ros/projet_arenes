@@ -119,14 +119,14 @@ class FightersTable extends Table {
         $dice = rand(20, 1);
         //pr($dice);
         if (10 + $def['level'] - $att['level'] >= $dice) {
-            $def['skill_health'] -= $att['skill_strength'];
+            $def['current_health'] -= $att['skill_strength'];
 
             //xp pour attaque réussie
             $att['xp'] += 1;
             //appel updateFighter pour $def
             $this->updateFighter($def);
             //test si tué
-            if ($def['skill_health'] <= 0) {
+            if ($def['current_health'] <= 0) {
                 //xp pour tué
                 $att['xp'] += $def['level'];
                 $this->deleteFighter($defId);
@@ -139,7 +139,7 @@ class FightersTable extends Table {
         } else {
             $this->Events->createEventMiss($att, $def);
         }
-        //pr($def['skill_health']);
+        //pr($def['current_health']);
     }
 
     public function updateFighter($fighter) {
