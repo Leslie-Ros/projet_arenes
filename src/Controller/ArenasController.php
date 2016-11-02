@@ -54,6 +54,10 @@ class ArenasController extends AppController {
                     //$this->Fighters->levelUp($persos[0]['id'], $this->request->data['competence']);
                     $this->Fighters->levelUp($selected, $this->request->data['competence']);
                     break;
+                case 'selection':
+                    $selected=$this->request->data['id_f'];
+                    $this->request->session()->write('User.fighter_id', $selected);
+                    break;
             }
         }
 
