@@ -1,5 +1,6 @@
 <?= $this->assign('title', 'Flêche dans le genou');?>
 <?php
+echo "Il vous reste ".$ap." points d'actions";
 echo "<br>";
 ?>
 <div id = "jeu"><?php for ($row = 0; $row < $largeur; $row++) {

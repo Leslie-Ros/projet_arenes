@@ -138,16 +138,20 @@ class EventsTable extends Table {
         $x=$fighter['coordinate_x'];
         $y=$fighter['coordinate_y'];
         $datelist=$this->find('all');
+        $event[] = "Il n'y a pas d'évènement de moins de 24h";
         foreach($datelist as $value){
             $xe=$value['coordinate_x'];
             $ye=$value['coordinate_y'];
             $date= $value['date']->modify('-2 hours');
             if(($date->wasWithinLast(1)) and ($xe <= ($x+$sight)) and ($xe >= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye >= ($y-$sight))){
-              $event[]=$value['name'];             
+                if($event[0] === "rien"){
+                    $event[0]=$value['name']; 
+                }else {
+                    $event[]=$value['name'];    
+                }        
+            }
         }
-        
-            }return $event;
-
+        return $event;
     }
 
 }
