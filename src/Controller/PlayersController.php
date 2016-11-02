@@ -1,4 +1,4 @@
-<<?php
+<?php
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -66,7 +66,8 @@ class PlayersController extends AppController
                 $session = $this->request->session();
                 $session->write('User.player_id', $player['id']);
                 $this->Auth->setUser($player);
-                
+                if ($this->Fighters->getDefaultFighterId($player['id'])!=null)
+                   $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($player['id'])); 
                 
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -78,6 +79,8 @@ class PlayersController extends AppController
         $this->request->session()->destroy('access_token');
         $this->Flash->success(__("Vous êtes maintenant déconnecté."));
         $this->request->session()->delete('User.player_id');
+        if ($this->request->session()->check('User.fighter_id'))
+            $this->request->session()->delete('User.fighter_id');
         return $this->redirect($this->Auth->logout());
     }
     
