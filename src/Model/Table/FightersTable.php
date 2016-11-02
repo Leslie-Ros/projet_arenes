@@ -25,10 +25,10 @@ class FightersTable extends Table {
         return 'ok';
     }
     
-    var $largeur=15;
-    var $longueur=10;
+    var $largeur=10;
+    var $longueur=15;
     var $maxAp = 3;
-    var $delay = 10;
+    var $delay = 1;
 
     public function getBestFighter() {
         $max = $this->find()->max('level')->toArray();
@@ -293,8 +293,12 @@ class FightersTable extends Table {
         $ap = $this->hasActionPoints($fighter['id']);
         $ap -= 1;
         $time = Time::now();
-        for ($i = 0; $i < $ap; $i++) {
-            $time->subSeconds($this->delay);
+        if($fighter['next_action_time']->diffInSeconds() >= $this->maxAp*$this->delay){
+            for ($i = 0; $i < $ap; $i++) {
+                $time->subSeconds($this->delay);
+            }
+        }else {
+             $time->addSeconds($this->delay);
         }
         $fighter['next_action_time'] = $time;
         $this->updateFighter($fighter);
