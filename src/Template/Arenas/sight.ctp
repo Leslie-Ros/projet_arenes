@@ -22,6 +22,7 @@ echo "<br>";
     }
     echo "<div style=\"clear: both\"></div>";
 }?></div>
+<div id="explication"><?php echo "Bienvenu dans WebArena! </br> Pour se déplacer, utilisez la barre de selection:</br> North = aller en haut </br> South = aller en bas</br> West= aller à droite</br> East = aller à gauche</br> Pour attaquer, foncez sur votre ennemi!! "; ?></div>
 <div id = "bselection" ><?php
 echo $this->Form->create();
 $options = ['N' => 'North', 'W' => 'West', 'S' => 'South', 'E' => 'East'];
