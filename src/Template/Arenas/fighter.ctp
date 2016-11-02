@@ -1,34 +1,34 @@
 
     <h1>Combattant</h1>
 
-    <?php
-    if ($hasFighter) {
-        ?>
-    <h2>Votre combattant</h2>
-        
-    <table class='fighterPrint'>
-        <?php echo $this->Html->tableHeaders(['Nom', 'Niveau', 'xp', 'Vue', 'Force', 'Vie max', 'PV']);
-        echo $this->Html->tableCells([$combattant->name, $combattant->level, $combattant->xp, $combattant->skill_sight, $combattant->skill_strength, $combattant->skill_health, $combattant->current_health]);
-        ?>
-    </table>
-        
-        
-        <?php
-        if ($mayLevelUp == TRUE) { ?>
-            Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
-                 <?php echo $this->Form->create();
-                 $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
-                 echo $this->Form->select('competence', $options);
-                 echo $this->Form->hidden('idform', ['value' => 'levelup']);
-                 echo $this->Form->button('Passer au niveau supérieur !');
-                 echo $this->Form->end();
-                 ?>
-    
-        <?php } else {
-            ?> <section class='cadrecss'>Encore quelques points à gagner !</section><?php
+    <?php 
+    if ($hasFighter) { ?> <h2>Vos combattants</h2> <?php
+        foreach($combattants as $combattant){?>
+
+        <table class='fighterPrint'>
+            <?php echo $this->Html->tableHeaders(['Nom', 'Niveau', 'xp', 'Vue', 'Force', 'Vie max', 'PV']);
+            echo $this->Html->tableCells([$combattant->name, $combattant->level, $combattant->xp, $combattant->skill_sight, $combattant->skill_strength, $combattant->skill_health, $combattant->current_health]);
+            ?>
+        </table>
+
+
+            <?php
+            if ($mayLevelUp == TRUE) { ?>
+                Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
+                     <?php echo $this->Form->create();
+                     $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
+                     echo $this->Form->select('competence', $options);
+                     echo $this->Form->hidden('idform', ['value' => 'levelup']);
+                     echo $this->Form->button('Passer au niveau supérieur !');
+                     echo $this->Form->end();
+                     ?>
+
+            <?php } else {
+                ?> <section class='cadrecss'>Encore quelques points à gagner !</section><?php
+            }
+            $parametres = array("combattant" => $combattant, "mayLevelUp" => $mayLevelUp);
+            //echo $this->element('selection', $parametres);
         }
-        $parametres = array("combattant" => $combattant, "mayLevelUp" => $mayLevelUp);
-        //echo $this->element('selection', $parametres);
     }
     
     //Desormais on laisse toujours la possibilité de créer d'autres fighters

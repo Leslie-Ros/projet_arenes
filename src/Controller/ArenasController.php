@@ -69,7 +69,8 @@ class ArenasController extends AppController {
         } else {
             $this->request->session()->write('User.fighter_id', $persos[0]['id']);//A CHANGER SI PERSOS MULTIPLES
             $this->set('hasFighter', TRUE);
-            $this->set('combattant', $persos[0]);
+            //$this->set('combattant', $persos[0]);
+            $this->set('combattants', $persos);
             $this->set('mayLevelUp', $this->Fighters->mayLevelUp($persos[0]->id));
         }
         
