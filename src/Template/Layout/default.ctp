@@ -49,12 +49,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         
         <ul class="header">  
 <li><?php echo $this->Html->link('Accueil', '/'); ?></li>
-<li><?php echo $this->Html->link("Jouer", array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
-<li><?php echo $this->Html->link("Combattant", array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
-   <li>    <?php echo $this->Html->link('Se connecter', array('controller' => 'Players', 'action' => 'login')); ?></li>
-<li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Players', 'action' => 'add')); ?></li>
-<li><?php echo $this->Html->link("Se déconnecter", array('controller' => 'Players', 'action' => 'logout')); ?></li>
-<li><?php echo $this->Html->link("Journal", array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
+<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Jouer", array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
+<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Combattant", array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
+<li><?php if (! $this->request->session()->check('User.player_id'))echo $this->Html->link('Se connecter', array('controller' => 'Players', 'action' => 'login')); ?></li>
+<li><?php if (! $this->request->session()->check('User.player_id'))echo $this->Html->link("S'inscrire", array('controller' => 'Players', 'action' => 'add')); ?></li>
+<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Se déconnecter", array('controller' => 'Players', 'action' => 'logout')); ?></li>
+<li><?php if ($this->request->session()->check('User.player_id')) echo $this->Html->link("Journal", array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
 
         </div>
     </nav>
