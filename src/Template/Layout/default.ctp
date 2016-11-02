@@ -66,7 +66,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <footer>
     
     <ul>
-        <li id="gpop"><b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS. - <b>Groupe:</b> SI1 - <b>Options:</b> - CG - <a href="<?php echo $this->Url->build([
+        <li id="gpop"><b>Auteurs:</b> ROS, EA, MIENNE, DELONGEAS. - <b>Groupe:</b> SI1 - <b>Options:</b> - CG - <b>Option supplémentaire:</b> A (multi-combattants) - <b>Bonus:</b> <a href="<?php echo $this->Url->build([
                 'controller' => 'webroot',
                 'action' => 'versions.log'
             ]); ?>" class="btn btn-lg btn-primary">versions.log</a> </li>
