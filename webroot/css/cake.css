@@ -772,7 +772,7 @@ h1
 {
 width: 600px;
 opacity: 0.8;
-margin-left: 10px;
+margin-left: 5px;
 float: left;
 }
 
@@ -798,4 +798,8 @@ h2
 {
     color: white;
     font-family: 'notmarykateregular', arial;
+
+.monPerso {
+    color: green;
+    border-color: #000000;
 }
