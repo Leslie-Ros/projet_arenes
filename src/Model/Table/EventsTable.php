@@ -118,9 +118,9 @@ class EventsTable extends Table {
     }
 
     public function displayEvents($fighterId) {
-
+        
         $tableFighters = TableRegistry::get('Fighters');
-        $fighter = $tableFighters->get($fighterId);
+        /*$fighter = $tableFighters->get($fighterId);
         $sight = $fighter['skill_sight'];
         $x = $fighter['coordinate_x'];
         $y = $fighter['coordinate_y'];
@@ -132,7 +132,7 @@ class EventsTable extends Table {
             if (($date->wasWithinLast(1)) and ( $xe <= ($x + $sight)) and ( $xe >= ($x - $sight)) and ( $ye <= ($y + $sight)) and ( $ye >= ($y - $sight))) {
                 echo $value;
             }
-        }
+        }*/
         $fighter=$tableFighters->get($fighterId);
         $sight=$fighter['skill_sight'];
         $x=$fighter['coordinate_x'];
@@ -144,7 +144,7 @@ class EventsTable extends Table {
             $ye=$value['coordinate_y'];
             $date= $value['date']->modify('-2 hours');
             if(($date->wasWithinLast(1)) and ($xe <= ($x+$sight)) and ($xe >= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye >= ($y-$sight))){
-                if($event[0] === "rien"){
+                if($event[0] === "Il n'y a pas d'évènement de moins de 24h"){
                     $event[0]=$value['name']; 
                 }else {
                     $event[]=$value['name'];    

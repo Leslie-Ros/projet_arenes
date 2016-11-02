@@ -104,10 +104,8 @@ class ArenasController extends AppController {
         $this->loadModel('Events');
         $this->loadModel('Fighters');
         $tableFighters = TableRegistry::get('Fighters');
-        $fighter = $tableFighters->get(1);
-        $enemy = $tableFighters->get(2);
         //  $this->Events->createEventDeath($fighter,$enemy);
-        $this->set('event', $this->Events->displayEvents(1));
+        $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
     }
 
 }
