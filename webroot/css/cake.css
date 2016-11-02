@@ -674,7 +674,7 @@ h1
 
 /*Mise en forme Diary*/
 
-.cadrecss
+.cadrecssdiary
 {
  margin-top: 10px;
  margin-left: 150px;
@@ -745,6 +745,7 @@ h1
     height: 45px;width: 45px;
     border-style: solid;
     float: left;
+
 }
 
 .backgroundSight{
@@ -755,17 +756,36 @@ h1
     background-color: #000000;
 }
 /*Mise en forme fighter*/
+.cadrecssfighter
+{
+ margin-top: 10px;
+ margin-left: 700px;
+ background-color:#FAFAFA;
+ opacity: 0.7;
+ padding:10px;
+ width:400px;
+ color: black;
+ border-style: double;
+}
+
+.fighterPrint
+{
+width: 600px;
+opacity: 0.8;
+margin-left: 10px;
+float: left;
+}
 
 h2
 {
-     text-shadow: #FFF 1px 1px 10px;    
+    text-shadow: #FFF 1px 1px 10px;    
 }
 #jouer
 {
-    text-align: center;
-    margin-top: 70px;
- margin-left: 350px;
- float: left;
+ text-align: center;
+ margin-top: 100px;
+ margin-right: 200px;
+ float: right;
  background-color:#990000;
  color: white;
  font-weight: bold;
@@ -775,26 +795,6 @@ h2
 }
 
 #jouer a
-{
-    color: white;
-    font-family: 'notmarykateregular', arial;
-}
-#evenfighter 
-{
- text-align: center;
- margin-top: 70px;
- margin-right: 300px;
- float: right;
- background-color:#990000;
- color: white;
- font-weight: bold;
- padding:10px;
- width:300px;
- border-style: ridge;
-
-}
-
-#evenfighter a
 {
     color: white;
     font-family: 'notmarykateregular', arial;
