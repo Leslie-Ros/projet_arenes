@@ -89,7 +89,7 @@ class ArenasController extends AppController {
         if ($this->request->is("post")) {
             //pr($this->request->data);
             if($this->Fighters->hasActionPoints(1)){
-                pr('form');
+                //pr('form');
                 $this->Fighters->move($this->request->data['direction'], 1, $arena);
                 //1 id du fighter, à changer par $this->request->session->read($fighterId)
                 $arena = $this->Fighters->createArena();

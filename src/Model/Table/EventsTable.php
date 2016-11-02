@@ -133,21 +133,20 @@ class EventsTable extends Table {
                 echo $value;
             }
         }
-        $fighter=$tableFighters->get($fighterId);
-        $sight=$fighter['skill_sight'];
-        $x=$fighter['coordinate_x'];
-        $y=$fighter['coordinate_y'];
-        $datelist=$this->find('all');
-        foreach($datelist as $value){
-            $xe=$value['coordinate_x'];
-            $ye=$value['coordinate_y'];
-            $date= $value['date']->modify('-2 hours');
-            if(($date->wasWithinLast(1)) and ($xe <= ($x+$sight)) and ($xe >= ($x-$sight)) and ($ye <= ($y+$sight)) and ($ye >= ($y-$sight))){
-              $event[]=$value['name'];             
+        $fighter = $tableFighters->get($fighterId);
+        $sight = $fighter['skill_sight'];
+        $x = $fighter['coordinate_x'];
+        $y = $fighter['coordinate_y'];
+        $datelist = $this->find('all');
+        foreach ($datelist as $value) {
+            $xe = $value['coordinate_x'];
+            $ye = $value['coordinate_y'];
+            $date = $value['date']->modify('-2 hours');
+            if (($date->wasWithinLast(1)) and ( $xe <= ($x + $sight)) and ( $xe >= ($x - $sight)) and ( $ye <= ($y + $sight)) and ( $ye >= ($y - $sight))) {
+                $event[] = $value['name'];
+            }
         }
-        
-            }return $event;
-
+        return $event;
     }
 
 }
