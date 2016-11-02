@@ -5,7 +5,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
 use Cake\ORM\TableRegistry;
 use Cake\Event\Event;
 use Cake\Error\Debugger;
@@ -23,39 +22,35 @@ class ArenasController extends AppController {
 //        $figterlist = $this->Fighters->find('all');
 //        pr($figterlist->toArray());
 //        $this->set('players', $this->Players->find('all'));
-
-
     }
-
 
     public function fighter() {
         $this->loadModel('Fighters');
         //$userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //à changer : récupérer l'iduser lors de la connexion
-        
         //s'il n'y a pas d'utilisateur connecté on redirige de suite vers le login
-        if ($this->request->session()->check('User.player_id')){
-            $userid=$this->request->session()->read('User.player_id');
+        if ($this->request->session()->check('User.player_id')) {
+            $userid = $this->request->session()->read('User.player_id');
             $persos = $this->Fighters->getFightersForUser($userid);
-        }
-        else{
+        } else {
             //rediriger vers login (n'est pas censé se produire)
             $userid = 'e15d495a-1bad-4f63-aaaa-52be03c8f72d'; //provisoire pour ne pas crash
             pr("Nous n'etes pas co");
         }
-        
+
         //traitement des formulaires
-        if($this->request->is('post'))
-        {
+        if ($this->request->is('post')) {
             //pr($this->request->data);
-            switch ($this->request->data['idform']){
+            switch ($this->request->data['idform']) {
                 case 'creation' :
-                    if (!empty($this->request->data['name'])){
+                    if (!empty($this->request->data['name'])) {
                         $arena = $this->Fighters->createArena(); //on crée une arène virtuelle pour savoir où il est possible de placer le nouveau personnage
                         $this->Fighters->createFighter($this->request->data['name'], $userid, $arena);
+                        $this->request->session()->write('User.fighter_id', $this->Fighters->getDefaultFighterId($userid));
+                   
                     }
                     break;
                 case 'levelup':
-                    $this->Fighters->levelUp($persos[0]['id'],$this->request->data['competence']);
+                    $this->Fighters->levelUp($persos[0]['id'], $this->request->data['competence']);
                     break;
             }
         }
@@ -67,7 +62,9 @@ class ArenasController extends AppController {
         if (empty($persos)) {
             $this->set('hasFighter', FALSE);
         } else {
+
             //$this->request->session()->write('User.fighter_id', $persos[0]['id']);//A CHANGER SI PERSOS MULTIPLES
+
             $this->set('hasFighter', TRUE);
             //$this->set('combattant', $persos[0]);
             $this->set('combattants', $persos);
@@ -77,35 +74,42 @@ class ArenasController extends AppController {
             }
             $this->set('mayLevelUp', $mayLevelUp);
         }
-        
     }
-    
+
     public function sight() {
+    if($this->request->session()->read('User.fighter_id')){//renvoie null si la variable n'existe pas
         //if($this->Session->read('lastTime') <= );
         //initialiser arena
         $this->loadModel('Fighters');
+        $this->loadModel('Events');
         $arena = $this->Fighters->createArena();
         $this->set('largeur', $this->Fighters->largeur);
         $this->set('longueur', $this->Fighters->longueur);
-        /*$this->Fighters->hasActionPoints(1);
-        $this->Fighters->removeActionPoint(1);*/
-        
+        /* $this->Fighters->hasActionPoints(1);
+          $this->Fighters->removeActionPoint(1); */
+
         //post traitemnt
+        $log = "Vous entrez dans l'arène:";
+        $fid = $this->request->session()->read('User.fighter_id');
         if ($this->request->is("post")) {
             //pr($this->request->data);
-            if($this->Fighters->hasActionPoints(1)){
-                pr('form');
-                $this->Fighters->move($this->request->data['direction'], 1, $arena);
+            if ($this->Fighters->hasActionPoints($fid)) {
+                //pr('form');$this->request->session()->read('User.fighter_id')
+                $this->Fighters->move($this->request->data['direction'], $fid, $arena);
                 //1 id du fighter, à changer par $this->request->session->read($fighterId)
                 $arena = $this->Fighters->createArena();
+                $log = $this->Events->getLastEvent()->toArray()['name'];
             }
         }
-        $mask = $this->Fighters->canSee($arena, 1);
-        //$this->Fighters->attack(1,1); a force de tester j'ai tué aragorn
-        //1 id du fighter, à changer par $this->request->session->read($fighterId)
-        //pr($arena);
+        $mask = $this->Fighters->canSee($arena, $fid);
         $this->set('mask', $mask);
         $this->set('arena', $arena);
+        $this->set('ap', $this->Fighters->hasActionPoints($fid));
+        $this->set('log', $log);
+        $this->set('hasFighter', true);
+    }else {
+        $this->set('hasFighter', false);
+    }
     }
 
     //Exemple d'utilisation de la fonction createFighter
@@ -113,20 +117,16 @@ class ArenasController extends AppController {
     //Exemple d'utilisation de la fonction deleteFighter
     //$this->Fighters->deleteFighter(3);
 
-public function diary()
-{
-    //test
-    $this->loadModel('Events');
-    $this->loadModel('Fighters');
+    public function diary() {
+        //test
+        if($this->request->session()->read('User.fighter_id')){
+            $this->loadModel('Events');
+            $this->loadModel('Fighters');
             $tableFighters = TableRegistry::get('Fighters');
-            $fighter= $tableFighters->get(1);
-            $enemy= $tableFighters->get(2);
-  //  $this->Events->createEventDeath($fighter,$enemy);
-    $this->set('event',$this->Events->displayEvents(1));
-    
+            //  $this->Events->createEventDeath($fighter,$enemy);
+            $this->set('event', $this->Events->displayEvents($this->request->session()->read('User.fighter_id')));
+        }
     }
-    
-
 }
 
 ?>

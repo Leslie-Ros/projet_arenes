@@ -24,7 +24,7 @@
                      ?>
 
             <?php } else {
-                ?> <section class='cadrecss'>Encore quelques points à gagner !</section><?php
+                ?> <section class='cadrecssfighter'>Encore quelques points à gagner !</section><?php
             }
             $parametres = array("combattant" => $combattant, "mayLevelUp" => $mayLevelUp);
             //echo $this->element('selection', $parametres);
@@ -50,12 +50,5 @@
                 'controller' => 'Arenas',
                 'action' => 'sight'
             ]); ?>" class="btn btn-lg btn-primary">JOUER MAINTENANT</a>
-
-</div>
- <div id="evenfighter">
- <a href="<?php echo $this->Url->build([
-                'controller' => 'Arenas',
-                'action' => 'diary'
-            ]); ?>" class="btn btn-lg btn-primary">JOURNAL DES EVENEMENTS</a>
 
 </div>

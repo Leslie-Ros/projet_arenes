@@ -40,28 +40,40 @@ footer {
     background: #890000;
     font-family: serif, arial;
     color: #FFF;
-    padding-bottom: 1px;
-    padding-top: 1px;
+
 }
 footer ul
 {
     list-style-type : none;
+    margin: 1px;
+ 
 }
 footer li 
 {
-    float: center;
-    background: #890000;
+    background: #890000;  
+}
+footer a
+{
+    color: white;
+    font-family: serif, arial;
     display: inline;
+    float: right;
+
+}
+footer a:hover
+{
+    color: black;
+
 }
 #opgr
 {
-    float : left;
+    float : left; 
+    display: inline;
 }
-#auteur
+#attention
 {
-    float : right;
+    text-align: center;
 }
-
 
 header .header-title {
     padding-left:80px
@@ -613,9 +625,9 @@ div.message.hidden {
     border-bottom: 0px;
 }
 
-/*Mise en forme de add.ctp*/
+/*Mise en forme de add.ctp et login.ctp*/
 form {
- margin-top: 100px;
+ margin-top: 80px;
  margin-left: 250px;
  background-color:#FAFAFA;
  padding:10px;
@@ -629,6 +641,15 @@ form {
  {
     text-align: center;
     margin-top: 100px;
+ margin-left: 250px;
+ background-color:#FAFAFA;
+ padding:10px;
+ width:600px;
+ }
+  #forgetpassword
+ {
+    text-align: center;
+    margin-top: 10px;
  margin-left: 250px;
  background-color:#FAFAFA;
  padding:10px;
@@ -674,7 +695,7 @@ h1
 
 /*Mise en forme Diary*/
 
-.cadrecss
+.cadrecssdiary
 {
  margin-top: 10px;
  margin-left: 150px;
@@ -709,36 +730,52 @@ h1
 }
 
 /*Mise en forme de sight*/
+
+#explication
+{
+ margin-top: 10px;
+ text-align: center;
+ background-color:#000;
+ margin-left: 750px;
+ color: white;
+ font-weight: bold;
+ padding:10px;
+ width:500px;
+ border-style: ridge;
+ opacity: 0.7;
+}
 #bselection form {
     float: right;
+     margin-top: 10px;
     margin-left: 0px;
-    margin-right: 300px;
-    margin-top: 100px;
-    width: 300px;
+    margin-right: 150px;
+    width: 250px;
+    border-style: ridge;
 }
 #evensight 
 {
- text-align: center;
- margin-top: 350px;
- margin-left: 700px;
+ text-align: center; 
+ margin-top: 170px;
+ margin-left: 870px;
  background-color:#990000;
  color: white;
  font-weight: bold;
  padding:10px;
  width:250px;
  border-style: ridge;
- opacity: 0.7;
+ opacity: 0.8;
 }
 
 #evensight a
 {
     color: white;
-    font-family: notmarykateregular;
+    font-family: 'notmarykateregular', arial;
 }
 #jeu
-{
+{   
+    margin-top: 10px;
     float: left;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 #arene{
     text-align: center;
@@ -754,18 +791,52 @@ h1
 .backgroundFog{
     background-color: #000000;
 }
+.monPerso {
+    background-color: green;
+}
+.situation
+{
+    margin-top: 20px;
+ margin-left: 50px;
+ background-color:#FAFAFA;
+ opacity: 0.7;
+ padding:10px;
+ width:679px;
+ color: black;
+ border-style: double;
+}
+
 /*Mise en forme fighter*/
+.cadrecssfighter
+{
+ margin-top: 10px;
+ margin-left: 700px;
+ background-color:#FAFAFA;
+ opacity: 0.7;
+ padding:10px;
+ width:400px;
+ color: black;
+ border-style: double;
+}
+
+.fighterPrint
+{
+width: 600px;
+opacity: 0.8;
+margin-left: 5px;
+float: left;
+}
 
 h2
 {
-     text-shadow: #FFF 1px 1px 10px;    
+    text-shadow: #FFF 1px 1px 10px;    
 }
 #jouer
 {
-    text-align: center;
-    margin-top: 70px;
- margin-left: 350px;
- float: left;
+ text-align: center;
+ margin-top: 100px;
+ margin-right: 200px;
+ float: right;
  background-color:#990000;
  color: white;
  font-weight: bold;
@@ -779,23 +850,4 @@ h2
     color: white;
     font-family: 'notmarykateregular', arial;
 }
-#evenfighter 
-{
- text-align: center;
- margin-top: 70px;
- margin-right: 300px;
- float: right;
- background-color:#990000;
- color: white;
- font-weight: bold;
- padding:10px;
- width:300px;
- border-style: ridge;
 
-}
-
-#evenfighter a
-{
-    color: white;
-    font-family: 'notmarykateregular', arial;
-}
