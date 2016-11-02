@@ -15,7 +15,7 @@
             <!-- Affichage ou non de la possibilité de level up-->
             <?php
             if ($mayLevelUp[$key] == TRUE) { ?>
-                Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?
+                <div class="cadrecssfighter">Vous pouvez passer au niveau suivant. Quelle caractéristique souhaitez-vous améliorer ?</div>
                      <?php echo $this->Form->create();
                      $options = ['vue' => 'Vue', 'force' => 'Force', 'vie'=> 'Vie max'];
                      echo $this->Form->select('competence', $options);
