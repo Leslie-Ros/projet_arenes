@@ -74,6 +74,23 @@ class PlayersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
     
+ public function forgetPassword() {
+        $email=$this->request->data;
+        $this->Players->findByEmail($email);
+        $newpassword = chaine_aleatoire(5, $chaine = 'azertyuiopqsdfghjklmwxcvbn123456789');
+        $player->password = $newpassword;
+        if ($this->Players->save($player)) {
+            $email = new Email('default');
+            $email
+                    ->to($player->email)
+                    ->from(['webarenaprojet@gmail.com' => 'WebArena'])
+                    ->send('Voici votre nouveau password: ' . $newpassword);
+        } else {
+            $this->Flash->error(__('Impossible de générer un nouveau password'));
+        }
+    }
+    
+    
  public function googlelogin()
     {
         $client = new Google_Client();
