@@ -34,7 +34,7 @@
     
     
     else {//s'il n'y a pas de combattant associé à ce joueur
-        ?></section>
+        ?>
     <h2>Créez votre combattant</h2>
         <?php
         echo $this->Form->create('Fighters');
@@ -44,7 +44,7 @@
         echo $this->Form->end();
         //echo $this->element('creation');
     }
-    ?>
+    ?></section>
 
     <div id="jouer">
  <a href="<?php echo $this->Url->build([
