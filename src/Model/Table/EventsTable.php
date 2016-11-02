@@ -40,6 +40,42 @@ class EventsTable extends Table {
         //insertion du nouveau tuple
         $tableEvents->save($event);
     }
+    
+    public function createEventMove($fighter) {
+
+        $tableEvents = TableRegistry::get('Events');
+        $event = $tableEvents->newEntity();
+        $time = Time::now();
+        $time->setTimezone(new \DateTimeZone('Europe/Paris'));
+
+
+        //remplissage des attributs de ce nouveau tuple
+        $event->name = $fighter['name'].' se deplace sur ('.$fighter['coordinate_x'].','.$fighter['coordinate_y'].')';
+        $event->date = $time;
+        $event->coordinate_x = $fighter['coordinate_x'];
+        $event->coordinate_y = $fighter['coordinate_y'];
+
+        //insertion du nouveau tuple
+        $tableEvents->save($event);
+    }
+    
+    public function createEventDummy($fighter) {
+
+        $tableEvents = TableRegistry::get('Events');
+        $event = $tableEvents->newEntity();
+        $time = Time::now();
+        $time->setTimezone(new \DateTimeZone('Europe/Paris'));
+
+
+        //remplissage des attributs de ce nouveau tuple
+        $event->name = $fighter['name'].' s\'est mangé un mur';
+        $event->date = $time;
+        $event->coordinate_x = $fighter['coordinate_x'];
+        $event->coordinate_y = $fighter['coordinate_y'];
+
+        //insertion du nouveau tuple
+        $tableEvents->save($event);
+    }
 
     public function createEventMiss($fighter, $enemy) {
 
@@ -115,6 +151,10 @@ class EventsTable extends Table {
 
         //insertion du nouveau tuple
         $tableEvents->save($event);
+    }
+    
+    public function getLastEvent(){
+        return $this->find('all')->last();
     }
 
     public function displayEvents($fighterId) {
